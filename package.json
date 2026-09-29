@@ -1,0 +1,17 @@
+{
+  "name": "poseidon9991.github.io",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.2.5",
+    "@fontsource/kantumruy-pro": "^5.2.5",
+    "@fontsource/spline-sans-mono": "^5.2.5",
+    "astro": "^5.16.0"
+  }
+}
