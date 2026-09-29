@@ -46,13 +46,8 @@ import '@fontsource/spline-sans-mono/400.css';
         <span>UTC+7</span>
         <span>KHR / EN</span>
         <span class="cube-wrap">
-          <span class="cube">
-            <span class="cube-in">
-              <i class="f f1"></i><i class="f f2"></i><i class="f f3"></i>
-              <i class="f f4"></i><i class="f f5"></i><i class="f f6"></i>
-            </span>
-          </span>
-          <span class="cube-cap">Fig. 03 — CSS solid</span>
+          <canvas class="minisolid" width="160" height="160" role="img" aria-label="Wireframe database cylinder rotating"></canvas>
+          <span class="cube-cap">Fig. 03 — datastore study</span>
         </span>
       </aside>
       <div class="tb">
@@ -85,10 +80,10 @@ import '@fontsource/spline-sans-mono/400.css';
             <div><b>Scale</b><span>1:1</span></div>
           </div>
           <div class="specimen">
-            <canvas class="solid" width="240" height="240" role="img" aria-label="Rotating wireframe icosahedron — drag to rotate"></canvas>
+            <canvas class="solid" width="300" height="200" role="img" aria-label="Wireframe phone syncing data packets to a server rack — drag to rotate"></canvas>
             <div class="spec-note">
-              <b>Fig. 02 — solid study</b>
-              <span>Wireframe icosahedron rendered live on canvas. Drag to rotate.</span>
+              <b>Fig. 02 — sync study</b>
+              <span>Offline device queue → backend API. Rendered live; drag to rotate.</span>
             </div>
           </div>
           <div class="cta">
@@ -668,8 +663,8 @@ POST /verify  → check OTP at every login</code></pre>
       animation: settle .6s .62s cubic-bezier(.22, 1, .36, 1) both;
     }
     .solid {
-      width: 124px;
-      height: 124px;
+      width: 150px;
+      height: 100px;
       flex: 0 0 auto;
       cursor: grab;
       touch-action: none;
@@ -692,7 +687,7 @@ POST /verify  → check OTP at every login</code></pre>
       color: var(--graphite);
     }
     @media (max-width: 560px) {
-      .solid { width: 96px; height: 96px; }
+      .solid { width: 132px; height: 88px; }
     }
 
     .redact {
@@ -772,32 +767,16 @@ POST /verify  → check OTP at every login</code></pre>
     }
     @keyframes trace { to { stroke-dashoffset: 0; } }
 
-    /* ── Margin 3D solid study ──────────────── */
+    /* ── Margin datastore study ─────────────── */
     .cube-wrap { display: block; margin-top: 30px; text-align: right; }
-    .cube {
+    .minisolid {
       display: inline-block;
-      width: 66px;
-      height: 66px;
-      perspective: 420px;
-      position: relative;
+      width: 80px;
+      height: 80px;
+      cursor: grab;
+      touch-action: none;
     }
-    .cube-in {
-      position: absolute;
-      inset: 0;
-      transform-style: preserve-3d;
-      animation: tumble 18s linear infinite;
-    }
-    .cube .f { position: absolute; inset: 9px; border: 1.5px solid var(--ink); background: rgba(243, 245, 239, .35); }
-    .f1 { transform: translateZ(24px); }
-    .f2 { transform: translateZ(-24px); }
-    .f3 { transform: rotateY(90deg) translateZ(24px); }
-    .f4 { transform: rotateY(-90deg) translateZ(24px); }
-    .f5 { transform: rotateX(90deg) translateZ(24px); }
-    .f6 { transform: rotateX(-90deg) translateZ(24px); }
-    @keyframes tumble {
-      from { transform: rotateX(-22deg) rotateY(0deg); }
-      to   { transform: rotateX(-22deg) rotateY(360deg); }
-    }
+    .minisolid:active { cursor: grabbing; }
     .cube-cap {
       display: block;
       margin-top: 12px;
@@ -1011,24 +990,13 @@ POST /verify  → check OTP at every login</code></pre>
     (() => {
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      /* ── Interactive wireframe icosahedron ── */
-      const canvas = document.querySelector('.solid');
-      if (canvas) {
+      /* ── Wireframe engine: device→API sync + datastore ── */
+      const engines = [];
+      function wireframe(canvas, scene) {
         const ctx = canvas.getContext('2d');
         const W = canvas.width, H = canvas.height;
-        const t = (1 + Math.sqrt(5)) / 2;
-        const V = [
-          [-1, t, 0], [1, t, 0], [-1, -t, 0], [1, -t, 0],
-          [0, -1, t], [0, 1, t], [0, -1, -t], [0, 1, -t],
-          [t, 0, -1], [t, 0, 1], [-t, 0, -1], [-t, 0, 1],
-        ];
-        const E = [];
-        for (let i = 0; i < V.length; i++)
-          for (let j = i + 1; j < V.length; j++) {
-            const dx = V[i][0] - V[j][0], dy = V[i][1] - V[j][1], dz = V[i][2] - V[j][2];
-            if (dx * dx + dy * dy + dz * dz < 4.1) E.push([i, j]);
-          }
-        let ax = -0.42, ay = 0.65, dragging = false, lx = 0, ly = 0;
+        const scale = Math.min(W / (2 * scene.rx), H / (2 * scene.ry)) * 0.9;
+        let ax = scene.ax, ay = scene.ay, dragging = false, lx = 0, ly = 0;
 
         const rot = ([x, y, z]) => {
           let c = Math.cos(ay), s = Math.sin(ay);
@@ -1037,19 +1005,19 @@ POST /verify  → check OTP at every login</code></pre>
           [y, z] = [y * c - z * s, y * s + z * c];
           return [x, y, z];
         };
+        const proj = ([x, y, z]) => {
+          const f = 5 / (5 - z);
+          return [W / 2 + x * f * scale, H / 2 - y * f * scale, z];
+        };
 
-        const draw = () => {
+        const draw = (t) => {
           ctx.clearRect(0, 0, W, H);
-          const scale = W * 0.29;
-          const P = V.map(rot).map(([x, y, z]) => {
-            const f = 5 / (5 - z);
-            return [W / 2 + x * f * scale, H / 2 - y * f * scale, z];
-          });
-          ctx.lineWidth = 1.6;
+          const P = scene.verts.map(v => proj(rot(v)));
+          ctx.lineWidth = 1.5;
           ctx.lineCap = 'round';
-          for (const [i, j] of E) {
+          for (const [i, j, a0] of scene.edges) {
             const z = (P[i][2] + P[j][2]) / 2;
-            const a = 0.3 + 0.6 * (z + 1.75) / 3.5;
+            const a = Math.min(1, Math.max(0, a0 * (0.45 + 0.55 * (z + 1.9) / 3.8)));
             ctx.strokeStyle = 'rgba(27, 35, 30, ' + a.toFixed(3) + ')';
             ctx.beginPath();
             ctx.moveTo(P[i][0], P[i][1]);
@@ -1060,12 +1028,16 @@ POST /verify  → check OTP at every login</code></pre>
             ctx.fillStyle = '#C23A26';
             ctx.fillRect(x - 1.5, y - 1.5, 3, 3);
           }
-        };
-
-        const tick = () => {
-          if (!dragging && !reduce) ay += 0.0045;
-          draw();
-          requestAnimationFrame(tick);
+          for (const pk of scene.packets) {
+            const p = (pk.p + t * pk.speed) % 1;
+            const [x, y] = proj(rot([
+              pk.f[0] + (pk.t[0] - pk.f[0]) * p,
+              pk.f[1] + (pk.t[1] - pk.f[1]) * p,
+              pk.f[2] + (pk.t[2] - pk.f[2]) * p,
+            ]));
+            ctx.fillStyle = '#146B45';
+            ctx.fillRect(x - 2, y - 2, 4, 4);
+          }
         };
 
         canvas.addEventListener('pointerdown', e => {
@@ -1080,8 +1052,66 @@ POST /verify  → check OTP at every login</code></pre>
         });
         ['pointerup', 'pointercancel'].forEach(ev =>
           canvas.addEventListener(ev, () => { dragging = false; }));
-        tick();
+
+        engines.push({ isDrag: () => dragging, rotY: v => { ay = v; }, getY: () => ay, draw });
       }
+
+      /* phone (left) → server rack (right) with sync packets */
+      const sceneSync = () => {
+        const verts = [], edges = [];
+        const box = (cx, cy, cz, hx, hy, hz, a = 1) => {
+          const b = verts.length;
+          for (const [sx, sy, sz] of [[-1,-1,-1],[1,-1,-1],[1,-1,1],[-1,-1,1],[-1,1,-1],[1,1,-1],[1,1,1],[-1,1,1]])
+            verts.push([cx + sx * hx, cy + sy * hy, cz + sz * hz]);
+          [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]]
+            .forEach(([i, j]) => edges.push([b + i, b + j, a]));
+        };
+        box(-1.7, -0.1, 0, 0.42, 0.8, 0.08);                       // phone body
+        const s = verts.length;                                    // screen inset
+        [[-0.32, 0.6], [0.32, 0.6], [0.32, -0.6], [-0.32, -0.6]]
+          .forEach(([sx, sy]) => verts.push([-1.7 + sx, -0.1 + sy, 0.09]));
+        [[0,1],[1,2],[2,3],[3,0]].forEach(([i, j]) => edges.push([s + i, s + j, 0.45]));
+        box(1.7, 0.36, 0, 0.52, 0.15, 0.36);                       // server tray 1
+        box(1.7, -0.06, 0, 0.52, 0.15, 0.36);                      // server tray 2
+        box(1.7, -0.48, 0, 0.52, 0.15, 0.36);                      // server tray 3
+        const p = verts.length;
+        verts.push([-1.22, 0.62, 0], [1.12, 0.58, 0]);             // sync path
+        edges.push([p, p + 1, 0.22]);
+        const packets = [0, 0.34, 0.67].map(ph => ({
+          f: verts[p], t: verts[p + 1], p: ph, speed: 0.0045,
+        }));
+        return { verts, edges, packets, rx: 2.5, ry: 1.05, ax: -0.32, ay: 0.55 };
+      };
+
+      /* database cylinder: three rings + verticals */
+      const sceneDb = () => {
+        const verts = [], edges = [], N = 14, r = 0.95;
+        const ring = (h, a = 1) => {
+          const b = verts.length;
+          for (let i = 0; i < N; i++) {
+            const ang = (i / N) * Math.PI * 2;
+            verts.push([r * Math.cos(ang), h, r * Math.sin(ang)]);
+          }
+          for (let i = 0; i < N; i++) edges.push([b + i, b + ((i + 1) % N), a]);
+          return b;
+        };
+        const top = ring(0.85), bot = ring(-0.85); ring(0, 0.3);
+        for (let i = 0; i < N; i++) edges.push([top + i, bot + i, 0.9]);
+        return { verts, edges, packets: [], rx: 1.15, ry: 1.1, ax: -0.62, ay: 0.4 };
+      };
+
+      const big = document.querySelector('.solid');
+      if (big) wireframe(big, sceneSync());
+      const mini = document.querySelector('.minisolid');
+      if (mini) wireframe(mini, sceneDb());
+
+      let t = 0;
+      const frame = () => {
+        t += 1;
+        engines.forEach(e => { if (!e.isDrag() && !reduce) e.rotY(e.getY() + 0.0045); e.draw(t); });
+        requestAnimationFrame(frame);
+      };
+      if (engines.length) frame();
 
       /* ── Pointer-tilt depth on plates ─────── */
       if (matchMedia('(pointer: fine)').matches && !reduce) {
