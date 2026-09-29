@@ -107,7 +107,7 @@ import '@fontsource/spline-sans-mono/400.css';
           </div>
           <div class="srow">
             <span class="grp">Backend</span>
-            <p>Laravel, Node.js, Go (Fiber), REST APIs</p>
+            <p>Laravel, Node.js, Go (Fiber), Python, REST APIs</p>
           </div>
           <div class="srow">
             <span class="grp">Data</span>
@@ -191,6 +191,50 @@ await addToSyncQueue('createMobileSaleOrder', ensureClientRequestId(order));</co
 SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></pre>
           </div>
         </article>
+
+        <h3 class="loghead">Field log — additional work</h3>
+        <ol class="log">
+          <li>
+            <span class="lno">L.01</span>
+            <div>
+              <h4>Database as a Service</h4>
+              <p>Managed database offering on DP Cloud; backend and service layer in Laravel.</p>
+              <span class="lmeta">Daun Penh Cloud · Laravel · Backend</span>
+            </div>
+          </li>
+          <li>
+            <span class="lno">L.02</span>
+            <div>
+              <h4>DailyPlus Online Learning — AWS EC2 → DP Cloud</h4>
+              <p>Migrated a production e-learning platform from AWS EC2 onto DP Cloud infrastructure.</p>
+              <span class="lmeta">Daun Penh Cloud · Web hosting · Migration</span>
+            </div>
+          </li>
+          <li>
+            <span class="lno">L.03</span>
+            <div>
+              <h4>EbookCambodia — DigitalOcean → DP Cloud</h4>
+              <p>Migrated the EbookCambodia platform from DigitalOcean to DP Cloud.</p>
+              <span class="lmeta">Daun Penh Cloud · Web hosting · Migration</span>
+            </div>
+          </li>
+          <li>
+            <span class="lno">L.04</span>
+            <div>
+              <h4>IoT Project</h4>
+              <p>Connected hardware project using Python and programmable logic controllers.</p>
+              <span class="lmeta">Python · PLC</span>
+            </div>
+          </li>
+          <li>
+            <span class="lno">L.05</span>
+            <div>
+              <h4>Student &amp; Instructor Record System</h4>
+              <p>Full-stack record management system with a Vue.js frontend.</p>
+              <span class="lmeta">Vue.js · Full-stack</span>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -216,6 +260,7 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
             <span class="dates">2024</span>
             <h3>National Polytechnic Institute of Cambodia</h3>
             <p>Internship: practical web development and team collaboration.</p>
+            <p class="tech">Thesis final score: 85 · Dec 2024</p>
           </li>
         </ol>
       </div>
@@ -677,6 +722,44 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
       color: var(--ink);
     }
     .code code { font: inherit; }
+
+    /* ── Field log ──────────────────────────── */
+    .loghead {
+      margin: 40px 0 0;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--graphite);
+    }
+    .log { list-style: none; margin: 10px 0 0; padding: 0; }
+    .log li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 0 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .log li:first-child { border-top: 1px solid var(--rule); }
+    .lno {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 12px;
+      color: var(--red-pencil);
+      padding-top: 3px;
+    }
+    .log h4 {
+      margin: 0 0 4px;
+      font-family: 'Archivo Variable', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -.005em;
+    }
+    .log p { margin: 0 0 5px; font-size: 14.5px; max-width: 62ch; }
+    .lmeta {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 12px;
+      color: var(--graphite);
+    }
 
     /* ── Contact ────────────────────────────── */
     .contact { list-style: none; margin: 8px 0 0; padding: 0; }
