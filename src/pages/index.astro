@@ -66,7 +66,7 @@ import '@fontsource/spline-sans-mono/400.css';
           </p>
           <svg class="scope" viewBox="0 0 300 40" aria-hidden="true">
             <path d="M0 20h34l7-14 9 28 7-14h52l6-9 8 18 6-9h58l7-15 10 28 7-13h89" fill="none" stroke-width="1.5"/>
-            <text x="0" y="37" class="scope-label">SIG.01 · SYNC OK</text>
+            <text x="0" y="37" class="scope-label">QUEUE 0 · SYNC OK</text>
           </svg>
           <figure class="photo">
             <img src="/photo.jpg" alt="Hoeng Reaksa" width="520" height="520" />
@@ -187,7 +187,6 @@ import '@fontsource/spline-sans-mono/400.css';
             <pre class="code"><code>// Concept — a stable idempotency key rides with every queued order,
 // so a retry after a flaky network can never create a duplicate.
 queue.enqueue('order.create', order.withIdempotencyKey());</code></pre>
-            <p class="redact">Pattern shown conceptually — production internals redacted.</p>
           </div>
         </article>
 
@@ -206,7 +205,6 @@ queue.enqueue('order.create', order.withIdempotencyKey());</code></pre>
             <p class="tech">Laravel · MySQL · Vue 3 · Redis</p>
             <pre class="code"><code>-- Concept — per-status counts in a single pass over today's orders
 SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) AS pending_count</code></pre>
-            <p class="redact">Pattern shown conceptually — production schema redacted.</p>
           </div>
         </article>
 
@@ -227,7 +225,6 @@ SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) AS pending_count</code></pre
             <pre class="code"><code># Concept — relying apps delegate all TOTP handling over a keyed API
 POST /setup   → enrol user, return QR + secret
 POST /verify  → check OTP at every login</code></pre>
-            <p class="redact">Pattern shown conceptually — production endpoints redacted.</p>
           </div>
         </article>
 
@@ -688,14 +685,6 @@ POST /verify  → check OTP at every login</code></pre>
     }
     @media (max-width: 560px) {
       .solid { width: 132px; height: 88px; }
-    }
-
-    .redact {
-      margin: 8px 0 4px;
-      font-family: 'Spline Sans Mono', monospace;
-      font-size: 11px;
-      letter-spacing: .02em;
-      color: var(--graphite);
     }
 
     .plate {
