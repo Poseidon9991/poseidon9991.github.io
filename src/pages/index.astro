@@ -120,11 +120,11 @@ import '@fontsource/spline-sans-mono/400.css';
           </div>
           <div class="srow">
             <span class="grp">Backend</span>
-            <p>Laravel, Node.js, Go (Fiber), Python, REST APIs</p>
+            <p>Laravel, Ruby on Rails, Node.js, Go (Fiber), Python, REST APIs</p>
           </div>
           <div class="srow">
             <span class="grp">Data</span>
-            <p>MySQL, PostgreSQL, MongoDB, Redis</p>
+            <p>MySQL, PostgreSQL, MariaDB, MongoDB, Redis</p>
           </div>
           <div class="srow">
             <span class="grp">Delivery</span>
@@ -164,7 +164,7 @@ import '@fontsource/spline-sans-mono/400.css';
 
     <!-- ═══════════ WORK / PLATES ═══════════ -->
     <section class="sec" id="work">
-      <aside class="note" aria-hidden="true"><span>Plate set 01–02</span></aside>
+      <aside class="note" aria-hidden="true"><span>Plate set 01–03</span></aside>
       <div class="body">
         <h2>Work <span class="h2km" lang="km">គម្រោង</span></h2>
 
@@ -202,6 +202,26 @@ await addToSyncQueue('createMobileSaleOrder', ensureClientRequestId(order));</co
             <p class="tech">Laravel · MySQL · Vue 3 · Redis</p>
             <pre class="code"><code>-- Per-customer order status counts, from the sale-dashboard API
 SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></pre>
+          </div>
+        </article>
+
+        <article class="plate">
+          <div class="plate-head">
+            <span class="pno">Plate 03</span>
+            <span class="ptitle">TOTP Shield: self-hosted 2FA as a service</span>
+            <span class="pdate">2025</span>
+          </div>
+          <div class="plate-body">
+            <p>
+              A central two-factor authentication provider that other applications integrate with
+              through a REST API. Client apps enrol users via QR code, verify OTPs at login, and
+              delegate all TOTP handling to the service. The web dashboard manages API apps,
+              monitors usage, and administers users across three roles.
+            </p>
+            <p class="tech">Ruby on Rails 7.1 · MariaDB · Devise + devise-two-factor · ROTP · Docker</p>
+            <pre class="code"><code># Apps delegate 2FA entirely over the API (X-API-KEY auth)
+POST /api/v1/totp/setup   → QR code SVG + otp_secret
+POST /api/v1/totp/verify  → verify OTP at every login</code></pre>
           </div>
         </article>
 
@@ -245,6 +265,14 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
               <h4>Student &amp; Instructor Record System</h4>
               <p>Full-stack record management system with a Vue.js frontend.</p>
               <span class="lmeta">Vue.js · Full-stack</span>
+            </div>
+          </li>
+          <li>
+            <span class="lno">L.06</span>
+            <div>
+              <h4>Provida Analytics</h4>
+              <p>Internal analytics dashboard over the Provida sales dataset: orders, wholesale, customer visits, vehicles and staff.</p>
+              <span class="lmeta">Laravel 12 · Inertia.js · Vue 3</span>
             </div>
           </li>
         </ol>
