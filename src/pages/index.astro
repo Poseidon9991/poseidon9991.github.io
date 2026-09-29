@@ -24,11 +24,7 @@ import '@fontsource/spline-sans-mono/400.css';
 
   <header class="topbar">
     <a class="mark" href="#top" aria-label="Hoeng Reaksa, back to top">
-      <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" fill="none" stroke="currentColor" stroke-opacity=".25"/>
-        <path d="M8 0v32M16 0v32M24 0v32M0 8h32M0 16h32M0 24h32" stroke="currentColor" stroke-opacity=".12"/>
-        <path d="M7 22V10h5a3 3 0 0 1 0 6H7m5 0 4 6" fill="none" stroke="#146B45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <img class="mark-logo" src="/logo.svg" width="26" height="26" alt="" />
       <span>Hoeng&nbsp;Reaksa</span>
     </a>
     <nav aria-label="Sections">
@@ -64,6 +60,11 @@ import '@fontsource/spline-sans-mono/400.css';
             I build offline-first sales apps and the Laravel APIs that power
             them, from UI to database.
           </p>
+          <figure class="photo">
+            <img src="/photo.jpg" alt="Hoeng Reaksa" width="520" height="520" />
+            <figcaption>Fig. 01 — field photo, Phnom Penh</figcaption>
+            <span class="tape" aria-hidden="true"></span>
+          </figure>
           <div class="tb-fields">
             <div><b>Location</b><span>Phnom Penh, Cambodia</span></div>
             <div><b>Currently</b><span>Software Developer, DaunPenh Data Center</span></div>
@@ -485,7 +486,50 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
       max-width: 46ch;
       animation: settle .6s .4s cubic-bezier(.22, 1, .36, 1) both;
     }
+    .mark-logo { display: block; width: 26px; height: 26px; }
+
+    .photo {
+      position: relative;
+      float: right;
+      width: clamp(130px, 22vw, 185px);
+      margin: 6px 0 18px 28px;
+      transform: rotate(2deg);
+      animation: settle .6s .52s cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 6px;
+      background: var(--paper-deep);
+      border: 1.5px solid var(--ink);
+      filter: grayscale(1) contrast(1.08) brightness(1.03);
+    }
+    .photo figcaption {
+      margin-top: 7px;
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .02em;
+      color: var(--graphite);
+      text-align: center;
+    }
+    .photo .tape {
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      width: 74px;
+      height: 22px;
+      transform: translateX(-50%) rotate(-4deg);
+      background: rgba(235, 238, 229, .72);
+      border: 1px solid rgba(27, 35, 30, .16);
+      box-shadow: 0 1px 2px rgba(27, 35, 30, .1);
+    }
+    @media (max-width: 560px) {
+      .photo { width: 118px; margin-left: 18px; }
+    }
+
     .tb-fields {
+      clear: both;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 14px 24px;
