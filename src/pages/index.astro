@@ -45,6 +45,15 @@ import '@fontsource/spline-sans-mono/400.css';
       <aside class="note" aria-hidden="true">
         <span>UTC+7</span>
         <span>KHR / EN</span>
+        <span class="cube-wrap">
+          <span class="cube">
+            <span class="cube-in">
+              <i class="f f1"></i><i class="f f2"></i><i class="f f3"></i>
+              <i class="f f4"></i><i class="f f5"></i><i class="f f6"></i>
+            </span>
+          </span>
+          <span class="cube-cap">Fig. 3D — solid study</span>
+        </span>
       </aside>
       <div class="tb">
         <div class="tb-inner">
@@ -55,14 +64,18 @@ import '@fontsource/spline-sans-mono/400.css';
           </div>
           <h1>Hoeng Reaksa</h1>
           <p class="khmer" lang="km">ហុឹង រក្សា</p>
-          <p class="role">Full-Stack Developer</p>
+          <p class="role">Full-Stack Developer <span class="role-km" lang="km">អ្នកអភិវឌ្ឍន៍គេហទំព័រ</span></p>
           <p class="statement">
             I build offline-first sales apps and the Laravel APIs that power
             them, from UI to database.
           </p>
+          <svg class="scope" viewBox="0 0 300 40" aria-hidden="true">
+            <path d="M0 20h34l7-14 9 28 7-14h52l6-9 8 18 6-9h58l7-15 10 28 7-13h89" fill="none" stroke-width="1.5"/>
+            <text x="0" y="37" class="scope-label">SIG.01 · SYNC OK</text>
+          </svg>
           <figure class="photo">
             <img src="/photo.jpg" alt="Hoeng Reaksa" width="520" height="520" />
-            <figcaption>Fig. 01 — field photo, Phnom Penh</figcaption>
+            <figcaption>Fig. 01 — field photo · <span lang="km">ភ្នំពេញ</span></figcaption>
             <span class="tape" aria-hidden="true"></span>
           </figure>
           <div class="tb-fields">
@@ -83,7 +96,7 @@ import '@fontsource/spline-sans-mono/400.css';
     <section class="sec" id="about">
       <aside class="note" aria-hidden="true"><span>Profile</span></aside>
       <div class="body">
-        <h2>About</h2>
+        <h2>About <span class="h2km" lang="km">អំពីខ្ញុំ</span></h2>
         <p>
           I&rsquo;m a full-stack developer in Phnom Penh shipping production systems for
           Cambodia&rsquo;s distribution industry: a sales-force app that reps use on the road
@@ -99,7 +112,7 @@ import '@fontsource/spline-sans-mono/400.css';
     <section class="sec" id="stack">
       <aside class="note" aria-hidden="true"><span>Tooling</span></aside>
       <div class="body">
-        <h2>Stack</h2>
+        <h2>Stack <span class="h2km" lang="km">បច្ចេកវិទ្យា</span></h2>
         <div class="stack-rows">
           <div class="srow">
             <span class="grp">Frontend</span>
@@ -125,7 +138,7 @@ import '@fontsource/spline-sans-mono/400.css';
     <section class="sec" id="experience">
       <aside class="note" aria-hidden="true"><span>Service record</span></aside>
       <div class="body">
-        <h2>Experience</h2>
+        <h2>Experience <span class="h2km" lang="km">បទពិសោធន៍</span></h2>
         <ol class="xp">
           <li>
             <span class="dates">08/2025 – present</span>
@@ -153,7 +166,7 @@ import '@fontsource/spline-sans-mono/400.css';
     <section class="sec" id="work">
       <aside class="note" aria-hidden="true"><span>Plate set 01–02</span></aside>
       <div class="body">
-        <h2>Work</h2>
+        <h2>Work <span class="h2km" lang="km">គម្រោង</span></h2>
 
         <article class="plate">
           <div class="plate-head">
@@ -242,7 +255,7 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
     <section class="sec" id="education">
       <aside class="note" aria-hidden="true"><span>Credentials</span></aside>
       <div class="body">
-        <h2>Education</h2>
+        <h2>Education <span class="h2km" lang="km">ការសិក្សា</span></h2>
         <ol class="xp">
           <li>
             <span class="dates">01–02/2024</span>
@@ -261,6 +274,7 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
             <h3>National Polytechnic Institute of Cambodia</h3>
             <p>Internship: practical web development and team collaboration.</p>
             <p class="tech">Thesis final score: 85 · Dec 2024</p>
+            <span class="stamp">Completed</span>
           </li>
         </ol>
       </div>
@@ -270,7 +284,7 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
     <section class="sec" id="contact">
       <aside class="note" aria-hidden="true"><span>Available</span></aside>
       <div class="body">
-        <h2>Get in touch</h2>
+        <h2>Get in touch <span class="h2km" lang="km">ទំនាក់ទំនង</span></h2>
         <p class="statement">The fastest way to reach me is email or Telegram.</p>
         <ul class="contact">
           <li>
@@ -620,6 +634,98 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
     @keyframes settle {
       from { opacity: 0; filter: blur(5px); transform: translateY(10px); }
       to { opacity: 1; filter: blur(0); transform: none; }
+    }
+
+    /* ── Khmer annotations ──────────────────── */
+    .h2km {
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-size: .62em;
+      font-weight: 500;
+      letter-spacing: 0;
+      color: var(--red-pencil);
+      margin-left: 12px;
+      white-space: nowrap;
+    }
+    .role-km {
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-size: .82em;
+      font-weight: 500;
+      color: var(--graphite);
+      margin-left: 10px;
+    }
+    @media (max-width: 640px) {
+      .h2km { display: block; margin: 3px 0 0; font-size: .56em; }
+      .role-km { display: block; margin: 4px 0 0; }
+    }
+
+    /* ── Oscilloscope trace ─────────────────── */
+    .scope {
+      display: block;
+      margin-top: 24px;
+      width: min(300px, 78%);
+      height: auto;
+      animation: settle .6s .5s cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .scope path {
+      stroke: var(--instrument);
+      stroke-dasharray: 520;
+      stroke-dashoffset: 520;
+      animation: trace 1.6s .9s cubic-bezier(.4, 0, .2, 1) forwards;
+    }
+    .scope-label {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 8.5px;
+      letter-spacing: .1em;
+      fill: var(--graphite);
+    }
+    @keyframes trace { to { stroke-dashoffset: 0; } }
+
+    /* ── Margin 3D solid study ──────────────── */
+    .cube-wrap { display: block; margin-top: 30px; text-align: right; }
+    .cube {
+      display: inline-block;
+      width: 66px;
+      height: 66px;
+      perspective: 420px;
+      position: relative;
+    }
+    .cube-in {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      animation: tumble 18s linear infinite;
+    }
+    .cube .f { position: absolute; inset: 9px; border: 1.5px solid var(--ink); background: rgba(243, 245, 239, .35); }
+    .f1 { transform: translateZ(24px); }
+    .f2 { transform: translateZ(-24px); }
+    .f3 { transform: rotateY(90deg) translateZ(24px); }
+    .f4 { transform: rotateY(-90deg) translateZ(24px); }
+    .f5 { transform: rotateX(90deg) translateZ(24px); }
+    .f6 { transform: rotateX(-90deg) translateZ(24px); }
+    @keyframes tumble {
+      from { transform: rotateX(-22deg) rotateY(0deg); }
+      to   { transform: rotateX(-22deg) rotateY(360deg); }
+    }
+    .cube-cap {
+      display: block;
+      margin-top: 12px;
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      color: var(--graphite);
+      text-transform: none;
+    }
+
+    /* ── Small-screen tightening ────────────── */
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .topbar { gap: 14px; height: 54px; }
+      .locale { display: none; }
+      .tb-inner { padding: 24px 18px; }
+      .tb-head { gap: 6px 20px; font-size: 12px; }
+      .plate-body { padding: 14px; }
+      .code { font-size: 12.5px; }
+      .log li { grid-template-columns: 36px 1fr; gap: 0 12px; }
     }
 
     /* ── Stack rows ─────────────────────────── */
