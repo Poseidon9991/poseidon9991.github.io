@@ -52,7 +52,7 @@ import '@fontsource/spline-sans-mono/400.css';
               <i class="f f4"></i><i class="f f5"></i><i class="f f6"></i>
             </span>
           </span>
-          <span class="cube-cap">Fig. 3D — solid study</span>
+          <span class="cube-cap">Fig. 03 — CSS solid</span>
         </span>
       </aside>
       <div class="tb">
@@ -83,6 +83,13 @@ import '@fontsource/spline-sans-mono/400.css';
             <div><b>Currently</b><span>Software Developer, DaunPenh Data Center</span></div>
             <div><b>Focus</b><span>PWAs, clean APIs, reliable sync</span></div>
             <div><b>Scale</b><span>1:1</span></div>
+          </div>
+          <div class="specimen">
+            <canvas class="solid" width="240" height="240" role="img" aria-label="Rotating wireframe icosahedron — drag to rotate"></canvas>
+            <div class="spec-note">
+              <b>Fig. 02 — solid study</b>
+              <span>Wireframe icosahedron rendered live on canvas. Drag to rotate.</span>
+            </div>
           </div>
           <div class="cta">
             <a class="btn primary" href="mailto:hongraksa097@gmail.com">Email me</a>
@@ -182,8 +189,10 @@ import '@fontsource/spline-sans-mono/400.css';
               history with order-status breakdowns, end-of-day summaries, and activity maps.
             </p>
             <p class="tech">Next.js (PWA) · TypeScript · Tailwind CSS · IndexedDB sync queue</p>
-            <pre class="code"><code>// Stable idempotency key survives queueing + retries → no duplicate orders
-await addToSyncQueue('createMobileSaleOrder', ensureClientRequestId(order));</code></pre>
+            <pre class="code"><code>// Concept — a stable idempotency key rides with every queued order,
+// so a retry after a flaky network can never create a duplicate.
+queue.enqueue('order.create', order.withIdempotencyKey());</code></pre>
+            <p class="redact">Pattern shown conceptually — production internals redacted.</p>
           </div>
         </article>
 
@@ -200,8 +209,9 @@ await addToSyncQueue('createMobileSaleOrder', ensureClientRequestId(order));</co
               JSON-scoped territories.
             </p>
             <p class="tech">Laravel · MySQL · Vue 3 · Redis</p>
-            <pre class="code"><code>-- Per-customer order status counts, from the sale-dashboard API
-SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></pre>
+            <pre class="code"><code>-- Concept — per-status counts in a single pass over today's orders
+SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) AS pending_count</code></pre>
+            <p class="redact">Pattern shown conceptually — production schema redacted.</p>
           </div>
         </article>
 
@@ -219,9 +229,10 @@ SUM(CASE WHEN o.OrderStatusId = 1 THEN 1 ELSE 0 END) AS orders_pending</code></p
               monitors usage, and administers users across three roles.
             </p>
             <p class="tech">Ruby on Rails 7.1 · MariaDB · Devise + devise-two-factor · ROTP · Docker</p>
-            <pre class="code"><code># Apps delegate 2FA entirely over the API (X-API-KEY auth)
-POST /api/v1/totp/setup   → QR code SVG + otp_secret
-POST /api/v1/totp/verify  → verify OTP at every login</code></pre>
+            <pre class="code"><code># Concept — relying apps delegate all TOTP handling over a keyed API
+POST /setup   → enrol user, return QR + secret
+POST /verify  → check OTP at every login</code></pre>
+            <p class="redact">Pattern shown conceptually — production endpoints redacted.</p>
           </div>
         </article>
 
@@ -643,6 +654,59 @@ POST /api/v1/totp/verify  → verify OTP at every login</code></pre>
       margin-top: 32px;
       animation: settle .6s .56s cubic-bezier(.22, 1, .36, 1) both;
     }
+
+    /* ── 3D specimen strip ──────────────────── */
+    .specimen {
+      clear: both;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--rule);
+      animation: settle .6s .62s cubic-bezier(.22, 1, .36, 1) both;
+    }
+    .solid {
+      width: 124px;
+      height: 124px;
+      flex: 0 0 auto;
+      cursor: grab;
+      touch-action: none;
+    }
+    .solid:active { cursor: grabbing; }
+    .spec-note b {
+      display: block;
+      font-family: 'Archivo Variable', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--red-pencil);
+    }
+    .spec-note span {
+      display: block;
+      margin-top: 4px;
+      max-width: 42ch;
+      font-size: 13.5px;
+      color: var(--graphite);
+    }
+    @media (max-width: 560px) {
+      .solid { width: 96px; height: 96px; }
+    }
+
+    .redact {
+      margin: 8px 0 4px;
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .02em;
+      color: var(--graphite);
+    }
+
+    .plate {
+      transition: transform .22s ease-out;
+      will-change: transform;
+    }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -942,5 +1006,96 @@ POST /api/v1/totp/verify  → verify OTP at every login</code></pre>
       *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
+
+  <script>
+    (() => {
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ── Interactive wireframe icosahedron ── */
+      const canvas = document.querySelector('.solid');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        const W = canvas.width, H = canvas.height;
+        const t = (1 + Math.sqrt(5)) / 2;
+        const V = [
+          [-1, t, 0], [1, t, 0], [-1, -t, 0], [1, -t, 0],
+          [0, -1, t], [0, 1, t], [0, -1, -t], [0, 1, -t],
+          [t, 0, -1], [t, 0, 1], [-t, 0, -1], [-t, 0, 1],
+        ];
+        const E = [];
+        for (let i = 0; i < V.length; i++)
+          for (let j = i + 1; j < V.length; j++) {
+            const dx = V[i][0] - V[j][0], dy = V[i][1] - V[j][1], dz = V[i][2] - V[j][2];
+            if (dx * dx + dy * dy + dz * dz < 4.1) E.push([i, j]);
+          }
+        let ax = -0.42, ay = 0.65, dragging = false, lx = 0, ly = 0;
+
+        const rot = ([x, y, z]) => {
+          let c = Math.cos(ay), s = Math.sin(ay);
+          [x, z] = [x * c - z * s, x * s + z * c];
+          c = Math.cos(ax); s = Math.sin(ax);
+          [y, z] = [y * c - z * s, y * s + z * c];
+          return [x, y, z];
+        };
+
+        const draw = () => {
+          ctx.clearRect(0, 0, W, H);
+          const scale = W * 0.29;
+          const P = V.map(rot).map(([x, y, z]) => {
+            const f = 5 / (5 - z);
+            return [W / 2 + x * f * scale, H / 2 - y * f * scale, z];
+          });
+          ctx.lineWidth = 1.6;
+          ctx.lineCap = 'round';
+          for (const [i, j] of E) {
+            const z = (P[i][2] + P[j][2]) / 2;
+            const a = 0.3 + 0.6 * (z + 1.75) / 3.5;
+            ctx.strokeStyle = 'rgba(27, 35, 30, ' + a.toFixed(3) + ')';
+            ctx.beginPath();
+            ctx.moveTo(P[i][0], P[i][1]);
+            ctx.lineTo(P[j][0], P[j][1]);
+            ctx.stroke();
+          }
+          for (const [x, y] of P) {
+            ctx.fillStyle = '#C23A26';
+            ctx.fillRect(x - 1.5, y - 1.5, 3, 3);
+          }
+        };
+
+        const tick = () => {
+          if (!dragging && !reduce) ay += 0.0045;
+          draw();
+          requestAnimationFrame(tick);
+        };
+
+        canvas.addEventListener('pointerdown', e => {
+          dragging = true; lx = e.clientX; ly = e.clientY;
+          canvas.setPointerCapture(e.pointerId);
+        });
+        canvas.addEventListener('pointermove', e => {
+          if (!dragging) return;
+          ay += (e.clientX - lx) * 0.008;
+          ax += (e.clientY - ly) * 0.008;
+          lx = e.clientX; ly = e.clientY;
+        });
+        ['pointerup', 'pointercancel'].forEach(ev =>
+          canvas.addEventListener(ev, () => { dragging = false; }));
+        tick();
+      }
+
+      /* ── Pointer-tilt depth on plates ─────── */
+      if (matchMedia('(pointer: fine)').matches && !reduce) {
+        document.querySelectorAll('.plate').forEach(pl => {
+          pl.addEventListener('pointermove', e => {
+            const r = pl.getBoundingClientRect();
+            const rx = ((e.clientY - r.top) / r.height - 0.5) * -2.2;
+            const ry = ((e.clientX - r.left) / r.width - 0.5) * 2.2;
+            pl.style.transform = 'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+          });
+          pl.addEventListener('pointerleave', () => { pl.style.transform = ''; });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
