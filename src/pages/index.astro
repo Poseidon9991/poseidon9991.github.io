@@ -108,29 +108,42 @@ import '@fontsource/kantumruy-pro/600.css';
       <div class="srow">
         <span class="grp">Frontend</span>
         <p class="chips">
-          <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Vue 3</span>
-          <span class="chip">Nuxt</span><span class="chip">Astro</span><span class="chip">Tailwind CSS</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" />React</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" loading="lazy" />Next.js</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="" loading="lazy" />Vue 3</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" alt="" loading="lazy" />Nuxt</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg" alt="" loading="lazy" />Astro</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="" loading="lazy" />Tailwind CSS</span>
         </p>
       </div>
       <div class="srow">
         <span class="grp">Backend</span>
         <p class="chips">
-          <span class="chip">Laravel</span><span class="chip">Ruby on Rails</span><span class="chip">Node.js</span>
-          <span class="chip">Go (Fiber)</span><span class="chip">Python</span><span class="chip">REST APIs</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="" loading="lazy" />Laravel</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-plain.svg" alt="" loading="lazy" />Ruby on Rails</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" loading="lazy" />Node.js</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="" loading="lazy" />Go (Fiber)</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" loading="lazy" />Python</span>
+          <span class="chip"><i class="ico-glyph">⇄</i>REST APIs</span>
         </p>
       </div>
       <div class="srow">
         <span class="grp">Data</span>
         <p class="chips">
-          <span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">MariaDB</span>
-          <span class="chip">MongoDB</span><span class="chip">Redis</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" loading="lazy" />MySQL</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" loading="lazy" />PostgreSQL</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg" alt="" loading="lazy" />MariaDB</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" loading="lazy" />MongoDB</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="" loading="lazy" />Redis</span>
         </p>
       </div>
       <div class="srow">
         <span class="grp">Delivery</span>
         <p class="chips">
-          <span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Vercel</span>
-          <span class="chip">PWA offline sync</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy" />Docker</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="" loading="lazy" />GitHub Actions</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="" loading="lazy" />Vercel</span>
+          <span class="chip"><i class="ico-glyph">↻</i>PWA offline sync</span>
         </p>
       </div>
     </section>
@@ -772,6 +785,9 @@ POST /verify  → check OTP at every login</pre>
     }
     .chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; }
     .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 4px 13px;
       border-radius: 999px;
       font-weight: 800;
@@ -780,6 +796,14 @@ POST /verify  → check OTP at every login</pre>
       background: linear-gradient(180deg, #FFFFFF, #DCF3FC 60%, #BFE6F7);
       border: 1px solid rgba(255, 255, 255, .95);
       box-shadow: inset 0 1px 0 #fff, 0 3px 7px rgba(7, 64, 94, .12);
+    }
+    .chip img { width: 15px; height: 15px; display: block; }
+    .chip .ico-glyph {
+      font-style: normal;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--aqua-deep);
+      line-height: 1;
     }
     .chip.sm { font-size: 12px; padding: 3px 11px; }
 
