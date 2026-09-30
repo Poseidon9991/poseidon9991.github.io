@@ -11,6 +11,8 @@
   "dependencies": {
     "@fontsource-variable/archivo": "^5.2.5",
     "@fontsource/kantumruy-pro": "^5.2.5",
+    "@fontsource/nunito": "^5.3.0",
+    "@fontsource/press-start-2p": "^5.3.0",
     "@fontsource/spline-sans-mono": "^5.2.5",
     "astro": "^5.16.0"
   }

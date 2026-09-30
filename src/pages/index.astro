@@ -1,4 +1,9 @@
 ---
+import '@fontsource/nunito/400.css';
+import '@fontsource/nunito/600.css';
+import '@fontsource/nunito/700.css';
+import '@fontsource/nunito/800.css';
+import '@fontsource/press-start-2p';
 import '@fontsource/kantumruy-pro/400.css';
 import '@fontsource/kantumruy-pro/500.css';
 import '@fontsource/kantumruy-pro/600.css';
@@ -9,9 +14,9 @@ import '@fontsource/kantumruy-pro/600.css';
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hoeng Reaksa's Homepage — welcome.exe</title>
+  <title>HOENG REAKSA — PLAYER 1</title>
   <meta name="description" content="Hoeng Reaksa, full-stack developer in Phnom Penh, Cambodia. Offline-first SFA apps, Laravel APIs, React frontends, end to end." />
-  <meta name="theme-color" content="#008080" />
+  <meta name="theme-color" content="#45B5E8" />
   <meta property="og:title" content="Hoeng Reaksa — Full-Stack Developer" />
   <meta property="og:description" content="Offline-first SFA apps and the Laravel APIs that power them, from UI to database." />
   <meta property="og:type" content="website" />
@@ -19,676 +24,909 @@ import '@fontsource/kantumruy-pro/600.css';
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div class="bubbles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
 
-  <div class="desktop">
-    <main id="main" class="desk-inner">
+  <!-- ═══════════ HUD ═══════════ -->
+  <header class="hud">
+    <a class="hud-logo" href="#top">HR://PORTFOLIO</a>
+    <nav aria-label="Sections">
+      <a href="#about">Profile</a>
+      <a href="#stack">Skills</a>
+      <a href="#experience">Quests</a>
+      <a href="#work">Levels</a>
+      <a href="#education">Trophies</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-      <!-- ═══════════ WELCOME.EXE ═══════════ -->
-      <section class="win" id="top" aria-label="Welcome">
-        <div class="wbar">
-          <span class="wtitle">■ welcome.exe — Hoeng Reaksa's Homepage</span>
-          <span class="wbtns"><i>_</i><i>□</i><i>✕</i></span>
-        </div>
-        <div class="menubar" aria-hidden="true">
-          <span>File</span><span>Edit</span><span>View</span><span>Help</span>
-        </div>
-        <div class="marq" aria-hidden="true"><span class="marq-in">
-          *** WELCOME TO MY HOMEPAGE *** est. 1999 *** best viewed at 800×600 *** 100% pure HTML, 0% flash *** sign my guestbook! ***
-          &nbsp;*** WELCOME TO MY HOMEPAGE *** est. 1999 *** best viewed at 800×600 *** 100% pure HTML, 0% flash *** sign my guestbook! ***
-        </span></div>
-        <div class="wpad">
-          <pre class="ascii" aria-hidden="true">+------------------------------------------------+
-|   H O E N G   R E A K S A                      |
-|   full-stack developer · Phnom Penh, Cambodia  |
-+------------------------------------------------+</pre>
+  <main id="main" class="page">
+
+    <!-- ═══════════ PLAYER 1 / HERO ═══════════ -->
+    <section class="glass hero" id="top" aria-label="Introduction">
+      <p class="eyebrow">◆ PLAYER 1 — READY</p>
+      <div class="hero-flex">
+        <div class="hero-main">
+          <h1>HOENG<br/>REAKSA</h1>
           <p class="khmer" lang="km">ហុឹង រក្សា — អ្នកអភិវឌ្ឍន៍គេហទំព័រ</p>
-          <p>
+          <p class="role">Full-Stack Developer</p>
+          <p class="statement">
             I build offline-first sales apps and the Laravel APIs that power
-            them, from UI to database.<span class="blink">▮</span>
+            them, from UI to database.
           </p>
-
-          <figure class="photo">
-            <img src="/photo.jpg" alt="Hoeng Reaksa" width="520" height="520" />
-            <figcaption>me.jpg — 960×960, 24-bit</figcaption>
-          </figure>
-
-          <pre class="ini">[system]
-user      = Hoeng Reaksa
-location  = Phnom Penh, Cambodia
-employer  = DaunPenh Data Center (Software Developer)
-focus     = offline-first PWA + clean APIs
-version   = 2026.09</pre>
-
-          <div class="crtwrap">
-            <div class="crtbar"><span>sync_demo.exe</span><span>■</span></div>
-            <canvas class="solid crt" width="300" height="200" role="img" aria-label="Wireframe phone syncing data packets to a server rack — drag to rotate"></canvas>
-            <p class="crtcap">Fig. 02 — offline queue → API, live render. Drag to rotate.</p>
+          <div class="stats">
+            <div><b>Location</b><span>Phnom Penh, KH</span></div>
+            <div><b>Employer</b><span>DaunPenh Data Center</span></div>
+            <div><b>Focus</b><span>offline PWA + APIs</span></div>
+            <div><b>Build</b><span>v2026.09</span></div>
           </div>
+          <div class="cta">
+            <a class="btn" href="mailto:hongraksa097@gmail.com">✉ Send message</a>
+            <a class="btn alt" href="https://t.me/ReaksaNamikaze" rel="me noopener">Telegram</a>
+          </div>
+          <p class="press-start" aria-hidden="true">▶ PRESS START</p>
+        </div>
+        <figure class="avatar">
+          <img src="/photo.jpg" alt="Hoeng Reaksa" width="520" height="520" />
+          <figcaption>PLAYER SPRITE · 960×960</figcaption>
+        </figure>
+      </div>
+      <div class="term">
+        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>sync_demo.exe</span></div>
+        <canvas class="solid" width="300" height="200" role="img" aria-label="Wireframe phone syncing data packets to a server rack — drag to rotate"></canvas>
+        <p class="term-cap">FIG.02 — offline queue → API, live render. Drag to rotate.</p>
+      </div>
+    </section>
 
-          <div class="btnrow">
-            <a class="btn95" href="mailto:hongraksa097@gmail.com">📧 Email me</a>
-            <a class="btn95" href="https://t.me/ReaksaNamikaze" rel="me noopener">Telegram</a>
+    <!-- ═══════════ PLAYER PROFILE ═══════════ -->
+    <section class="glass" id="about" aria-label="About">
+      <p class="eyebrow">◆ PLAYER PROFILE</p>
+      <h2>About</h2>
+      <p>
+        I'm a full-stack developer in Phnom Penh shipping production systems for
+        Cambodia's distribution industry: a sales-force app that reps use on the road
+        without signal, and the Laravel platform that approves, syncs, and reports
+        those orders.
+      </p>
+      <p>
+        Currently at DaunPenh Data Center. Before that, web development at QL
+        Management and an internship at NPIC. I care about clean UIs, honest APIs,
+        and apps that keep working offline.
+      </p>
+    </section>
+
+    <!-- ═══════════ SKILL TREE ═══════════ -->
+    <section class="glass" id="stack" aria-label="Tech stack">
+      <p class="eyebrow">◆ SKILL TREE</p>
+      <h2>Loadout</h2>
+      <div class="srow">
+        <span class="grp">Frontend</span>
+        <p class="chips">
+          <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Vue 3</span>
+          <span class="chip">Nuxt</span><span class="chip">Astro</span><span class="chip">Tailwind CSS</span>
+        </p>
+      </div>
+      <div class="srow">
+        <span class="grp">Backend</span>
+        <p class="chips">
+          <span class="chip">Laravel</span><span class="chip">Ruby on Rails</span><span class="chip">Node.js</span>
+          <span class="chip">Go (Fiber)</span><span class="chip">Python</span><span class="chip">REST APIs</span>
+        </p>
+      </div>
+      <div class="srow">
+        <span class="grp">Data</span>
+        <p class="chips">
+          <span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">MariaDB</span>
+          <span class="chip">MongoDB</span><span class="chip">Redis</span>
+        </p>
+      </div>
+      <div class="srow">
+        <span class="grp">Delivery</span>
+        <p class="chips">
+          <span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Vercel</span>
+          <span class="chip">PWA offline sync</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════ QUEST LOG ═══════════ -->
+    <section class="glass" id="experience" aria-label="Work experience">
+      <p class="eyebrow">◆ QUEST LOG</p>
+      <h2>Experience</h2>
+      <div class="quest">
+        <span class="qdate">08/2025 – present</span>
+        <h3>Software Developer · DaunPenh Data Center</h3>
+        <p>Production apps and internal services: an offline-first sales-force platform, reporting APIs, self-hosted 2FA, cloud migrations.</p>
+        <p class="chips">
+          <span class="chip sm">Next.js</span><span class="chip sm">Laravel</span><span class="chip sm">Rails</span>
+          <span class="chip sm">Go</span><span class="chip sm">PostgreSQL</span><span class="chip sm">MongoDB</span>
+          <span class="chip sm">Redis</span><span class="chip sm">Docker</span>
+        </p>
+      </div>
+      <div class="quest">
+        <span class="qdate">02/2025 – 08/2025</span>
+        <h3>Web Developer · QL Management Company</h3>
+        <p>Full-stack web features with product and QA; performance and UX improvements.</p>
+        <p class="chips"><span class="chip sm">Laravel</span><span class="chip sm">Vue</span><span class="chip sm">MySQL</span></p>
+      </div>
+      <div class="quest">
+        <span class="qdate">2024</span>
+        <h3>Intern · National Polytechnic Institute of Cambodia</h3>
+        <p>Web development fundamentals and team workflows; first production Laravel + Vue features.</p>
+        <p class="chips"><span class="chip sm">Laravel</span><span class="chip sm">Vue</span><span class="chip sm">MySQL</span></p>
+      </div>
+    </section>
+
+    <!-- ═══════════ LEVEL SELECT ═══════════ -->
+    <section class="glass" id="work" aria-label="Selected work">
+      <p class="eyebrow">◆ LEVEL SELECT</p>
+      <h2>Work</h2>
+
+      <article class="level">
+        <div class="level-head">
+          <span class="lvl-no">01</span>
+          <div class="lvl-title">
+            <h3>Provida SFA: offline-first sales platform</h3>
+            <span class="lvl-tag">WORLD 2025 · MAIN QUEST</span>
           </div>
         </div>
-      </section>
-
-      <!-- ═══════════ ABOUT.TXT ═══════════ -->
-      <section class="win" id="about" aria-label="About">
-        <div class="wbar">
-          <span class="wtitle">■ about.txt — Notepad</span>
-          <span class="wbtns"><i>_</i><i>□</i><i>✕</i></span>
-        </div>
-        <div class="wpad">
-          <p>
-            I'm a full-stack developer in Phnom Penh shipping production systems for
-            Cambodia's distribution industry: a sales-force app that reps use on the road
-            without signal, and the Laravel platform that approves, syncs, and reports
-            those orders.
-          </p>
-          <p>
-            Currently at DaunPenh Data Center. Before that, web development at QL
-            Management and an internship at NPIC. I care about clean UIs, honest APIs,
-            and apps that keep working offline.
-          </p>
-        </div>
-      </section>
-
-      <!-- ═══════════ TOOLKIT ═══════════ -->
-      <section class="win" id="stack" aria-label="Stack">
-        <div class="wbar">
-          <span class="wtitle">■ C:\dev\toolkit — command</span>
-          <span class="wbtns"><i>_</i><i>□</i><i>✕</i></span>
-        </div>
-        <div class="wpad">
-          <table class="tbl">
-            <tbody>
-              <tr><th>frontend</th><td>React, Next.js, Vue 3, Nuxt, Astro, Tailwind CSS</td></tr>
-              <tr><th>backend</th><td>Laravel, Ruby on Rails, Node.js, Go (Fiber), Python, REST APIs</td></tr>
-              <tr><th>data</th><td>MySQL, PostgreSQL, MariaDB, MongoDB, Redis</td></tr>
-              <tr><th>delivery</th><td>Docker, GitHub Actions, Vercel, PWA offline sync</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- ═══════════ CAREER.LOG ═══════════ -->
-      <section class="win" id="experience" aria-label="Experience">
-        <div class="wbar">
-          <span class="wtitle">■ career.log — Event Viewer</span>
-          <span class="wbtns"><i>_</i><i>□</i><i>✕</i></span>
-        </div>
-        <div class="wpad">
-          <div class="xrow">
-            <span class="xdate">08/2025 – present</span>
-            <h3>Software Developer · DaunPenh Data Center</h3>
-            <p>Production apps and internal services: an offline-first sales-force platform, reporting APIs, self-hosted 2FA, cloud migrations.</p>
-            <p class="tech">Next.js · Laravel · Rails · Go · PostgreSQL · MongoDB · Redis · Docker</p>
-          </div>
-          <div class="xrow">
-            <span class="xdate">02/2025 – 08/2025</span>
-            <h3>Web Developer · QL Management Company</h3>
-            <p>Full-stack web features with product and QA; performance and UX improvements.</p>
-            <p class="tech">Laravel · Vue · MySQL</p>
-          </div>
-          <div class="xrow">
-            <span class="xdate">2024</span>
-            <h3>Intern · National Polytechnic Institute of Cambodia</h3>
-            <p>Web development fundamentals and team workflows; first production Laravel + Vue features.</p>
-            <p class="tech">Laravel · Vue · MySQL</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ PROJECTS DIR ═══════════ -->
-      <section class="win" id="work" aria-label="Work">
-        <div class="wbar">
-          <span class="wtitle">■ C:\projects — File Manager</span>
-          <span class="wbtns"><i>_</i><i>□</i><i>✕</i></span>
-        </div>
-        <div class="wpad">
-
-          <div class="subwin">
-            <div class="wbar small">
-              <span class="wtitle">plate01.txt — Provida SFA: offline-first sales platform</span>
-              <span class="wbtns"><i>✕</i></span>
-            </div>
-            <div class="wpad">
-              <p>
-                Sales reps in the field order without signal. Orders queue on-device with idempotency
-                keys and sync safely when the network returns, with no duplicates and no lost work. The app
-                tracks customer visits and stock counts, and closes the day with reports: sales
-                history with order-status breakdowns, end-of-day summaries, and activity maps.
-              </p>
-              <p class="tech">Next.js (PWA) · TypeScript · Tailwind CSS · IndexedDB sync queue</p>
-              <pre class="code">// Concept — a stable idempotency key rides with every queued order,
+        <p>
+          Sales reps in the field order without signal. Orders queue on-device with idempotency
+          keys and sync safely when the network returns, with no duplicates and no lost work. The app
+          tracks customer visits and stock counts, and closes the day with reports: sales
+          history with order-status breakdowns, end-of-day summaries, and activity maps.
+        </p>
+        <p class="chips">
+          <span class="chip sm">Next.js (PWA)</span><span class="chip sm">TypeScript</span>
+          <span class="chip sm">Tailwind CSS</span><span class="chip sm">IndexedDB sync queue</span>
+        </p>
+        <div class="term">
+          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>level01.log</span></div>
+          <pre class="code">// Concept — a stable idempotency key rides with every queued order,
 // so a retry after a flaky network can never create a duplicate.
 queue.enqueue('order.create', order.withIdempotencyKey());</pre>
-            </div>
-          </div>
+        </div>
+      </article>
 
-          <div class="subwin">
-            <div class="wbar small">
-              <span class="wtitle">plate02.txt — Provida Report Platform: Laravel backend</span>
-              <span class="wbtns"><i>✕</i></span>
-            </div>
-            <div class="wpad">
-              <p>
-                The API behind the SFA app: order approval workflow with Sage ERP sync, per-customer
-                sales dashboards, and mobile endpoints scoped by sales rep, on MySQL with
-                JSON-scoped territories.
-              </p>
-              <p class="tech">Laravel · MySQL · Vue 3 · Redis</p>
-              <pre class="code">-- Concept — per-status counts in a single pass over today's orders
+      <article class="level">
+        <div class="level-head">
+          <span class="lvl-no">02</span>
+          <div class="lvl-title">
+            <h3>Provida Report Platform: Laravel backend</h3>
+            <span class="lvl-tag">WORLD 2025 · MAIN QUEST</span>
+          </div>
+        </div>
+        <p>
+          The API behind the SFA app: order approval workflow with Sage ERP sync, per-customer
+          sales dashboards, and mobile endpoints scoped by sales rep, on MySQL with
+          JSON-scoped territories.
+        </p>
+        <p class="chips">
+          <span class="chip sm">Laravel</span><span class="chip sm">MySQL</span>
+          <span class="chip sm">Vue 3</span><span class="chip sm">Redis</span>
+        </p>
+        <div class="term">
+          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>level02.log</span></div>
+          <pre class="code">-- Concept — per-status counts in a single pass over today's orders
 SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) AS pending_count</pre>
-            </div>
-          </div>
+        </div>
+      </article>
 
-          <div class="subwin">
-            <div class="wbar small">
-              <span class="wtitle">plate03.txt — TOTP Shield: self-hosted 2FA service</span>
-              <span class="wbtns"><i>✕</i></span>
-            </div>
-            <div class="wpad">
-              <p>
-                A central two-factor authentication provider that other applications integrate with
-                through a REST API. Client apps enrol users via QR code, verify OTPs at login, and
-                delegate all TOTP handling to the service. The web dashboard manages API apps,
-                monitors usage, and administers users across three roles.
-              </p>
-              <p class="tech">Ruby on Rails 7.1 · MariaDB · Devise + devise-two-factor · ROTP · Docker</p>
-              <pre class="code"># Concept — relying apps delegate all TOTP handling over a keyed API
+      <article class="level">
+        <div class="level-head">
+          <span class="lvl-no">03</span>
+          <div class="lvl-title">
+            <h3>TOTP Shield: self-hosted 2FA service</h3>
+            <span class="lvl-tag">WORLD 2025 · SIDE BOSS</span>
+          </div>
+        </div>
+        <p>
+          A central two-factor authentication provider that other applications integrate with
+          through a REST API. Client apps enrol users via QR code, verify OTPs at login, and
+          delegate all TOTP handling to the service. The web dashboard manages API apps,
+          monitors usage, and administers users across three roles.
+        </p>
+        <p class="chips">
+          <span class="chip sm">Rails 7.1</span><span class="chip sm">MariaDB</span>
+          <span class="chip sm">Devise + 2FA</span><span class="chip sm">ROTP</span><span class="chip sm">Docker</span>
+        </p>
+        <div class="term">
+          <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>level03.log</span></div>
+          <pre class="code"># Concept — relying apps delegate all TOTP handling over a keyed API
 POST /setup   → enrol user, return QR + secret
 POST /verify  → check OTP at every login</pre>
-            </div>
-          </div>
+        </div>
+      </article>
 
-          <div class="crtwrap">
-            <div class="crtbar"><span>db_study.exe</span><span>■</span></div>
-            <canvas class="minisolid crt" width="160" height="160" role="img" aria-label="Wireframe database cylinder rotating — drag to rotate"></canvas>
-            <p class="crtcap">Fig. 03 — datastore, wireframe. Drag to rotate.</p>
-          </div>
-
-          <p class="dirhead">Index of /work/more</p>
-          <table class="dirtbl">
-            <thead><tr><th></th><th>Name</th><th>Size</th><th>Description</th></tr></thead>
-            <tbody>
-              <tr><td>↩</td><td>Parent Directory</td><td>-</td><td></td></tr>
-              <tr><td>□</td><td>dbaas/</td><td>-</td><td>Managed database service on DP Cloud — Laravel backend</td></tr>
-              <tr><td>□</td><td>dailyplus_migration/</td><td>-</td><td>E-learning platform, AWS EC2 → DP Cloud</td></tr>
-              <tr><td>□</td><td>ebookcambodia_migration/</td><td>-</td><td>EbookCambodia, DigitalOcean → DP Cloud</td></tr>
-              <tr><td>□</td><td>iot_project/</td><td>-</td><td>Connected hardware — Python + PLC</td></tr>
-              <tr><td>□</td><td>student_records/</td><td>-</td><td>Student &amp; instructor record system — Vue.js</td></tr>
-              <tr><td>□</td><td>provida_analytics/</td><td>-</td><td>Sales analytics dashboard — Laravel 12 · Inertia · Vue</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- ═══════════ CERTIFICATES.DOC ═══════════ -->
-      <section class="win" id="education" aria-label="Education">
-        <div class="wbar">
-          <span class="wtitle">■ certificates.doc — WordPad</span>
-          <span class="wbtns"><i>_</i><i>□</i><i>✕</i></span>
-        </div>
-        <div class="wpad">
-          <div class="xrow">
-            <span class="xdate">01–02/2024</span>
-            <h3>Nanyang Polytechnic International, Singapore</h3>
-            <p>ASEAN and Republic of Korea TVET Mobility Program, IT Applications &amp; Development.</p>
-            <span class="stamp">Certified</span>
-          </div>
-          <div class="xrow">
-            <span class="xdate">12/2024</span>
-            <h3>Guangzhou Industry and Trade Technician College</h3>
-            <p>ILO and China South-South Cooperation: Internet of Things online training. Cert № GZITTC-IN20240055.</p>
-            <span class="stamp">Completed</span>
-          </div>
-          <div class="xrow">
-            <span class="xdate">2024</span>
-            <h3>National Polytechnic Institute of Cambodia</h3>
-            <p>Internship: practical web development and team collaboration.</p>
-            <p class="tech">Thesis final score: 85 · Dec 2024</p>
-            <span class="stamp">Completed</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══════════ MAIL.EXE ═══════════ -->
-      <section class="win" id="contact" aria-label="Contact">
-        <div class="wbar">
-          <span class="wtitle">■ mail.exe — New Message</span>
-          <span class="wbtns"><i>_</i><i>□</i><i>✕</i></span>
-        </div>
-        <div class="wpad">
-          <p>The fastest way to reach me is email or Telegram. <span lang="km">សូមទាក់ទងមក!</span></p>
-          <table class="tbl">
-            <tbody>
-              <tr><td>✉</td><td><a href="mailto:hongraksa097@gmail.com">hongraksa097@gmail.com</a></td></tr>
-              <tr><td>✈</td><td><a href="https://t.me/ReaksaNamikaze" rel="me noopener">t.me/ReaksaNamikaze</a></td></tr>
-              <tr><td>in</td><td><a href="https://www.linkedin.com/in/hoeng-reaksa-48b5842b3" rel="me noopener">linkedin.com/in/hoeng-reaksa-48b5842b3</a></td></tr>
-              <tr><td>◇</td><td><a href="https://github.com/Poseidon9991" rel="me noopener">github.com/Poseidon9991</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- ═══════════ DESK FOOTER ═══════════ -->
-      <div class="deskfoot">
-        <div class="counter" aria-label="Visit counter">
-          you are visitor <b id="visits">000001</b> — last updated 30/09/2026
-        </div>
-        <div class="badges">
-          <span class="badge">BEST VIEWED<br/>800×600</span>
-          <span class="badge">HTML 4.01<br/>TRANSITIONAL</span>
-          <span class="badge">MADE WITH<br/>NOTEPAD</span>
-          <span class="badge">100%<br/>HANDMADE</span>
-        </div>
-        <p class="footline">© 1999–2026 Hoeng Reaksa · powered by coffee and O(n) loops</p>
+      <div class="term dbterm">
+        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>db_study.exe</span></div>
+        <canvas class="minisolid" width="160" height="160" role="img" aria-label="Wireframe database cylinder rotating — drag to rotate"></canvas>
+        <p class="term-cap">FIG.03 — datastore, wireframe. Drag to rotate.</p>
       </div>
-    </main>
 
-    <!-- ═══════════ TASKBAR ═══════════ -->
-    <footer class="taskbar">
-      <a class="start" href="#top"><b>☰ Start</b></a>
-      <span class="taskbtn">index.html</span>
-      <span class="clock" id="clock" aria-label="Local time">00:00</span>
+      <p class="eyebrow sub">◆ SIDE QUESTS</p>
+      <ul class="sidequests">
+        <li><b>dbaas/</b> — Managed database service on DP Cloud, Laravel backend</li>
+        <li><b>dailyplus_migration/</b> — E-learning platform, AWS EC2 → DP Cloud</li>
+        <li><b>ebookcambodia_migration/</b> — EbookCambodia, DigitalOcean → DP Cloud</li>
+        <li><b>iot_project/</b> — Connected hardware, Python + PLC</li>
+        <li><b>student_records/</b> — Student & instructor record system, Vue.js</li>
+        <li><b>provida_analytics/</b> — Sales analytics, Laravel 12 · Inertia · Vue</li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ TROPHIES ═══════════ -->
+    <section class="glass" id="education" aria-label="Education and certifications">
+      <p class="eyebrow">◆ TROPHIES</p>
+      <h2>Education</h2>
+      <div class="achv">
+        <span class="achv-ico" aria-hidden="true">★</span>
+        <div>
+          <h3>Nanyang Polytechnic International, Singapore</h3>
+          <p>ASEAN and Republic of Korea TVET Mobility Program, IT Applications & Development.</p>
+          <p class="achv-meta">01–02/2024 · <b class="unlocked">UNLOCKED</b></p>
+        </div>
+      </div>
+      <div class="achv">
+        <span class="achv-ico" aria-hidden="true">★</span>
+        <div>
+          <h3>Guangzhou Industry and Trade Technician College</h3>
+          <p>ILO and China South-South Cooperation: Internet of Things online training. Cert № GZITTC-IN20240055.</p>
+          <p class="achv-meta">12/2024 · <b class="unlocked">UNLOCKED</b></p>
+        </div>
+      </div>
+      <div class="achv">
+        <span class="achv-ico" aria-hidden="true">★</span>
+        <div>
+          <h3>National Polytechnic Institute of Cambodia</h3>
+          <p>Internship: practical web development and team collaboration. Thesis final score: 85.</p>
+          <p class="achv-meta">2024 · <b class="unlocked">UNLOCKED</b> · THESIS +85 PTS</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTINUE? ═══════════ -->
+    <section class="glass continue" id="contact" aria-label="Contact">
+      <p class="eyebrow">◆ GAME OVER? NO — CONTINUE</p>
+      <h2 class="cont-title">CONTINUE?</h2>
+      <p class="insert" aria-hidden="true">INSERT COIN TO REACH PLAYER 1</p>
+      <ul class="contacts">
+        <li><a href="mailto:hongraksa097@gmail.com">✉ hongraksa097@gmail.com</a></li>
+        <li><a href="https://t.me/ReaksaNamikaze" rel="me noopener">✈ t.me/ReaksaNamikaze</a></li>
+        <li><a href="https://www.linkedin.com/in/hoeng-reaksa-48b5842b3" rel="me noopener">in linkedin.com/in/hoeng-reaksa</a></li>
+        <li><a href="https://github.com/Poseidon9991" rel="me noopener">◆ github.com/Poseidon9991</a></li>
+      </ul>
+      <p class="khmer-c" lang="km">សូមទាក់ទងមក!</p>
+    </section>
+
+    <!-- ═══════════ SCORE BOARD ═══════════ -->
+    <footer class="scoreboard">
+      <p class="score">HIGH SCORE <b id="visits">000001</b></p>
+      <div class="badges">
+        <span class="badge">Y2K<br/>COMPLIANT</span>
+        <span class="badge">FRUTIGER<br/>AERO</span>
+        <span class="badge">EST.<br/>1999</span>
+        <span class="badge">MADE WITH<br/>♥ & AQUA</span>
+      </div>
+      <p class="footline">© 1999–2026 Hoeng Reaksa · Phnom Penh · powered by coffee and O(n) loops</p>
     </footer>
-  </div>
+  </main>
 
   <style is:global>
     :root {
-      --desk: #008080;
-      --face: #C0C0C0;
-      --face-hi: #FFFFFF;
-      --face-sh: #808080;
-      --face-dk: #404040;
-      --bar-a: #000080;
-      --bar-b: #1084D0;
-      --ink: #000000;
-      --link: #0000FF;
-      --visited: #551A8B;
-      --green: #39FF14;
-      --amber: #FFB000;
+      --sky-a: #8FD9FF;
+      --sky-b: #45B5E8;
+      --sky-c: #A8E8CC;
+      --deep: #07405E;
+      --body-ink: #123A52;
+      --aqua: #00B7E5;
+      --aqua-deep: #0080B0;
+      --lime: #58C920;
+      --magenta: #FF4FA3;
+      --sun: #FFD447;
+      --term-bg: #04283E;
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 
     body {
       margin: 0;
-      font-family: Tahoma, Verdana, 'MS Sans Serif', Geneva, sans-serif;
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--ink);
-      background-color: var(--desk);
-      background-image:
-        repeating-linear-gradient(0deg, rgba(0,0,0,.045) 0 1px, transparent 1px 2px),
-        repeating-linear-gradient(90deg, rgba(0,0,0,.045) 0 1px, transparent 1px 2px);
-      -webkit-font-smoothing: none;
+      font-family: 'Nunito', 'Kantumruy Pro', system-ui, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: var(--body-ink);
+      background:
+        radial-gradient(1200px 500px at 85% -5%, rgba(255, 255, 255, .55), transparent 60%),
+        radial-gradient(900px 420px at -10% 20%, rgba(168, 232, 204, .5), transparent 55%),
+        linear-gradient(180deg, var(--sky-a) 0%, var(--sky-b) 55%, var(--sky-c) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
     }
 
-    a { color: var(--link); }
-    a:visited { color: var(--visited); }
-    a:hover { color: var(--link); text-decoration-style: double; }
+    /* CRT scanlines, very subtle */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      pointer-events: none;
+      background: repeating-linear-gradient(0deg, rgba(4, 30, 46, .05) 0 1px, transparent 1px 3px);
+    }
 
-    :focus-visible { outline: 1px dotted var(--ink); outline-offset: -1px; }
+    a { color: var(--aqua-deep); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+    a:hover { color: var(--deep); }
+
+    :focus-visible {
+      outline: 3px solid var(--aqua-deep);
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
 
     .skip {
       position: fixed;
-      top: -48px;
-      left: 8px;
-      z-index: 20;
-      background: var(--face);
-      border: 2px solid;
-      border-color: var(--face-hi) var(--face-dk) var(--face-dk) var(--face-hi);
-      padding: 4px 10px;
-      transition: top .12s;
-    }
-    .skip:focus { top: 8px; }
-
-    /* ── desktop & windows ─────────────────── */
-    .desktop { min-height: 100dvh; padding-bottom: 42px; }
-    .desk-inner {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 28px 10px 24px;
-      display: grid;
-      gap: 18px;
-    }
-    .win, .subwin {
-      background: var(--face);
-      border: 2px solid;
-      border-color: var(--face-hi) var(--face-dk) var(--face-dk) var(--face-hi);
-      box-shadow: 1px 1px 0 var(--face-sh);
-    }
-    .wbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 3px 4px 3px 6px;
-      background: linear-gradient(90deg, var(--bar-a), var(--bar-b));
-      color: #fff;
-      font-weight: 700;
-      font-size: 12px;
-      user-select: none;
-    }
-    .wbar.small { font-size: 11.5px; }
-    .wtitle { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .wbtns { display: inline-flex; gap: 2px; flex-shrink: 0; }
-    .wbtns i {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 16px;
-      height: 14px;
-      background: var(--face);
-      color: var(--ink);
-      border: 1px solid;
-      border-color: var(--face-hi) var(--face-dk) var(--face-dk) var(--face-hi);
-      font-style: normal;
-      font-size: 10px;
-      font-weight: 700;
-      line-height: 1;
-    }
-    .menubar {
-      display: flex;
-      gap: 14px;
-      padding: 2px 8px;
-      font-size: 12px;
-      border-bottom: 1px solid var(--face-sh);
-    }
-    .wpad { padding: 12px 14px 14px; }
-    .wpad > :last-child { margin-bottom: 0; }
-    .subwin { margin-top: 14px; }
-    .subwin:first-of-type { margin-top: 4px; }
-
-    /* ── marquee ───────────────────────────── */
-    .marq {
-      overflow: hidden;
-      border-bottom: 1px solid var(--face-sh);
+      top: -60px;
+      left: 12px;
+      z-index: 70;
       background: #fff;
-      font-size: 12px;
-      white-space: nowrap;
+      color: var(--deep);
+      padding: 10px 16px;
+      font-weight: 800;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(7, 64, 94, .25);
+      transition: top .15s;
     }
-    .marq-in {
-      display: inline-block;
-      padding: 2px 0;
-      animation: marq 24s linear infinite;
-    }
-    @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .skip:focus { top: 12px; }
 
-    /* ── hero bits ─────────────────────────── */
-    .ascii {
-      margin: 0 0 10px;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 12.5px;
-      line-height: 1.25;
-      color: #000080;
+    /* ── bubbles (Frutiger Aero) ────────────── */
+    .bubbles {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .bubbles span {
+      position: absolute;
+      bottom: -80px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 32% 28%, rgba(255, 255, 255, .95) 0 12%, rgba(255, 255, 255, .22) 45%, rgba(255, 255, 255, .05) 70%);
+      border: 1px solid rgba(255, 255, 255, .5);
+      box-shadow: inset -6px -8px 14px rgba(255, 255, 255, .35), 0 4px 18px rgba(7, 64, 94, .12);
+      animation: rise linear infinite;
+    }
+    .bubbles span:nth-child(1) { left: 6%;  width: 34px; height: 34px; animation-duration: 17s; animation-delay: -2s; }
+    .bubbles span:nth-child(2) { left: 18%; width: 16px; height: 16px; animation-duration: 13s; animation-delay: -7s; }
+    .bubbles span:nth-child(3) { left: 31%; width: 46px; height: 46px; animation-duration: 21s; animation-delay: -11s; }
+    .bubbles span:nth-child(4) { left: 47%; width: 20px; height: 20px; animation-duration: 15s; animation-delay: -4s; }
+    .bubbles span:nth-child(5) { left: 58%; width: 30px; height: 30px; animation-duration: 19s; animation-delay: -9s; }
+    .bubbles span:nth-child(6) { left: 69%; width: 14px; height: 14px; animation-duration: 12s; animation-delay: -6s; }
+    .bubbles span:nth-child(7) { left: 81%; width: 40px; height: 40px; animation-duration: 23s; animation-delay: -14s; }
+    .bubbles span:nth-child(8) { left: 92%; width: 22px; height: 22px; animation-duration: 16s; animation-delay: -3s; }
+    @keyframes rise {
+      from { transform: translateY(0) translateX(0); }
+      25%  { transform: translateY(-30vh) translateX(18px); }
+      50%  { transform: translateY(-60vh) translateX(-12px); }
+      75%  { transform: translateY(-85vh) translateX(14px); }
+      to   { transform: translateY(-115vh) translateX(0); }
+    }
+
+    /* ── HUD topbar ─────────────────────────── */
+    .hud {
+      position: sticky;
+      top: 10px;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 940px;
+      margin: 10px auto 0;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .75), rgba(255, 255, 255, .4));
+      backdrop-filter: blur(14px) saturate(1.4);
+      border: 1px solid rgba(255, 255, 255, .9);
+      box-shadow: 0 10px 26px rgba(7, 64, 94, .2), inset 0 1px 0 rgba(255, 255, 255, .95);
+    }
+    .hud-logo {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      color: var(--aqua-deep);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 4px 6px;
+    }
+    .hud-logo:hover { color: var(--deep); }
+    .hud nav {
+      display: flex;
+      gap: 2px;
+      margin-left: auto;
       overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .hud nav::-webkit-scrollbar { display: none; }
+    .hud nav a {
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--deep);
+      text-decoration: none;
+      padding: 5px 11px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: background-color .15s;
+    }
+    .hud nav a:hover { background: rgba(255, 255, 255, .8); }
+
+    /* ── page & glass cards ─────────────────── */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 26px 14px 40px;
+      display: grid;
+      gap: 22px;
+    }
+    .glass {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .74), rgba(255, 255, 255, .42));
+      backdrop-filter: blur(16px) saturate(1.35);
+      border: 1px solid rgba(255, 255, 255, .88);
+      border-radius: 22px;
+      box-shadow:
+        0 14px 34px rgba(7, 64, 94, .18),
+        inset 0 1px 0 rgba(255, 255, 255, .95);
+      padding: clamp(20px, 4vw, 34px);
+    }
+    .glass > :last-child { margin-bottom: 0; }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 9px;
+      letter-spacing: .06em;
+      color: var(--aqua-deep);
+    }
+    .eyebrow.sub { margin-top: 30px; }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      font-weight: 800;
+      color: var(--deep);
+      letter-spacing: -.01em;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 76px;
+      height: 5px;
+      margin-top: 7px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--aqua), var(--lime));
+      box-shadow: 0 2px 6px rgba(0, 183, 229, .4);
+    }
+    .glass p { max-width: 68ch; }
+
+    /* ── hero ───────────────────────────────── */
+    .hero-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 26px;
+      align-items: flex-start;
+    }
+    .hero-main { flex: 1 1 340px; min-width: 0; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 8vw, 4.2rem);
+      font-weight: 800;
+      line-height: .95;
+      letter-spacing: -.02em;
+      background: linear-gradient(180deg, #FFFFFF 0%, #C9EEFF 32%, #57A9DC 50%, #E9F8FF 54%, #6FC3EC 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 3px 4px rgba(7, 64, 94, .3));
     }
     .khmer {
-      font-family: 'Kantumruy Pro', Tahoma, sans-serif;
-      color: #404040;
-      margin: 0 0 8px;
+      margin: 12px 0 0;
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-size: 1.05rem;
+      color: var(--deep);
     }
-    .blink { animation: blink 1.1s steps(1, end) infinite; font-size: 11px; }
+    .role {
+      margin: 10px 0 0;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--aqua-deep);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .statement { margin: 12px 0 0; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin: 20px 0 0;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .5);
+      border: 1px solid rgba(255, 255, 255, .85);
+    }
+    .stats b {
+      display: block;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7.5px;
+      color: var(--aqua-deep);
+      margin-bottom: 4px;
+    }
+    .stats span { font-weight: 700; font-size: 13.5px; color: var(--deep); }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14.5px;
+      text-decoration: none;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 60, 90, .35);
+      background: linear-gradient(180deg, #79DFFF 0%, #12A9DC 55%, #0087B8 100%);
+      border: 1px solid rgba(255, 255, 255, .75);
+      box-shadow:
+        0 8px 18px rgba(0, 150, 205, .38),
+        inset 0 1px 0 rgba(255, 255, 255, .85),
+        inset 0 -2px 4px rgba(0, 70, 105, .25);
+      transition: transform .12s, box-shadow .12s;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0, 150, 205, .45), inset 0 1px 0 rgba(255, 255, 255, .85); }
+    .btn:active { transform: translateY(1px); }
+    .btn.alt {
+      background: linear-gradient(180deg, #FFE98F 0%, #FFC93C 55%, #F0A400 100%);
+      box-shadow: 0 8px 18px rgba(240, 164, 0, .4), inset 0 1px 0 rgba(255, 255, 255, .9), inset 0 -2px 4px rgba(160, 100, 0, .25);
+    }
+    .press-start {
+      margin: 20px 0 0;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 11px;
+      color: var(--magenta);
+      animation: blink 1.2s steps(1, end) infinite;
+    }
     @keyframes blink { 50% { opacity: 0; } }
 
-    .photo {
-      float: right;
-      width: clamp(120px, 22vw, 160px);
-      margin: 4px 0 12px 20px;
-      background: #fff;
-      border: 1px solid var(--face-sh);
-      padding: 4px;
-      transform: rotate(1.6deg);
-      box-shadow: 2px 2px 0 rgba(0,0,0,.2);
-    }
-    .photo img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--face-sh);
-      filter: grayscale(.35) contrast(1.05);
-    }
-    .photo figcaption {
-      margin-top: 4px;
-      font-family: 'Courier New', monospace;
-      font-size: 10.5px;
-      color: #606060;
-      text-align: center;
-    }
-
-    .ini, .code {
-      clear: both;
-      margin: 12px 0;
-      padding: 8px 10px;
-      background: #fff;
-      border: 1px solid;
-      border-color: var(--face-dk) var(--face-hi) var(--face-hi) var(--face-dk);
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 12px;
-      line-height: 1.5;
-      overflow-x: auto;
-      white-space: pre;
-    }
-    .code { color: #000080; }
-
-    .btnrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .btn95 {
-      display: inline-block;
-      padding: 4px 14px;
-      background: var(--face);
-      color: var(--ink);
-      border: 2px solid;
-      border-color: var(--face-hi) var(--face-dk) var(--face-dk) var(--face-hi);
-      font-weight: 700;
-      font-size: 12.5px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .btn95:active {
-      border-color: var(--face-dk) var(--face-hi) var(--face-hi) var(--face-dk);
-      transform: translate(1px, 1px);
-    }
-
-    /* ── CRT panels (3D canvas) ────────────── */
-    .crtwrap {
-      clear: both;
-      margin-top: 14px;
-      background: var(--face);
-      border: 2px solid;
-      border-color: var(--face-dk) var(--face-hi) var(--face-hi) var(--face-dk);
-    }
-    .crtbar {
-      display: flex;
-      justify-content: space-between;
-      padding: 2px 6px;
-      background: #000;
-      color: var(--green);
-      font-family: 'Courier New', monospace;
-      font-size: 11px;
-    }
-    .crt {
-      display: block;
-      width: 100%;
-      height: auto;
-      background: #000;
-      cursor: grab;
-      touch-action: none;
-    }
-    .crt:active { cursor: grabbing; }
-    .crtcap {
+    .avatar {
       margin: 0;
-      padding: 4px 8px;
-      font-family: 'Courier New', monospace;
-      font-size: 10.5px;
-      color: #404040;
-      border-top: 1px solid var(--face-sh);
+      flex: 0 0 auto;
+      width: clamp(150px, 26vw, 210px);
+      padding: 10px 10px 8px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(230, 246, 255, .55));
+      border: 1px solid rgba(255, 255, 255, .95);
+      box-shadow: 0 12px 26px rgba(7, 64, 94, .2), inset 0 1px 0 #fff;
+      position: relative;
+      overflow: hidden;
     }
-
-    /* ── tables ────────────────────────────── */
-    .tbl {
+    .avatar::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -30%;
+      width: 55%;
+      height: 160%;
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .75), transparent);
+      transform: rotate(12deg);
+      animation: shine 4.5s ease-in-out infinite;
+    }
+    @keyframes shine {
+      0%, 55% { left: -35%; }
+      100% { left: 130%; }
+    }
+    .avatar img {
+      display: block;
       width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      border: 1px solid;
-      border-color: var(--face-dk) var(--face-hi) var(--face-hi) var(--face-dk);
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, .8);
     }
-    .tbl th, .tbl td {
-      border: 1px dotted var(--face-sh);
-      padding: 5px 8px;
-      text-align: left;
-      vertical-align: top;
-      font-weight: 400;
-    }
-    .tbl th {
-      background: var(--face);
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    /* ── experience / education rows ───────── */
-    .xrow { padding: 10px 0; border-bottom: 1px solid var(--face-sh); }
-    .xrow:first-child { padding-top: 2px; }
-    .xrow:last-child { border-bottom: 0; }
-    .xdate {
-      display: inline-block;
-      padding: 1px 6px;
-      background: var(--face);
-      border: 1px solid;
-      border-color: var(--face-hi) var(--face-dk) var(--face-dk) var(--face-hi);
-      font-family: 'Courier New', monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: #000080;
-    }
-    .xrow h3 { margin: 7px 0 5px; font-size: 13.5px; color: #000080; }
-    .xrow p { margin: 0 0 5px; }
-    .tech { color: #606060; font-size: 12px; }
-    .stamp {
-      display: inline-block;
+    .avatar figcaption {
       margin-top: 6px;
-      padding: 2px 8px;
-      border: 2px double #C00000;
-      color: #C00000;
-      font-family: 'Courier New', monospace;
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      transform: rotate(-2deg);
-    }
-
-    /* ── apache dir listing ────────────────── */
-    .dirhead {
-      margin: 18px 0 4px;
-      font-family: 'Courier New', monospace;
-      font-size: 13px;
-      font-weight: 700;
-      color: #000080;
-    }
-    .dirtbl {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: 'Courier New', monospace;
-      font-size: 12px;
-    }
-    .dirtbl th, .dirtbl td { padding: 2.5px 8px; text-align: left; }
-    .dirtbl thead th { border-bottom: 1px solid var(--ink); font-weight: 700; }
-    .dirtbl td:first-child { color: var(--link); }
-
-    /* ── desk footer + badges ──────────────── */
-    .deskfoot {
-      background: var(--face);
-      border: 2px solid;
-      border-color: var(--face-hi) var(--face-dk) var(--face-dk) var(--face-hi);
-      padding: 8px 10px;
       text-align: center;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      color: var(--aqua-deep);
     }
-    .counter { font-family: 'Courier New', monospace; font-size: 11px; margin-bottom: 8px; }
-    .counter b {
-      display: inline-block;
-      background: #000;
-      color: var(--green);
-      padding: 1px 5px;
-      letter-spacing: 3px;
-      border: 1px solid var(--face-dk);
-    }
-    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
-    .badge {
-      display: inline-block;
-      padding: 3px 8px;
-      background: var(--face);
-      border: 2px solid;
-      border-color: var(--face-hi) var(--face-dk) var(--face-dk) var(--face-hi);
-      font-family: 'Courier New', monospace;
-      font-size: 9px;
-      font-weight: 700;
-      line-height: 1.3;
-      text-align: center;
-    }
-    .footline { margin: 8px 0 0; font-size: 11px; color: #404040; }
 
-    /* ── taskbar ───────────────────────────── */
-    .taskbar {
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
-      z-index: 15;
+    /* ── terminal panels (code + 3D) ────────── */
+    .term {
+      clear: both;
+      margin-top: 24px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(6, 44, 66, .94), var(--term-bg));
+      border: 1px solid rgba(120, 220, 255, .35);
+      box-shadow:
+        inset 0 0 30px rgba(0, 183, 229, .12),
+        0 10px 24px rgba(4, 40, 62, .35);
+      overflow: hidden;
+    }
+    .term-bar {
       display: flex;
       align-items: center;
       gap: 6px;
-      height: 30px;
-      padding: 0 4px;
-      background: var(--face);
-      border-top: 2px solid var(--face-hi);
-      box-shadow: 0 -1px 0 var(--face-sh);
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(120, 220, 255, .2);
     }
-    .start {
+    .term-bar i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .term-bar i:nth-child(1) { background: radial-gradient(circle at 35% 30%, #B9F3FF, var(--aqua)); }
+    .term-bar i:nth-child(2) { background: radial-gradient(circle at 35% 30%, #D5FFC0, var(--lime)); }
+    .term-bar i:nth-child(3) { background: radial-gradient(circle at 35% 30%, #FFD1E8, var(--magenta)); }
+    .term-bar span {
+      margin-left: 8px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7.5px;
+      color: #8FD9FF;
+      letter-spacing: .05em;
+    }
+    .term .code {
+      margin: 0;
+      padding: 14px 16px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #BDEFFF;
+      white-space: pre;
+    }
+    .term .solid, .term .minisolid {
+      display: block;
+      width: 100%;
+      height: auto;
+      cursor: grab;
+      touch-action: none;
+    }
+    .term .minisolid { width: min(240px, 60%); margin: 12px auto 4px; }
+    .term .solid:active, .term .minisolid:active { cursor: grabbing; }
+    .term-cap {
+      margin: 0;
+      padding: 8px 14px 10px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      color: #7FB8D8;
+      border-top: 1px solid rgba(120, 220, 255, .15);
+    }
+    .dbterm { margin-top: 28px; }
+
+    /* ── skill chips ────────────────────────── */
+    .srow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(7, 64, 94, .12);
+    }
+    .srow:first-of-type { border-top: 1px solid rgba(7, 64, 94, .12); }
+    .srow:last-of-type { border-bottom: 0; }
+    .grp {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: var(--aqua-deep);
+      padding-top: 6px;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; }
+    .chip {
+      padding: 4px 13px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--deep);
+      background: linear-gradient(180deg, #FFFFFF, #DCF3FC 60%, #BFE6F7);
+      border: 1px solid rgba(255, 255, 255, .95);
+      box-shadow: inset 0 1px 0 #fff, 0 3px 7px rgba(7, 64, 94, .12);
+    }
+    .chip.sm { font-size: 12px; padding: 3px 11px; }
+
+    /* ── quests (experience) ────────────────── */
+    .quest {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .5);
+      border: 1px solid rgba(255, 255, 255, .85);
+      box-shadow: inset 0 1px 0 #fff;
+      margin-bottom: 12px;
+    }
+    .quest:last-child { margin-bottom: 0; }
+    .qdate {
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 8px;
+      border-radius: 999px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7.5px;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 60, 90, .3);
+      background: linear-gradient(180deg, #79DFFF, #12A9DC 60%, #0087B8);
+      border: 1px solid rgba(255, 255, 255, .7);
+      box-shadow: 0 4px 10px rgba(0, 150, 205, .35), inset 0 1px 0 rgba(255, 255, 255, .7);
+    }
+    .quest h3 { margin: 4px 0 6px; font-size: 1.05rem; font-weight: 800; color: var(--deep); }
+    .quest p { margin: 0 0 8px; }
+
+    /* ── levels (plates) ────────────────────── */
+    .level {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .62), rgba(255, 255, 255, .34));
+      border: 1px solid rgba(255, 255, 255, .9);
+      box-shadow: inset 0 1px 0 #fff, 0 8px 18px rgba(7, 64, 94, .1);
+      margin-bottom: 18px;
+    }
+    .level:last-of-type { margin-bottom: 0; }
+    .level-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .lvl-no {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 26px;
+      color: transparent;
+      background: linear-gradient(180deg, #9FE8FF, #0087B8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      filter: drop-shadow(0 2px 2px rgba(7, 64, 94, .25));
+      flex-shrink: 0;
+    }
+    .lvl-title h3 { margin: 0 0 3px; font-size: 1.1rem; font-weight: 800; color: var(--deep); }
+    .lvl-tag {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      color: var(--aqua-deep);
+      letter-spacing: .04em;
+    }
+    .level > p { margin: 8px 0 10px; }
+    .level .chips { margin: 0 0 12px; }
+    .level .term { margin-top: 4px; }
+
+    /* ── side quests ────────────────────────── */
+    .sidequests { list-style: none; margin: 0; padding: 0; }
+    .sidequests li {
+      padding: 9px 4px 9px 14px;
+      border-bottom: 1px dashed rgba(7, 64, 94, .2);
+      font-size: 14px;
+    }
+    .sidequests li:last-child { border-bottom: 0; }
+    .sidequests b { color: var(--aqua-deep); font-family: 'Courier New', monospace; }
+
+    /* ── achievements ───────────────────────── */
+    .achv {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .5);
+      border: 1px solid rgba(255, 255, 255, .85);
+      box-shadow: inset 0 1px 0 #fff;
+      margin-bottom: 12px;
+    }
+    .achv:last-child { margin-bottom: 0; }
+    .achv-ico {
+      flex-shrink: 0;
       display: inline-flex;
       align-items: center;
-      padding: 3px 10px;
-      background: var(--face);
-      border: 2px solid;
-      border-color: var(--face-hi) var(--face-dk) var(--face-dk) var(--face-hi);
-      color: var(--ink);
-      font-size: 12px;
-      font-weight: 700;
-      text-decoration: none;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(40, 90, 10, .4);
+      background: radial-gradient(circle at 32% 28%, #CFF7A8, var(--lime) 65%, #3E9B0F);
+      border: 2px solid rgba(255, 255, 255, .9);
+      box-shadow: 0 6px 14px rgba(88, 201, 32, .4), inset 0 1px 0 rgba(255, 255, 255, .7);
     }
-    .start:active { border-color: var(--face-dk) var(--face-hi) var(--face-hi) var(--face-dk); }
-    .taskbtn {
-      padding: 3px 12px;
-      background: var(--face);
-      border: 1px solid;
-      border-color: var(--face-dk) var(--face-hi) var(--face-hi) var(--face-dk);
-      font-size: 11.5px;
-    }
-    .clock {
-      margin-left: auto;
-      padding: 3px 10px;
-      border: 1px solid;
-      border-color: var(--face-dk) var(--face-hi) var(--face-hi) var(--face-dk);
-      font-family: 'Courier New', monospace;
-      font-size: 11.5px;
+    .achv h3 { margin: 2px 0 4px; font-size: 1rem; font-weight: 800; color: var(--deep); }
+    .achv p { margin: 0 0 4px; }
+    .achv-meta { font-size: 12px; color: var(--aqua-deep); font-weight: 700; margin: 0; }
+    .unlocked {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      color: #3E9B0F;
+      letter-spacing: .05em;
     }
 
-    /* ── small screens ─────────────────────── */
+    /* ── continue / contact ─────────────────── */
+    .continue { text-align: center; }
+    .cont-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: var(--magenta);
+      text-shadow: 0 3px 0 rgba(255, 79, 163, .25);
+      margin: 6px 0 10px;
+    }
+    .cont-title::after { display: none; }
+    .insert {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8.5px;
+      color: var(--deep);
+      animation: blink 1.2s steps(1, end) infinite;
+      margin: 0 0 20px;
+    }
+    .contacts { list-style: none; margin: 0 auto 14px; padding: 0; max-width: 480px; }
+    .contacts li { padding: 8px 0; }
+    .contacts a {
+      display: inline-block;
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .65);
+      border: 1px solid rgba(255, 255, 255, .95);
+      box-shadow: inset 0 1px 0 #fff, 0 4px 10px rgba(7, 64, 94, .12);
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--deep);
+      text-decoration: none;
+      transition: transform .12s, background-color .12s;
+    }
+    .contacts a:hover { transform: translateY(-1px); background: #fff; color: var(--aqua-deep); }
+    .khmer-c { font-family: 'Kantumruy Pro', sans-serif; margin: 0; color: var(--deep); }
+
+    /* ── scoreboard (footer) ────────────────── */
+    .scoreboard { text-align: center; padding: 4px 6px 0; }
+    .score {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      color: var(--deep);
+      margin: 0 0 14px;
+    }
+    .score b {
+      display: inline-block;
+      background: #06283E;
+      color: var(--sun);
+      padding: 4px 10px;
+      margin-left: 10px;
+      border-radius: 6px;
+      letter-spacing: 4px;
+      box-shadow: inset 0 0 12px rgba(255, 212, 71, .35), 0 4px 10px rgba(7, 64, 94, .25);
+    }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 14px; }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      line-height: 1.5;
+      color: var(--deep);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(220, 243, 252, .6));
+      border: 1px solid rgba(255, 255, 255, .95);
+      box-shadow: inset 0 1px 0 #fff, 0 3px 8px rgba(7, 64, 94, .14);
+    }
+    .footline { margin: 0; font-size: 12.5px; color: var(--body-ink); }
+
+    /* ── small screens ──────────────────────── */
     @media (max-width: 560px) {
-      .desk-inner { padding: 14px 8px 20px; }
-      .photo { width: 112px; margin-left: 12px; }
-      .ascii { font-size: 9.5px; }
-      .marq-in { animation-duration: 18s; }
-      .clock { display: none; }
+      body { font-size: 15px; }
+      .hud { top: 6px; margin-top: 6px; gap: 8px; padding: 6px 10px; }
+      .hud-logo { font-size: 8px; }
+      .hud nav a { font-size: 12px; padding: 5px 8px; }
+      .avatar { width: 132px; }
+      .term .code { font-size: 11.5px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .marq-in { animation: none; }
-      .blink { animation: none; }
-      *, *::before, *::after { animation-duration: 0s !important; transition: none !important; }
+      .bubbles span, .avatar::before, .press-start, .insert { animation: none; }
+      .bubbles { display: none; }
+      *, *::before, *::after { animation-duration: 0s !important; transition-duration: 0s !important; }
     }
   </style>
 
@@ -696,19 +934,7 @@ POST /verify  → check OTP at every login</pre>
     (() => {
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      /* ── taskbar clock ─────────────────────── */
-      const clock = document.getElementById('clock');
-      if (clock) {
-        const tickClock = () => {
-          const d = new Date();
-          clock.textContent = String(d.getHours()).padStart(2, '0') + ':' +
-            String(d.getMinutes()).padStart(2, '0');
-        };
-        tickClock();
-        setInterval(tickClock, 10000);
-      }
-
-      /* ── visitor counter ───────────────────── */
+      /* ── high score counter ────────────────── */
       const v = document.getElementById('visits');
       if (v) {
         try {
@@ -718,7 +944,7 @@ POST /verify  → check OTP at every login</pre>
         } catch (e) { v.textContent = '000001'; }
       }
 
-      /* ── wireframe engine (CRT palette) ────── */
+      /* ── wireframe engine (neon palette) ───── */
       const engines = [];
       function wireframe(canvas, scene) {
         const ctx = canvas.getContext('2d');
@@ -739,22 +965,25 @@ POST /verify  → check OTP at every login</pre>
         };
 
         const draw = (t) => {
-          ctx.fillStyle = '#000';
+          ctx.fillStyle = '#04283E';
           ctx.fillRect(0, 0, W, H);
           const P = scene.verts.map(vv => proj(rot(vv)));
-          ctx.lineWidth = 1.5;
+          ctx.lineWidth = 1.6;
           ctx.lineCap = 'round';
+          ctx.shadowColor = 'rgba(0, 231, 255, .6)';
+          ctx.shadowBlur = 4;
           for (const [i, j, a0] of scene.edges) {
             const z = (P[i][2] + P[j][2]) / 2;
             const a = Math.min(1, Math.max(0, a0 * (0.45 + 0.55 * (z + 1.9) / 3.8)));
-            ctx.strokeStyle = 'rgba(57, 255, 20, ' + a.toFixed(3) + ')';
+            ctx.strokeStyle = 'rgba(0, 231, 255, ' + a.toFixed(3) + ')';
             ctx.beginPath();
             ctx.moveTo(P[i][0], P[i][1]);
             ctx.lineTo(P[j][0], P[j][1]);
             ctx.stroke();
           }
+          ctx.shadowBlur = 0;
           for (const [x, y] of P) {
-            ctx.fillStyle = '#FFB000';
+            ctx.fillStyle = '#FF4FA3';
             ctx.fillRect(x - 1.5, y - 1.5, 3, 3);
           }
           for (const pk of scene.packets) {
@@ -764,7 +993,7 @@ POST /verify  → check OTP at every login</pre>
               pk.f[1] + (pk.t[1] - pk.f[1]) * p,
               pk.f[2] + (pk.t[2] - pk.f[2]) * p,
             ]));
-            ctx.fillStyle = '#FFFFFF';
+            ctx.fillStyle = '#FFD447';
             ctx.fillRect(x - 2, y - 2, 4, 4);
           }
         };

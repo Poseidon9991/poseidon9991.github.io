@@ -2,43 +2,43 @@
 
 ## World
 
-**The Year-2000 Programmer's Homepage.** The portfolio reads as a personal homepage from the turn of the millennium, running inside a Windows 95-style desktop: teal #008080 desktop, gray beveled windows with navy→blue title bars (about.txt — Notepad, career.log — Event Viewer, C:\projects — File Manager), an ASCII banner, a scrolling marquee, an Apache "Index of /work/more" project listing, LED visitor counter, 88×31 badges, and a live taskbar clock. It is the era's programmer homepage faithfully rendered — not a parody of it.
-
-Superseded: the Engineer's Graph-Paper Notebook (replaced 30/09/2026 at the user's request — they wanted the old-school web era). Two disciplines carried forward unchanged: the wireframe sync/datastore studies (now re-paletted as green-phosphor CRT renderings inside inset DOS panels — the same 3D content, the era's correct texture) and genuine bilingual Khmer content.
+**Frutiger Aero × Y2K × Retro-Game HUD.** The portfolio plays as a bright, glossy game screen: an aqua-blue-to-mint gradient sky with drifting bubbles (Frutiger Aero's optimism), frosted-glass panels with glossy highlights, chrome-gradient display type (Y2K), and a full game-UI framing — PLAYER 1 hero, SKILL TREE chips, QUEST LOG for experience, LEVEL SELECT for the case studies, TROPHIES for certifications, and a CONTINUE? arcade contact screen. The visitor counter is a HIGH SCORE. Superseded both earlier worlds (graph-paper notebook → Win95 homepage → this) at the user's request; they asked for "retro game + Y2K + Frutiger Aero".
 
 ## Mode
 
-Experience — the work itself leads; the interface recedes (unchanged).
+Experience — the work itself leads; the interface recedes.
 
 ## Palette (named roles)
 
-- `--desk`: #008080 — Windows 95 desktop teal with a 1px dither overlay
-- `--face`/`--face-hi`/`--face-sh`/`--face-dk`: #C0C0C0 / #FFFFFF / #808080 / #404040 — the classic beveled control face
-- `--bar-a`→`--bar-b`: #000080→#1084D0 — title-bar gradient
-- `--ink`: #000000 — body text (era-correct true black)
-- `--link`: #0000FF, `--visited`: #551A8B — era link colors, underlined, always
-- `--green`: #39FF14 — phosphor green, only inside CRT panels
-- `#000080` navy — headings inside content; `#C00000` — double-line rubber stamps
+- `--sky-a/b/c`: #8FD9FF → #45B5E8 → #A8E8CC — the fixed-attachment gradient sky (blue into Aero mint)
+- `--deep`: #07405E — headings and strong text; `--body-ink`: #123A52 — body
+- `--aqua`: #00B7E5 / `--aqua-deep`: #0080B0 — primary accent, links, glossy pills
+- `--lime`: #58C920 — achievement orbs, the aqua→lime underline bar
+- `--magenta`: #FF4FA3 — CONTINUE? title and PRESS START blink
+- `--sun`: #FFD447 — the HIGH SCORE digits
+- `--term-bg`: #04283E — neon terminal panels
+
+Color strategy: sky/glass world with three committed candy accents (aqua primary, magenta sparingly, sun for score); green reserved for achievements.
 
 ## Type
 
-- UI/chrome: Tahoma/MS Sans Serif stack, 12–13px — the era's system font
-- Code/ASCII/tables of contents: Courier New — the era's mono
+- UI/body: Nunito (400/600/700/800) — rounded humanist, the Frutiger spirit
+- Display: Nunito 800 with a 5-stop silver-blue chrome gradient clipped to text (Y2K chrome) for the hero name; section h2s stay solid deep with a gradient underline bar
+- HUD/arcade: Press Start 2P at 7–11px — eyebrows, terminal bars, PRESS START, CONTINUE?, badges
 - Khmer: Kantumruy Pro — bilingual identity preserved
-- Headings: small navy bold, never display-scale (era pages had no giant display type)
 
 ## Layout
 
-Single 780px column of stacked windows on the desktop; each section is a complete window (title bar + optional menu bar + padded gray face). Content panels use sunken white insets; data uses bordered tables, not cards. Mobile: windows fill width, taskbar clock hides, ASCII banner shrinks — the world survives down to phone width.
+Sticky pill HUD topbar (glass) → 940px stack of glass cards (radius 22, blur + saturate, inset white highlight). Hero: two-column flex with glossy avatar frame (animated shine sweep) and HUD stat grid. Levels carry neon terminal panels (code + 3D canvases). Mobile: HUD nav scrolls horizontally, avatar shrinks, everything stacks.
 
 ## Motion
 
-Era-correct ambient motion only: the marquee scrolls forever, the ▮ cursor blinks after the hero statement, the taskbar clock is a real live clock, the visitor counter increments per browser. The two CRT canvases auto-rotate and respond to drag (the world's single "interactive moment"). `prefers-reduced-motion`: marquee and blink freeze, canvases render static but still accept drag.
+Ambient world motion: 8 bubbles rise forever (different sizes/speeds), the avatar gloss sweeps every ~4.5s, PRESS START / INSERT COIN blink, subtle CRT scanline overlay across the page. The two wireframe canvases auto-rotate with neon glow and accept drag — the world's interactive moment. `prefers-reduced-motion`: bubbles removed, shine/blink frozen, canvases still draggable.
 
 ## Signature
 
-Nested window chrome everywhere; the footer badge row ("BEST VIEWED 800×600", "HTML 4.01", "MADE WITH NOTEPAD") and the Start-button taskbar are the world's closing marks. Certification stamps keep their rotated rubber-stamp treatment.
+The chrome-gradient name over a bubble sky; LEVEL SELECT cards with pixel level numbers and neon terminals; the CONTINUE? contact screen with blinking INSERT COIN; HIGH SCORE footer with sun-yellow LED digits.
 
 ## Bans honored
 
-Zero rounded corners and zero shadows beyond 1-2px hard bevels; no gradients except the navy title bar (era chrome); no fade/slide entrances; no eyebrow labels; icons are text glyphs (□, ✕, ✉) as the era used them; emojis avoided in UI chrome; the only color beyond gray/navy lives inside the CRT panels where green-on-black belongs.
+No gray bevels (that was the previous world); no true black; no fade/slide entrances; no eyebrow labels except the pixel ◆ HUD lines, which are the game world's own language; no fake percentage bars (chips, not XP meters, to avoid invented metrics); icons stay as text glyphs; content identical across all redesigns.
