@@ -2,44 +2,43 @@
 
 ## World
 
-The Engineer's Graph-Paper Notebook. The portfolio reads as pages from a field engineer's lab notebook: everything sits on a measured graticule, content blocks are ruled like notebook entries, and the hero is a technical-drawing title block (name, role, location, date, rev) — the artifact this profession actually stamps its identity on. The graticule is not decoration; it is the world's measuring tool, and every element aligns to it.
+**The Year-2000 Programmer's Homepage.** The portfolio reads as a personal homepage from the turn of the millennium, running inside a Windows 95-style desktop: teal #008080 desktop, gray beveled windows with navy→blue title bars (about.txt — Notepad, career.log — Event Viewer, C:\projects — File Manager), an ASCII banner, a scrolling marquee, an Apache "Index of /work/more" project listing, LED visitor counter, 88×31 badges, and a live taskbar clock. It is the era's programmer homepage faithfully rendered — not a parody of it.
 
-Challenger verdicts from the roll: the oscilloscope signal bench was competitive (engineer's measurement bench, strong audience identification) — it donates two disciplines: "everything on screen is measured against the ten-division graticule" (strict grid alignment) and instrument-green for active/interactive states. The BBS nightboard, rain-night cityscape, mesophotic dive, mid-century magazine, and seed rack were declined: they could not carry a bilingual full-stack developer's range for a recruiter audience without costume.
+Superseded: the Engineer's Graph-Paper Notebook (replaced 30/09/2026 at the user's request — they wanted the old-school web era). Two disciplines carried forward unchanged: the wireframe sync/datastore studies (now re-paletted as green-phosphor CRT renderings inside inset DOS panels — the same 3D content, the era's correct texture) and genuine bilingual Khmer content.
 
 ## Mode
 
-Experience — the work itself leads from the first viewport; the interface recedes.
+Experience — the work itself leads; the interface recedes (unchanged).
 
 ## Palette (named roles)
 
-- `--paper`: #F3F5EF — cool pale graph-paper ground (light world: recruiters read in daylight and print)
-- `--ink`: #1B231E — near-black with a green cast; body and headings
-- `--graphite`: #57625B — secondary text, rules at low emphasis
-- `--grid`: rgba(27,35,30,0.08) — graticule lines on paper
-- `--instrument`: #146B45 — committed accent: links, active states, stamps, the "trace" green donated by the oscilloscope
-- `--red-pencil`: #C23A26 — the red margin rule and margin annotations only, as in real graph paper
-
-Color strategy: Restrained-plus — neutral paper world, one committed green accent, red reserved for the notebook's margin ritual.
+- `--desk`: #008080 — Windows 95 desktop teal with a 1px dither overlay
+- `--face`/`--face-hi`/`--face-sh`/`--face-dk`: #C0C0C0 / #FFFFFF / #808080 / #404040 — the classic beveled control face
+- `--bar-a`→`--bar-b`: #000080→#1084D0 — title-bar gradient
+- `--ink`: #000000 — body text (era-correct true black)
+- `--link`: #0000FF, `--visited`: #551A8B — era link colors, underlined, always
+- `--green`: #39FF14 — phosphor green, only inside CRT panels
+- `#000080` navy — headings inside content; `#C00000` — double-line rubber stamps
 
 ## Type
 
-- Display: Archivo Variable (Black 800–900, tight tracking -0.02em) — drafting-stencil grotesque for the title block and section heads
-- Body: Kantumruy Pro (400/500/600) — a Khmer-and-Latin grotesque; the bilingual identity is the body face itself, so Khmer text needs no costume
-- Code: Spline Sans Mono — only for actual code excerpts and tabular measurement readouts in case studies, never for labels
-- Base 17px / 1.6 body, measure 65–70ch, balanced headings, weight steps 400 → 600 → 900
+- UI/chrome: Tahoma/MS Sans Serif stack, 12–13px — the era's system font
+- Code/ASCII/tables of contents: Courier New — the era's mono
+- Khmer: Kantumruy Pro — bilingual identity preserved
+- Headings: small navy bold, never display-scale (era pages had no giant display type)
 
 ## Layout
 
-Left margin column (red rule at 88px on desktop) carries pencil-annotation metadata (dates, plate refs); main content max-width 880px inside it. Mobile: margin collapses to a top rule, graticule stays. Every element aligns to the 8px graticule; section heads sit on a ruled baseline.
+Single 780px column of stacked windows on the desktop; each section is a complete window (title bar + optional menu bar + padded gray face). Content panels use sunken white insets; data uses bordered tables, not cards. Mobile: windows fill width, taskbar clock hides, ASCII banner shrinks — the world survives down to phone width.
 
 ## Motion
 
-One authored moment: the hero title block draws itself on load — SVG rules stroke-draw, fields settle with exponential ease-out (600–900ms total), then the page is still. `prefers-reduced-motion`: everything renders in final state. Hover states are measured responses (rule weight change, graticule cell highlight), 120–160ms.
+Era-correct ambient motion only: the marquee scrolls forever, the ▮ cursor blinks after the hero statement, the taskbar clock is a real live clock, the visitor counter increments per browser. The two CRT canvases auto-rotate and respond to drag (the world's single "interactive moment"). `prefers-reduced-motion`: marquee and blink freeze, canvases render static but still accept drag.
 
 ## Signature
 
-The title block, echoed at the footer as a drawing sheet corner (DRAWN BY / DATE / SCALE 1:1 / SHEET 1 OF 1). Certifications carry a small ink-stamp treatment in instrument green.
+Nested window chrome everywhere; the footer badge row ("BEST VIEWED 800×600", "HTML 4.01", "MADE WITH NOTEPAD") and the Start-button taskbar are the world's closing marks. Certification stamps keep their rotated rubber-stamp treatment.
 
 ## Bans honored
 
-No eyebrow labels above headings; no section numbers except case-study "plates" (a drawing set genuinely numbers plates); no gradient text; no mono-as-costume (mono only in real code excerpts); icons are authored single-stroke SVGs; no card grids of icon+heading+text; grid overlay earns its place as the world's own measuring tool.
+Zero rounded corners and zero shadows beyond 1-2px hard bevels; no gradients except the navy title bar (era chrome); no fade/slide entrances; no eyebrow labels; icons are text glyphs (□, ✕, ✉) as the era used them; emojis avoided in UI chrome; the only color beyond gray/navy lives inside the CRT panels where green-on-black belongs.
