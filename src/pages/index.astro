@@ -258,9 +258,13 @@ POST /verify  → check OTP at every login</pre>
       </article>
 
       <div class="term dbterm">
-        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>packet_rush.exe</span></div>
-        <canvas id="game" width="240" height="180" tabindex="0" role="application" aria-label="Packet Rush mini-game — catch falling order packets with the phone. Arrow keys or drag to move, click to start."></canvas>
-        <p class="term-cap">GAME.01 — PACKET RUSH · ←→ / DRAG · CATCH THE ORDERS</p>
+        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>sync_lab.exe</span></div>
+        <canvas id="syncv" width="240" height="180" role="application" aria-label="Offline sync simulator — queue orders on the device and watch them sync to the server; toggle the network off to see orders keep queueing"></canvas>
+        <div class="tlbrow">
+          <button id="newOrder" class="tbtn" type="button">+ NEW ORDER</button>
+          <button id="netBtn" class="tbtn" type="button">NET: ON</button>
+        </div>
+        <p class="term-cap">LAB.01 — OFFLINE QUEUE → API · CUT THE NETWORK, ORDERS STILL QUEUE</p>
       </div>
 
       <p class="eyebrow sub">◆ SIDE QUESTS</p>
@@ -744,19 +748,32 @@ POST /verify  → check OTP at every login</pre>
       font: inherit;
       caret-color: var(--sun);
     }
-    .term #game {
+    .term #syncv {
       display: block;
       width: 100%;
       height: auto;
       background: #04283E;
-      image-rendering: pixelated;
+    }
+    .tlbrow {
+      display: flex;
+      gap: 8px;
+      padding: 8px 12px;
+      border-top: 1px solid rgba(120, 220, 255, .15);
+    }
+    .tbtn {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      letter-spacing: .04em;
+      padding: 8px 11px;
+      border-radius: 8px;
+      border: 1px solid rgba(120, 220, 255, .45);
+      background: rgba(0, 183, 229, .16);
+      color: #BDEFFF;
       cursor: pointer;
-      touch-action: none;
+      transition: background-color .12s;
     }
-    .term #game:focus-visible {
-      outline: 3px solid var(--aqua);
-      outline-offset: -3px;
-    }
+    .tbtn:hover { background: rgba(0, 183, 229, .34); }
+    .tbtn:active { transform: translateY(1px); }
     .term-cap {
       margin: 0;
       padding: 8px 14px 10px;
@@ -1147,121 +1164,130 @@ POST /verify  → check OTP at every login</pre>
         wrap.addEventListener('click', () => inp.focus());
       }
 
-      /* ── packet rush (mini-game) ───────────── */
-      const cv = document.getElementById('game');
-      if (cv) {
-        const ctx = cv.getContext('2d');
-        const W = cv.width, H = cv.height;
+      /* ── sync lab: offline queue → API ─────── */
+      const sv = document.getElementById('syncv');
+      if (sv) {
+        const ctx = sv.getContext('2d');
+        const W = sv.width, H = sv.height;
         ctx.imageSmoothingEnabled = false;
-        const reduceG = matchMedia('(prefers-reduced-motion: reduce)').matches;
-        let state = 'idle', score = 0, misses = 0;
-        let best = parseInt(localStorage.getItem('hr_pr_best') || '0', 10) || 0;
-        let px = W / 2, tx = W / 2, packets = [], parts = [], spawn = 0, last = 0;
-        const PW = 26, PH = 12, PY = H - 18;
         const font = s => s + 'px "Press Start 2P", monospace';
         const rnd = (a, b) => a + Math.random() * (b - a);
 
-        const burst = (x, y) => {
-          for (let i = 0; i < 10; i++)
-            parts.push({ x, y, vx: rnd(-60, 60), vy: rnd(-90, -20), life: rnd(.3, .6) });
+        let queue = [], synced = 0, flight = null, net = true, nextId = 1, last = 0, autoT = 2.2;
+
+        const enqueue = manual => {
+          queue.push(nextId++);
+          if (manual) sfx.key();
         };
+
         const update = dt => {
-          px += Math.max(-170 * dt, Math.min(170 * dt, tx - px));
-          spawn -= dt;
-          if (spawn <= 0) {
-            packets.push({ x: rnd(8, W - 8), y: -6, v: rnd(34, 50) + Math.min(score * 2.5, 70) });
-            spawn = Math.max(.32, .85 - score * .012);
+          autoT -= dt;
+          if (autoT <= 0) { enqueue(false); autoT = rnd(2.2, 4.2); }
+          if (net && !flight && queue.length) {
+            flight = { x: 60, t: 0 };
+            queue.shift();
           }
-          for (const p of packets) {
-            p.y += p.v * dt;
-            if (p.y > PY - 4 && p.y < PY + PH && Math.abs(p.x - px) < PW / 2 + 4) {
-              p.dead = true; score++; burst(p.x, p.y); sfx.coin();
-            } else if (p.y > H + 8) { p.dead = true; misses++; sfx.miss(); }
-          }
-          packets = packets.filter(p => !p.dead);
-          for (const q of parts) { q.life -= dt; q.vy += 260 * dt; q.x += q.vx * dt; q.y += q.vy * dt; }
-          parts = parts.filter(q => q.life > 0);
-          if (misses >= 3) {
-            state = 'over';
-            sfx.over();
-            if (score > best) { best = score; try { localStorage.setItem('hr_pr_best', String(best)); } catch (e) {} }
+          if (flight) {
+            flight.t += dt;
+            flight.x = 60 + (176 - 60) * Math.min(1, flight.t / .55);
+            if (flight.t >= .55) { synced++; sfx.coin(); flight = null; }
           }
         };
+
         const draw = () => {
           ctx.fillStyle = '#04283E';
           ctx.fillRect(0, 0, W, H);
           ctx.fillStyle = 'rgba(0, 231, 255, .06)';
           for (let x = 0; x < W; x += 12) ctx.fillRect(x, 0, 1, H);
           for (let y = 0; y < H; y += 12) ctx.fillRect(0, y, W, 1);
-          for (const p of packets) {
-            ctx.fillStyle = 'rgba(255, 212, 71, .35)';
-            ctx.fillRect(p.x - 2, p.y - 8, 4, 4);
-            ctx.fillStyle = '#FFD447';
-            ctx.fillRect(p.x - 3, p.y - 3, 6, 6);
-          }
-          for (const q of parts) {
-            ctx.fillStyle = q.life > .3 ? '#FFD447' : '#FF4FA3';
-            ctx.fillRect(q.x - 1.5, q.y - 1.5, 3, 3);
-          }
-          ctx.fillStyle = '#00E7FF';
-          ctx.fillRect(px - PW / 2, PY, PW, PH);
+
+          /* device box (queue lives here) */
+          ctx.fillStyle = '#0B3A55';
+          ctx.fillRect(12, H - 96, 48, 74);
+          ctx.strokeStyle = '#00E7FF';
+          ctx.strokeRect(12.5, H - 95.5, 47, 73);
           ctx.fillStyle = '#7DF3FF';
-          ctx.fillRect(px - PW / 2 + 3, PY + 3, PW - 6, PH - 6);
-          ctx.fillStyle = '#04283E';
-          ctx.fillRect(px - PW / 2 + 5, PY + 5, PW - 10, PH - 10);
-          ctx.fillStyle = '#00E7FF';
-          ctx.fillRect(px - 1.5, PY - 4, 3, 4);
-          ctx.textBaseline = 'top';
-          ctx.font = font(7);
-          ctx.fillStyle = '#BDEFFF';
-          ctx.fillText('SCORE ' + String(score).padStart(2, '0'), 6, 6);
           ctx.font = font(6);
-          ctx.fillStyle = '#7FB8D8';
-          ctx.fillText('BEST ' + String(best).padStart(2, '0'), 6, 17);
-          ctx.fillStyle = '#FF4FA3';
-          for (let i = 0; i < 3 - misses; i++) ctx.fillRect(W - 12 - i * 9, 6, 6, 6);
-          if (state !== 'run') {
-            ctx.fillStyle = 'rgba(4, 40, 62, .78)';
-            ctx.fillRect(0, H / 2 - 28, W, 56);
+          ctx.fillText('DEVICE', 16, H - 108);
+
+          const show = queue.slice(0, 9);
+          for (let i = 0; i < show.length; i++) {
+            const col = i % 3, row = Math.floor(i / 3);
+            ctx.fillStyle = '#FFD447';
+            ctx.fillRect(18 + col * 14, H - 32 - row * 15, 11, 11);
+            ctx.fillStyle = 'rgba(4, 40, 62, .85)';
+            ctx.fillRect(20 + col * 14, H - 30 - row * 15, 7, 7);
+          }
+          if (queue.length > 9) {
+            ctx.fillStyle = '#FFD447';
+            ctx.fillText('+' + (queue.length - 9), 20, H - 116);
+          }
+
+          /* server box */
+          ctx.fillStyle = '#0B3A55';
+          ctx.fillRect(176, H - 96, 52, 74);
+          ctx.strokeStyle = '#00E7FF';
+          ctx.strokeRect(176.5, H - 95.5, 51, 73);
+          ctx.fillStyle = '#7DF3FF';
+          ctx.fillText('SERVER', 182, H - 108);
+          for (let i = 0; i < Math.min(synced, 12); i++) {
+            const col = i % 3, row = Math.floor(i / 3);
+            ctx.fillStyle = '#39FF14';
+            ctx.fillRect(182 + col * 14, H - 32 - row * 15, 11, 11);
+          }
+          if (synced > 12) {
+            ctx.fillStyle = '#39FF14';
+            ctx.fillText('+' + (synced - 12), 184, H - 116);
+          }
+
+          /* flight packet with trail */
+          if (flight) {
+            ctx.fillStyle = 'rgba(255, 212, 71, .35)';
+            ctx.fillRect(flight.x - 9, H - 40, 4, 4);
+            ctx.fillStyle = '#FFD447';
+            ctx.fillRect(flight.x - 3, H - 42, 7, 7);
+          }
+
+          /* network LED + label */
+          ctx.fillStyle = net ? '#39FF14' : '#FF4FA3';
+          ctx.beginPath();
+          ctx.arc(104, 20, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = '#BDEFFF';
+          ctx.fillText(net ? 'ONLINE' : 'OFFLINE', 116, 17);
+
+          /* counters */
+          ctx.fillStyle = '#BDEFFF';
+          ctx.fillText('QUEUE ' + queue.length, 8, 8);
+          ctx.textAlign = 'right';
+          ctx.fillText('SYNCED ' + synced, W - 8, 8);
+          ctx.textAlign = 'left';
+
+          /* hint */
+          if (!queue.length && !synced && !flight) {
             ctx.textAlign = 'center';
-            ctx.font = font(10);
-            ctx.fillStyle = state === 'over' ? '#FF4FA3' : '#FFD447';
-            ctx.fillText(state === 'over' ? 'GAME OVER' : 'PACKET RUSH', W / 2, H / 2 - 20);
-            ctx.font = font(6);
-            ctx.fillStyle = '#BDEFFF';
-            ctx.fillText(
-              state === 'over'
-                ? 'SCORE ' + score + ' · BEST ' + best + ' — CLICK TO RETRY'
-                : 'CATCH THE ORDERS · CLICK TO START',
-              W / 2, H / 2 + 4);
+            ctx.fillStyle = '#7FB8D8';
+            ctx.fillText(net ? 'PRESS + NEW ORDER' : 'OFFLINE — ORDERS KEEP QUEUEING', W / 2, 44);
             ctx.textAlign = 'left';
           }
         };
+
         const loop = ts => {
           const dt = Math.min(.05, (ts - last) / 1000 || 0);
           last = ts;
-          if (state === 'run' && !reduceG) update(dt);
+          update(dt);
           draw();
           requestAnimationFrame(loop);
         };
         requestAnimationFrame(loop);
-        const setTx = e => {
-          const r = cv.getBoundingClientRect();
-          tx = Math.max(PW / 2, Math.min(W - PW / 2, (e.clientX - r.left) / r.width * W));
-        };
-        cv.addEventListener('pointermove', e => { if (state === 'run') setTx(e); });
-        cv.addEventListener('pointerdown', e => {
-          if (state !== 'run') {
-            state = 'run'; score = 0; misses = 0;
-            packets = []; parts = []; spawn = .4;
-            cv.focus();
-            sfx.start();
-          }
-          setTx(e);
-        });
-        cv.addEventListener('keydown', e => {
-          if (e.key === 'ArrowLeft') { tx = Math.max(PW / 2, px - 28); e.preventDefault(); }
-          if (e.key === 'ArrowRight') { tx = Math.min(W - PW / 2, px + 28); e.preventDefault(); }
+
+        const no = document.getElementById('newOrder');
+        if (no) no.addEventListener('click', () => enqueue(true));
+        const nb = document.getElementById('netBtn');
+        if (nb) nb.addEventListener('click', () => {
+          net = !net;
+          nb.textContent = net ? 'NET: ON' : 'NET: OFF';
+          sfx.enter();
         });
       }
     })();
