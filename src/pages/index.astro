@@ -40,6 +40,7 @@ import '@fontsource/kantumruy-pro/600.css';
       <a href="#education">Trophies</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="sfx-toggle" id="sfxToggle" type="button" aria-pressed="true" title="Toggle sound effects">SFX:ON</button>
   </header>
 
   <main id="main" class="page">
@@ -463,6 +464,19 @@ POST /verify  → check OTP at every login</pre>
       transition: background-color .15s;
     }
     .hud nav a:hover { background: rgba(255, 255, 255, .8); }
+    .sfx-toggle {
+      flex-shrink: 0;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .9);
+      background: rgba(255, 255, 255, .55);
+      color: var(--aqua-deep);
+      cursor: pointer;
+      box-shadow: inset 0 1px 0 #fff;
+    }
+    .sfx-toggle:hover { background: rgba(255, 255, 255, .85); }
 
     /* ── page & glass cards ─────────────────── */
     .page {
@@ -978,6 +992,53 @@ POST /verify  → check OTP at every login</pre>
         } catch (e) { v.textContent = '000001'; }
       }
 
+      /* ── chiptune sfx (Web Audio) ──────────── */
+      let sfxOn = true, actx = null;
+      try { sfxOn = localStorage.getItem('hr_sfx') !== 'off'; } catch (e) {}
+      const beep = (freq, dur, type = 'square', vol = .1, when = 0) => {
+        if (!sfxOn) return;
+        try {
+          if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+          if (actx.state === 'suspended') actx.resume();
+          const o = actx.createOscillator(), g = actx.createGain();
+          const t0 = actx.currentTime + when;
+          o.type = type;
+          o.frequency.value = freq;
+          g.gain.setValueAtTime(vol, t0);
+          g.gain.exponentialRampToValueAtTime(.001, t0 + dur);
+          o.connect(g);
+          g.connect(actx.destination);
+          o.start(t0);
+          o.stop(t0 + dur + .02);
+        } catch (e) {}
+      };
+      const sfx = {
+        click: () => beep(700, .05, 'square', .07),
+        key: () => beep(980, .03, 'square', .04),
+        enter: () => beep(620, .06, 'triangle', .09),
+        coin: () => { beep(880, .06, 'square', .11); beep(1318, .1, 'square', .11, .07); },
+        miss: () => beep(140, .16, 'sawtooth', .1),
+        start: () => [392, 523, 659].forEach((f, i) => beep(f, .09, 'square', .1, i * .07)),
+        over: () => [392, 330, 262, 175].forEach((f, i) => beep(f, .15, 'triangle', .12, i * .11)),
+      };
+      const sfxBtn = document.getElementById('sfxToggle');
+      const syncSfxBtn = () => {
+        if (!sfxBtn) return;
+        sfxBtn.textContent = sfxOn ? 'SFX:ON' : 'SFX:OFF';
+        sfxBtn.setAttribute('aria-pressed', String(sfxOn));
+      };
+      syncSfxBtn();
+      if (sfxBtn) sfxBtn.addEventListener('click', () => {
+        sfxOn = !sfxOn;
+        try { localStorage.setItem('hr_sfx', sfxOn ? 'on' : 'off'); } catch (e) {}
+        syncSfxBtn();
+        if (sfxOn) sfx.click();
+      });
+      document.addEventListener('click', e => {
+        const t = e.target.closest('a, button');
+        if (t && t.id !== 'sfxToggle') sfx.click();
+      });
+
       /* ── interactive shell (shell.exe) ─────── */
       const out = document.getElementById('shellOut');
       const inp = document.getElementById('shellIn');
@@ -1043,12 +1104,16 @@ POST /verify  → check OTP at every login</pre>
         const hist = []; let hi = 0;
         inp.addEventListener('keydown', e => {
           if (e.key === 'Enter') {
+            sfx.enter();
             const v = inp.value;
             inp.value = '';
             if (v.trim()) { hist.push(v); }
             hi = hist.length;
             run(v);
-          } else if (e.key === 'ArrowUp') {
+          } else if (e.key.length === 1) {
+            sfx.key();
+          }
+          if (e.key === 'ArrowUp') {
             if (hi > 0) { hi--; inp.value = hist[hi] || ''; e.preventDefault(); }
           } else if (e.key === 'ArrowDown') {
             if (hi < hist.length - 1) { hi++; inp.value = hist[hi] || ''; }
@@ -1086,14 +1151,15 @@ POST /verify  → check OTP at every login</pre>
           for (const p of packets) {
             p.y += p.v * dt;
             if (p.y > PY - 4 && p.y < PY + PH && Math.abs(p.x - px) < PW / 2 + 4) {
-              p.dead = true; score++; burst(p.x, p.y);
-            } else if (p.y > H + 8) { p.dead = true; misses++; }
+              p.dead = true; score++; burst(p.x, p.y); sfx.coin();
+            } else if (p.y > H + 8) { p.dead = true; misses++; sfx.miss(); }
           }
           packets = packets.filter(p => !p.dead);
           for (const q of parts) { q.life -= dt; q.vy += 260 * dt; q.x += q.vx * dt; q.y += q.vy * dt; }
           parts = parts.filter(q => q.life > 0);
           if (misses >= 3) {
             state = 'over';
+            sfx.over();
             if (score > best) { best = score; try { localStorage.setItem('hr_pr_best', String(best)); } catch (e) {} }
           }
         };
@@ -1165,6 +1231,7 @@ POST /verify  → check OTP at every login</pre>
             state = 'run'; score = 0; misses = 0;
             packets = []; parts = []; spawn = .4;
             cv.focus();
+            sfx.start();
           }
           setTx(e);
         });
