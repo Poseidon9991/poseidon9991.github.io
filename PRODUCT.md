@@ -28,7 +28,7 @@ Static site on GitHub Pages. Content sourced from the user's GitHub profile READ
 
 ## Capabilities and Constraints
 
-Sections: hero, about, tech stack, work experience, case studies (Provida SFA mobile app and providareport Laravel backend — described only, no repo links, repos are private company work), education and certifications, contact. No blog. No fabricated metrics, clients, or testimonials. Contact: hongraksa097@gmail.com, linkedin.com/in/hoeng-reaksa-48b5842b3, t.me/ReaksaNamikaze, github.com/Poseidon9991.
+Sections: hero, about, tech stack, work experience, case studies (Provida SFA mobile app and providareport Laravel backend — described only, no repo links, repos are private company work), GitHub live stats via the public GitHub REST API (repos/stars/follower tiles, language breakdown, 90-day public-events heat map; client-side fetch, graceful SIGNAL LOST fallback), education and certifications, contact. CRT boot screen (PRESS START) gates entry and unlocks audio. Night mode toggle persisted in localStorage. No blog. No fabricated metrics, clients, or testimonials. Contact: hongraksa097@gmail.com, linkedin.com/in/hoeng-reaksa-48b5842b3, t.me/ReaksaNamikaze, github.com/Poseidon9991.
 
 ## Brand Commitments
 

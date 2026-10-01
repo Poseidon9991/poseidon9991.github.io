@@ -1,6 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect x="1.5" y="1.5" width="61" height="61" rx="4" fill="#F3F5EF" stroke="#1B231E" stroke-width="4"/>
-  <circle cx="32" cy="16" r="5" fill="none" stroke="#1B231E" stroke-width="4"/>
-  <path d="M29.5 20 19 52M34.5 20 45 52" stroke="#1B231E" stroke-width="4.5" stroke-linecap="round"/>
-  <path d="M23 35h18" stroke="#1B231E" stroke-width="3.5" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8FD9FF"/>
+      <stop offset="55%" stop-color="#45B5E8"/>
+      <stop offset="100%" stop-color="#00B7E5"/>
+    </linearGradient>
+    <linearGradient id="h" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,.95)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,.35)"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="29" fill="url(#a)" stroke="#fff" stroke-width="3"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2"/>
+  <ellipse cx="22" cy="18" rx="9" ry="5" fill="url(#h)" transform="rotate(-15 22 18)"/>
+  <path d="M13 21h5v7h10v-7h5v18h-5v-7h-10v7h-5z" fill="#fff"/>
+  <path d="M39 21h14v8h-5l6 10h-6l-4-7v7h-5z" fill="#fff"/>
 </svg>
