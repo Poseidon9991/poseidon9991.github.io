@@ -61,7 +61,7 @@ import '@fontsource/kantumruy-pro/600.css';
       <a href="#education">Trophies</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to night mode" title="Toggle night mode">☾</button>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to night mode" title="Toggle day/night mode"><span class="tt-ico tt-sun" aria-hidden="true">☀</span><span class="tt-ico tt-moon" aria-hidden="true">☾</span><span class="tt-knob" aria-hidden="true"></span></button>
     <button class="sfx-toggle" id="sfxToggle" type="button" aria-pressed="true" title="Toggle sound effects">SFX:ON</button>
   </header>
 
@@ -588,7 +588,7 @@ POST /verify  → check OTP at every login</pre>
       text-shadow: 0 1px 2px rgba(0, 60, 90, .3);
       box-shadow: 0 4px 10px rgba(0, 150, 205, .35), inset 0 1px 0 rgba(255, 255, 255, .7);
     }
-    .sfx-toggle, .theme-toggle {
+    .sfx-toggle {
       flex-shrink: 0;
       font-family: 'Press Start 2P', monospace;
       font-size: 7px;
@@ -601,8 +601,52 @@ POST /verify  → check OTP at every login</pre>
       box-shadow: inset 0 1px 0 #fff;
       transition: background-color .15s;
     }
-    .sfx-toggle:hover, .theme-toggle:hover { background: rgba(255, 255, 255, .85); }
-    .theme-toggle { font-family: 'Nunito', system-ui, sans-serif; font-size: 14px; font-weight: 800; }
+    .sfx-toggle:hover { background: rgba(255, 255, 255, .85); }
+
+    /* day/night switch */
+    .theme-toggle {
+      position: relative;
+      flex-shrink: 0;
+      width: 54px;
+      height: 26px;
+      padding: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .92);
+      background: linear-gradient(180deg, #8FE1FA, #33B4E6 55%, #1291C0);
+      box-shadow: inset 0 2px 4px rgba(7, 64, 94, .3), inset 0 -1px 0 rgba(255, 255, 255, .4), 0 2px 7px rgba(7, 64, 94, .25);
+      cursor: pointer;
+      transition: filter .15s ease;
+    }
+    .theme-toggle:hover { filter: brightness(1.08); }
+    .tt-ico {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-style: normal;
+      line-height: 1;
+    }
+    .tt-sun { left: 1px; color: #FFF6CC; text-shadow: 0 1px 2px rgba(7, 64, 94, .45); }
+    .tt-moon { right: 1px; color: rgba(223, 243, 255, .8); text-shadow: 0 1px 2px rgba(7, 64, 94, .45); }
+    .tt-knob {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 34% 26%, #fff 0 28%, #F0FAFF 48%, #BEE6F6 100%);
+      box-shadow: 0 2px 5px rgba(7, 64, 94, .45), inset 0 -2px 3px rgba(0, 128, 176, .28), inset 0 1px 0 #fff;
+      transition: translate .25s cubic-bezier(.22, 1, .36, 1), background .25s ease;
+    }
+    .tt-knob::before { content: '☀'; font-size: 11px; line-height: 1; color: #E8920C; }
 
     /* ── page & glass cards ─────────────────── */
     .page {
@@ -1443,6 +1487,7 @@ POST /verify  → check OTP at every login</pre>
         radial-gradient(1100px 480px at 82% -8%, rgba(0, 183, 229, .13), transparent 60%),
         radial-gradient(900px 420px at -10% 24%, rgba(18, 84, 66, .2), transparent 55%),
         linear-gradient(180deg, var(--sky-a) 0%, var(--sky-b) 55%, var(--sky-c) 100%);
+      background-attachment: fixed;
     }
     [data-theme="dark"] body::before {
       content: '';
@@ -1488,7 +1533,6 @@ POST /verify  → check OTP at every login</pre>
     }
     [data-theme="dark"] .hud nav a:hover { background: rgba(95, 212, 255, .13); }
     [data-theme="dark"] .sfx-toggle,
-    [data-theme="dark"] .theme-toggle,
     [data-theme="dark"] .hud-menu {
       background: rgba(13, 33, 52, .72);
       border-color: rgba(110, 190, 240, .25);
@@ -1496,11 +1540,27 @@ POST /verify  → check OTP at every login</pre>
       box-shadow: inset 0 1px 0 rgba(140, 220, 255, .1);
     }
     [data-theme="dark"] .sfx-toggle:hover,
-    [data-theme="dark"] .theme-toggle:hover,
     [data-theme="dark"] .hud-menu:hover { background: rgba(13, 33, 52, .95); }
+    [data-theme="dark"] .theme-toggle {
+      background: linear-gradient(180deg, #1C3D5B, #0C2438 60%, #091C2D);
+      border-color: rgba(110, 190, 240, .35);
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, .55), inset 0 -1px 0 rgba(140, 220, 255, .12), 0 2px 7px rgba(0, 0, 0, .4);
+    }
+    [data-theme="dark"] .theme-toggle:hover { filter: brightness(1.15); }
+    [data-theme="dark"] .tt-sun { color: rgba(255, 246, 204, .45); text-shadow: none; }
+    [data-theme="dark"] .tt-moon { color: #BFE9FF; text-shadow: 0 1px 2px rgba(0, 0, 0, .5); }
+    [data-theme="dark"] .tt-knob {
+      translate: 28px 0;
+      background: radial-gradient(circle at 34% 26%, #fff 0 22%, #D8F0FF 45%, #8FCDF0 100%);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .6), inset 0 -2px 3px rgba(0, 60, 100, .35), inset 0 1px 0 rgba(255, 255, 255, .8);
+    }
+    [data-theme="dark"] .tt-knob::before { content: '☾'; color: #0A2540; }
     [data-theme="dark"] .hud-menu .bar { background: #8FD9FF; }
     [data-theme="dark"] h1 {
       background: linear-gradient(180deg, #FFFFFF 0%, #D8F4FF 32%, #6FC8EC 50%, #EAF8FF 54%, #7FD4EE 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .55)) drop-shadow(0 0 18px rgba(0, 183, 229, .3));
     }
     [data-theme="dark"] .stats {
@@ -1978,9 +2038,9 @@ POST /verify  → check OTP at every login</pre>
         document.documentElement.setAttribute('data-theme', theme);
         if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0B1826' : '#45B5E8');
         if (themeBtn) {
-          themeBtn.textContent = theme === 'dark' ? '☀' : '☾';
           themeBtn.setAttribute('aria-pressed', String(theme === 'dark'));
           themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to day mode' : 'Switch to night mode');
+          themeBtn.title = theme === 'dark' ? 'Switch to day mode' : 'Switch to night mode';
         }
       };
       applyTheme();
