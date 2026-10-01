@@ -21,6 +21,7 @@ import '@fontsource/kantumruy-pro/600.css';
   <meta property="og:description" content="Offline-first SFA apps and the Laravel APIs that power them, from UI to database." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preload" as="image" href="/fa-vista.jpg" fetchpriority="high" />
   <script is:inline>
     document.documentElement.classList.add('js');
     try {
@@ -30,6 +31,201 @@ import '@fontsource/kantumruy-pro/600.css';
   </script>
 </head>
 <body>
+  <!-- ═══════════ FRUTIGER AERO WORLD ═══════════ -->
+  <svg class="svgdefs" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="fishBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#9FF0FF"/><stop offset=".42" stop-color="#38B0E4"/>
+        <stop offset=".72" stop-color="#0E6FA0"/><stop offset="1" stop-color="#67C9EA"/>
+      </linearGradient>
+      <linearGradient id="fishTail" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#4FC3EC"/><stop offset="1" stop-color="#0B5E8C"/>
+      </linearGradient>
+      <linearGradient id="fishFin" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#BDEFFF"/><stop offset="1" stop-color="#4FBBE8"/>
+      </linearGradient>
+      <linearGradient id="angelBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFF3C8"/><stop offset=".45" stop-color="#FFC93E"/>
+        <stop offset=".75" stop-color="#E08A14"/><stop offset="1" stop-color="#FFD98C"/>
+      </linearGradient>
+      <linearGradient id="angelFin" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFE9A6"/><stop offset="1" stop-color="#E89A1E"/>
+      </linearGradient>
+      <linearGradient id="clownBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFD9A8"/><stop offset=".45" stop-color="#FF8A26"/>
+        <stop offset=".75" stop-color="#E4560C"/><stop offset="1" stop-color="#FFB765"/>
+      </linearGradient>
+      <linearGradient id="clownFin" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFB765"/><stop offset="1" stop-color="#E4560C"/>
+      </linearGradient>
+      <linearGradient id="pufferBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#E4FBC0"/><stop offset=".5" stop-color="#8ED974"/>
+        <stop offset=".8" stop-color="#3E9457"/><stop offset="1" stop-color="#A8E68B"/>
+      </linearGradient>
+      <linearGradient id="pufferFin" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#B8EF9E"/><stop offset="1" stop-color="#4EA96A"/>
+      </linearGradient>
+      <linearGradient id="minnowBody" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#CFEAF6"/>
+        <stop offset="1" stop-color="#8FBFD8"/>
+      </linearGradient>
+      <linearGradient id="cloudGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFFFFF"/><stop offset=".62" stop-color="#F3FBFF"/>
+        <stop offset="1" stop-color="#D4EBF7"/>
+      </linearGradient>
+      <linearGradient id="aurA" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#7FF3FF" stop-opacity="0"/>
+        <stop offset=".3" stop-color="#7FF3FF" stop-opacity=".55"/>
+        <stop offset=".55" stop-color="#9BFFE3" stop-opacity=".5"/>
+        <stop offset=".8" stop-color="#C7FF8A" stop-opacity=".35"/>
+        <stop offset="1" stop-color="#C7FF8A" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="aurB" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#B39FFF" stop-opacity="0"/>
+        <stop offset=".4" stop-color="#8CD9FF" stop-opacity=".45"/>
+        <stop offset="1" stop-color="#8CD9FF" stop-opacity="0"/>
+      </linearGradient>
+      <g id="fishShape">
+        <g class="tail"><path d="M78,32 L110,10 C102,25 102,39 110,54 Z" fill="url(#fishTail)"/></g>
+        <path class="fin" d="M46,12 C52,0 66,0 70,9 C62,7 54,8 46,12 Z" fill="url(#fishFin)"/>
+        <path d="M10,32 C24,9 60,5 79,16 C93,25 93,39 79,48 C60,59 24,55 10,32 Z" fill="url(#fishBody)"/>
+        <path class="fin" d="M40,36 C48,40 50,46 44,47 C38,44 37,39 40,36 Z" fill="url(#fishFin)" opacity=".9"/>
+        <ellipse cx="42" cy="45" rx="28" ry="7" fill="#E9FBFF" opacity=".6"/>
+        <ellipse cx="42" cy="17" rx="28" ry="5.5" fill="#fff" opacity=".55"/>
+        <path d="M36,15 C31,27 31,38 36,50" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+        <circle cx="23" cy="26" r="5.4" fill="#fff"/>
+        <circle cx="21.5" cy="26" r="2.7" fill="#08304A"/>
+        <circle cx="24" cy="24.4" r="1.4" fill="#fff" opacity=".9"/>
+      </g>
+      <g id="angelfish">
+        <g class="tail"><path d="M82,30 C92,22 100,20 106,24 C102,29 102,35 106,40 C100,44 92,42 82,34 Z" fill="url(#angelFin)"/></g>
+        <path d="M58,24 C62,8 74,-1 86,5 C78,9 71,16 68,26 Z" fill="url(#angelFin)"/>
+        <path d="M58,40 C62,56 74,65 86,59 C78,55 71,48 68,38 Z" fill="url(#angelFin)"/>
+        <path d="M26,32 C32,14 52,8 70,14 C82,18 86,26 82,32 C86,38 82,46 70,50 C52,56 32,50 26,32 Z" fill="url(#angelBody)"/>
+        <path d="M46,13 C43,22 43,42 46,51" fill="none" stroke="#8A5A12" stroke-width="3.4" opacity=".55"/>
+        <path d="M62,12 C59,22 59,42 62,52" fill="none" stroke="#8A5A12" stroke-width="3.4" opacity=".45"/>
+        <ellipse cx="55" cy="20" rx="20" ry="5" fill="#fff" opacity=".5"/>
+        <circle cx="34" cy="26" r="4.6" fill="#fff"/>
+        <circle cx="32.6" cy="26" r="2.3" fill="#20120A"/>
+        <circle cx="34.6" cy="24.6" r="1" fill="#fff" opacity=".85"/>
+      </g>
+      <g id="clownfish">
+        <g class="tail"><path d="M76,32 L98,21 C94,29 94,35 98,43 Z" fill="url(#clownFin)"/></g>
+        <path class="fin" d="M42,14 C46,5 58,4 62,10 C55,9 48,10 42,14 Z" fill="url(#clownFin)"/>
+        <path d="M14,32 C24,13 56,9 74,17 C88,24 88,40 74,47 C56,55 24,51 14,32 Z" fill="url(#clownBody)"/>
+        <path d="M30,14 C26,24 26,40 30,50" fill="none" stroke="#2A1608" stroke-width="7" opacity=".85"/>
+        <path d="M30,14 C26,24 26,40 30,50" fill="none" stroke="#FFF6EA" stroke-width="4.4"/>
+        <path d="M54,12 C51,22 51,42 54,52" fill="none" stroke="#2A1608" stroke-width="7" opacity=".85"/>
+        <path d="M54,12 C51,22 51,42 54,52" fill="none" stroke="#FFF6EA" stroke-width="4.4"/>
+        <path d="M72,17 C70,26 70,38 72,47" fill="none" stroke="#2A1608" stroke-width="5" opacity=".85"/>
+        <path d="M72,17 C70,26 70,38 72,47" fill="none" stroke="#FFF6EA" stroke-width="3"/>
+        <ellipse cx="46" cy="18" rx="22" ry="4.5" fill="#fff" opacity=".4"/>
+        <circle cx="22" cy="26" r="4.4" fill="#fff"/>
+        <circle cx="20.6" cy="26" r="2.2" fill="#180B04"/>
+        <circle cx="22.6" cy="24.6" r=".9" fill="#fff" opacity=".85"/>
+      </g>
+      <g id="puffer">
+        <g class="tail"><path d="M72,32 C80,24 90,22 94,28 C91,32 91,34 94,38 C90,44 80,42 72,34 Z" fill="url(#pufferFin)"/></g>
+        <path d="M30,12 l4,-7 2,8 Z M46,8 l4,-7 2,8 Z M62,12 l4,-7 2,8 Z M22,30 l-7,-3 5,-6 Z M27,50 l3,7 4,-6 Z M50,55 l4,7 2,-8 Z M68,48 l4,6 1,-7 Z" fill="#3E9457"/>
+        <ellipse cx="46" cy="32" rx="30" ry="24" fill="url(#pufferBody)"/>
+        <ellipse cx="44" cy="44" rx="20" ry="9" fill="#F2FBDA" opacity=".75"/>
+        <ellipse cx="44" cy="18" rx="18" ry="5" fill="#fff" opacity=".5"/>
+        <path class="fin" d="M58,40 C64,44 64,50 58,50 C54,46 54,42 58,40 Z" fill="url(#pufferFin)"/>
+        <circle cx="18" cy="30" r="2.4" fill="#12502A"/>
+        <circle cx="30" cy="24" r="4.6" fill="#fff"/>
+        <circle cx="28.6" cy="24" r="2.3" fill="#0C2416"/>
+        <circle cx="30.6" cy="22.6" r="1" fill="#fff" opacity=".85"/>
+      </g>
+      <g id="minnowShape">
+        <path d="M14,6 L21,2.6 C20,4.6 20,7.4 21,9.4 Z" fill="#8FBFD8"/>
+        <ellipse cx="8.5" cy="6" rx="8.5" ry="3.1" fill="url(#minnowBody)"/>
+        <circle cx="3" cy="5" r="1" fill="#0A2C42"/>
+      </g>
+      <g id="minnowSchool">
+        <use href="#minnowShape" transform="translate(6,10)"/>
+        <use href="#minnowShape" transform="translate(30,20) scale(.92)"/>
+        <use href="#minnowShape" transform="translate(14,34) scale(.85)"/>
+        <use href="#minnowShape" transform="translate(52,12) scale(.8)"/>
+        <use href="#minnowShape" transform="translate(56,30) scale(.9)"/>
+        <use href="#minnowShape" transform="translate(36,46) scale(.75)"/>
+      </g>
+      <g id="cloudShape">
+        <ellipse cx="70" cy="55" rx="60" ry="28"/>
+        <ellipse cx="115" cy="38" rx="50" ry="26"/>
+        <ellipse cx="155" cy="56" rx="48" ry="22"/>
+        <ellipse cx="55" cy="64" rx="32" ry="16"/>
+      </g>
+    </defs>
+  </svg>
+
+  <div class="bg-photo" aria-hidden="true"></div>
+  <div class="bg-sky" aria-hidden="true"></div>
+
+  <div class="bg-aurora" aria-hidden="true">
+    <svg viewBox="0 0 1440 420" preserveAspectRatio="none">
+      <path class="rib a" d="M-80,220 C180,90 420,300 720,190 C1010,85 1250,255 1520,150"/>
+      <path class="rib b" d="M-80,300 C260,190 480,370 800,270 C1090,180 1300,330 1520,255"/>
+    </svg>
+  </div>
+
+  <div class="bg-clouds" aria-hidden="true">
+    <svg class="cloud c1" viewBox="0 0 220 90"><use href="#cloudShape" fill="url(#cloudGrad)"/></svg>
+    <svg class="cloud c2" viewBox="0 0 220 90"><use href="#cloudShape" fill="url(#cloudGrad)"/></svg>
+    <svg class="cloud c3" viewBox="0 0 220 90"><use href="#cloudShape" fill="url(#cloudGrad)"/></svg>
+  </div>
+
+  <div class="bg-flare" aria-hidden="true"></div>
+
+  <div class="grass" aria-hidden="true">
+    <svg viewBox="0 0 1920 190" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="hillBack" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8ED44A"/><stop offset="1" stop-color="#4E9B1E"/>
+        </linearGradient>
+        <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#6FBE30"/><stop offset="1" stop-color="#3B8A10"/>
+        </linearGradient>
+        <linearGradient id="horizonGlow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="bladeGrad" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#2A6E0E"/><stop offset=".55" stop-color="#3E9B1B"/>
+          <stop offset="1" stop-color="#86DB46"/>
+        </linearGradient>
+        <g id="flowerShape">
+          <circle cx="-4" cy="0" r="3.4"/><circle cx="4" cy="0" r="3.4"/>
+          <circle cx="0" cy="-4.4" r="3.4"/><circle cx="-2.8" cy="4.2" r="3.4"/>
+          <circle cx="2.8" cy="4.2" r="3.4"/>
+          <circle cx="0" cy="0" r="2.6" fill="#FFD447"/>
+        </g>
+      </defs>
+      <ellipse cx="960" cy="100" rx="980" ry="44" fill="url(#horizonGlow)" opacity=".55"/>
+      <path fill="url(#hillBack)" d="M0,122 C240,72 480,106 760,90 C1040,74 1280,112 1600,86 C1760,76 1860,88 1920,80 L1920,190 L0,190 Z"/>
+      <path fill="url(#hillFront)" d="M0,152 C300,120 620,144 940,130 C1260,116 1560,148 1920,126 L1920,190 L0,190 Z"/>
+      <use href="#flowerShape" fill="#FFFFFF" transform="translate(330,152) scale(1.15)"/>
+      <use href="#flowerShape" fill="#FFFFFF" transform="translate(880,148) scale(1)"/>
+      <use href="#flowerShape" fill="#FFF6D8" transform="translate(1500,154) scale(1.25)"/>
+      <circle class="dew" cx="180" cy="158" r="3" fill="#fff"/>
+      <circle class="dew" cx="520" cy="150" r="2.5" fill="#fff"/>
+      <circle class="dew" cx="980" cy="148" r="3.4" fill="#fff"/>
+      <circle class="dew" cx="1320" cy="160" r="2.6" fill="#fff"/>
+      <circle class="dew" cx="1620" cy="152" r="3" fill="#fff"/>
+      <g id="blades"></g>
+    </svg>
+  </div>
+
+  <div class="fish-school" aria-hidden="true">
+    <div class="fish-track t1"><svg class="fish f1" viewBox="0 0 120 64"><use href="#fishShape"/><circle class="tb tb1" cx="30" cy="24" r="2.4"/><circle class="tb tb2" cx="35" cy="17" r="3.1"/><circle class="tb tb3" cx="36" cy="30" r="1.7"/></svg></div>
+    <div class="fish-track t4"><div class="flip"><svg class="fish f4" viewBox="0 0 120 64"><use href="#angelfish"/><circle class="tb tb1" cx="42" cy="20" r="2.4"/><circle class="tb tb2" cx="47" cy="14" r="3"/></svg></div></div>
+    <div class="fish-track t2"><svg class="fish f2" viewBox="0 0 120 64"><use href="#fishShape"/><circle class="tb tb1" cx="30" cy="24" r="2.4"/><circle class="tb tb2" cx="35" cy="17" r="3.1"/></svg></div>
+    <div class="fish-track t5"><svg class="fish f5" viewBox="0 0 120 64"><use href="#clownfish"/><circle class="tb tb1" cx="32" cy="20" r="2.3"/><circle class="tb tb2" cx="37" cy="14" r="3"/></svg></div>
+    <div class="fish-track t3"><svg class="fish f3" viewBox="0 0 120 64"><use href="#fishShape"/></svg></div>
+    <div class="fish-track t7"><div class="flip"><svg class="fish f7" viewBox="0 0 120 64"><use href="#minnowSchool"/></svg></div></div>
+    <div class="fish-track t6"><svg class="fish f6" viewBox="0 0 120 64"><use href="#puffer"/><circle class="tb tb1" cx="44" cy="18" r="2.4"/><circle class="tb tb2" cx="49" cy="12" r="3"/></svg></div>
+  </div>
+
+  <div class="bokeh" aria-hidden="true"><span></span><span></span><span></span></div>
+
   <!-- ═══════════ BOOT SCREEN ═══════════ -->
   <div class="boot" id="boot" role="button" tabindex="0" aria-label="Press start to enter the portfolio">
     <div class="boot-coin" aria-hidden="true">HR</div>
@@ -43,7 +239,8 @@ import '@fontsource/kantumruy-pro/600.css';
   <a class="skip" href="#main">Skip to content</a>
   <div class="bubbles" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span>
   </div>
 
   <!-- ═══════════ HUD ═══════════ -->
@@ -62,6 +259,7 @@ import '@fontsource/kantumruy-pro/600.css';
       <a href="#contact">Contact</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to night mode" title="Toggle day/night mode"><span class="tt-ico tt-sun" aria-hidden="true">☀</span><span class="tt-ico tt-moon" aria-hidden="true">☾</span><span class="tt-knob" aria-hidden="true"></span></button>
+    <button class="sfx-toggle" id="bgmToggle" type="button" aria-pressed="true" title="Toggle background music — LEASE + Lotus Waters playlist">BGM:ON</button>
     <button class="sfx-toggle" id="sfxToggle" type="button" aria-pressed="true" title="Toggle sound effects">SFX:ON</button>
   </header>
 
@@ -335,7 +533,7 @@ POST /verify  → check OTP at every login</pre>
       <p class="eyebrow">◆ TROPHIES</p>
       <h2>Education</h2>
       <div class="achv">
-        <span class="achv-ico" aria-hidden="true">★</span>
+        <span class="achv-logo" aria-hidden="true"><img src="/school-nyp.svg" alt="" loading="lazy" decoding="async"/></span>
         <div>
           <h3>Nanyang Polytechnic International, Singapore</h3>
           <p>ASEAN and Republic of Korea TVET Mobility Program, IT Applications & Development.</p>
@@ -343,7 +541,7 @@ POST /verify  → check OTP at every login</pre>
         </div>
       </div>
       <div class="achv">
-        <span class="achv-ico" aria-hidden="true">★</span>
+        <span class="achv-logo" aria-hidden="true"><img src="/school-gzittc-emblem.png" alt="" loading="lazy" decoding="async"/></span>
         <div>
           <h3>Guangzhou Industry and Trade Technician College</h3>
           <p>ILO and China South-South Cooperation: Internet of Things online training. Cert № GZITTC-IN20240055.</p>
@@ -351,7 +549,7 @@ POST /verify  → check OTP at every login</pre>
         </div>
       </div>
       <div class="achv">
-        <span class="achv-ico" aria-hidden="true">★</span>
+        <span class="achv-logo" aria-hidden="true"><img src="/school-npic-emblem.png" alt="" loading="lazy" decoding="async"/></span>
         <div>
           <h3>National Polytechnic Institute of Cambodia</h3>
           <p>Internship: practical web development and team collaboration. Thesis final score: 85.</p>
@@ -376,6 +574,7 @@ POST /verify  → check OTP at every login</pre>
 
     <!-- ═══════════ SCORE BOARD ═══════════ -->
     <footer class="scoreboard reveal stagger">
+      <button class="nowplaying" id="nowPlaying" type="button" title="Background music — click to skip track"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span id="npText">NOW PLAYING · LEASE — TAKESHI ABO</span><span class="np-skip" aria-hidden="true">[SKIP]</span></button>
       <p class="score">HIGH SCORE <b id="visits">000001</b></p>
       <div class="badges">
         <span class="badge">Y2K<br/>COMPLIANT</span>
@@ -388,6 +587,8 @@ POST /verify  → check OTP at every login</pre>
   </main>
 
   <button class="to-top" id="toTop" type="button" aria-label="Back to top">▲</button>
+
+  <div id="ytbgm" aria-hidden="true"></div>
 
   <style is:global>
     :root {
@@ -414,11 +615,7 @@ POST /verify  → check OTP at every login</pre>
       font-size: 15.5px;
       line-height: 1.65;
       color: var(--body-ink);
-      background:
-        radial-gradient(1200px 500px at 85% -5%, rgba(255, 255, 255, .55), transparent 60%),
-        radial-gradient(900px 420px at -10% 20%, rgba(168, 232, 204, .5), transparent 55%),
-        linear-gradient(180deg, var(--sky-a) 0%, var(--sky-b) 55%, var(--sky-c) 100%);
-      background-attachment: fixed;
+      background: linear-gradient(180deg, var(--sky-a) 0%, var(--sky-b) 55%, var(--sky-c) 100%);
       min-height: 100vh;
       overflow-x: clip;
     }
@@ -441,6 +638,19 @@ POST /verify  → check OTP at every login</pre>
       outline-offset: 2px;
       border-radius: 8px;
     }
+
+    ::selection { background: #79DFFF; color: #063349; }
+
+    html { scrollbar-color: #12A9DC rgba(143, 217, 255, .3); }
+    ::-webkit-scrollbar { width: 12px; }
+    ::-webkit-scrollbar-track { background: rgba(143, 217, 255, .25); }
+    ::-webkit-scrollbar-thumb {
+      border: 3px solid transparent;
+      border-radius: 999px;
+      background-clip: padding-box;
+      background-image: linear-gradient(180deg, #8FE1FA, #12A9DC 60%, #0087B8);
+    }
+    ::-webkit-scrollbar-thumb:hover { background-image: linear-gradient(180deg, #A5EBFF, #2BBCEC 60%, #0093C6); }
 
     .skip {
       position: fixed;
@@ -492,7 +702,7 @@ POST /verify  → check OTP at every login</pre>
       background:
         radial-gradient(circle at 32% 28%, rgba(255, 255, 255, .95) 0 12%, rgba(255, 255, 255, .22) 45%, rgba(255, 255, 255, .05) 70%);
       border: 1px solid rgba(255, 255, 255, .5);
-      box-shadow: inset -6px -8px 14px rgba(255, 255, 255, .35), 0 4px 18px rgba(7, 64, 94, .12);
+      box-shadow: inset -6px -8px 14px rgba(255, 255, 255, .35), 0 0 14px rgba(140, 235, 255, .22), 0 4px 18px rgba(7, 64, 94, .12);
       animation: rise linear infinite;
     }
     .bubbles span:nth-child(1) { left: 6%;  width: 34px; height: 34px; animation-duration: 17s; animation-delay: -2s; }
@@ -510,6 +720,150 @@ POST /verify  → check OTP at every login</pre>
       75%  { transform: translateY(-85vh) translateX(14px); }
       to   { transform: translateY(-115vh) translateX(0); }
     }
+    .bubbles span:nth-child(9)  { left: 12%; width: 52px; height: 52px; animation-duration: 24s; animation-delay: -18s; }
+    .bubbles span:nth-child(10) { left: 39%; width: 12px; height: 12px; animation-duration: 11s; animation-delay: -2s; }
+    .bubbles span:nth-child(11) { left: 64%; width: 58px; height: 58px; animation-duration: 26s; animation-delay: -21s; }
+    .bubbles span:nth-child(12) { left: 96%; width: 17px; height: 17px; animation-duration: 14s; animation-delay: -9s; }
+
+    /* ── Frutiger Aero world (photo, sky, aurora, clouds, flare, grass, fish, bokeh) ── */
+    .svgdefs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+    #ytbgm {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 200px;
+      height: 113px;
+      opacity: 0;
+      pointer-events: none;
+      border: 0;
+      z-index: -1;
+    }
+
+    .bg-photo {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background: url('/fa-vista.jpg') center bottom / cover no-repeat;
+      filter: saturate(1.1) brightness(1.02);
+      transition: filter .5s ease;
+    }
+
+    .bg-sky {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        radial-gradient(1200px 500px at 85% -5%, rgba(255, 255, 255, .5), transparent 60%),
+        radial-gradient(900px 420px at -10% 20%, rgba(168, 232, 204, .45), transparent 55%),
+        linear-gradient(180deg, rgba(143, 217, 255, .74) 0%, rgba(69, 181, 232, .66) 55%, rgba(168, 232, 204, .6) 100%);
+    }
+
+    .bg-aurora {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 48vh;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: .8;
+    }
+    .bg-aurora svg { display: block; width: 100%; height: 100%; animation: auroraDrift 26s ease-in-out infinite alternate; }
+    .bg-aurora .rib { fill: none; filter: blur(9px); }
+    .bg-aurora .rib.a { stroke: url(#aurA); stroke-width: 84; opacity: .6; }
+    .bg-aurora .rib.b { stroke: url(#aurB); stroke-width: 46; opacity: .38; }
+    @keyframes auroraDrift {
+      from { transform: translateX(-2%) rotate(-.5deg) scaleY(1); }
+      to { transform: translateX(2%) rotate(.5deg) scaleY(1.1); }
+    }
+
+    .bg-clouds { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .cloud { position: absolute; left: -30%; filter: blur(.6px); }
+    .c1 { top: 5%; width: min(360px, 44vw); opacity: .92; animation: cloudDrift 140s linear infinite; animation-delay: -40s; }
+    .c2 { top: 15%; width: min(250px, 32vw); opacity: .6; animation: cloudDrift 180s linear infinite; animation-delay: -100s; }
+    .c3 { top: 27%; width: min(430px, 52vw); opacity: .45; animation: cloudDrift 230s linear infinite; animation-delay: -160s; }
+    @keyframes cloudDrift { from { transform: translateX(0); } to { transform: translateX(160vw); } }
+
+    .bg-flare {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: flarePulse 11s ease-in-out infinite alternate;
+      background:
+        radial-gradient(360px 210px at 84% 4%, rgba(255, 255, 255, .5), transparent 70%),
+        radial-gradient(150px 100px at 76% 10%, rgba(160, 240, 255, .38), transparent 72%),
+        radial-gradient(circle 24px at 66% 15%, rgba(255, 255, 255, .5), transparent 100%),
+        radial-gradient(circle 13px at 57% 21%, rgba(150, 255, 220, .45), transparent 100%),
+        radial-gradient(circle 7px at 49% 26%, rgba(255, 255, 255, .5), transparent 100%),
+        radial-gradient(circle 19px at 89% 19%, rgba(255, 230, 150, .38), transparent 100%);
+    }
+    @keyframes flarePulse { from { opacity: .55; } to { opacity: .9; } }
+
+    .grass {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: clamp(78px, 12vh, 132px);
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      filter: saturate(1);
+      transition: filter .5s ease;
+    }
+    .grass svg { display: block; width: 100%; height: 100%; }
+    .grass .dew { animation: dewPulse 3.2s ease-in-out infinite alternate; }
+    @keyframes dewPulse { from { opacity: .45; } to { opacity: .95; } }
+
+    .fish-school { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .fish-track { position: absolute; left: 0; width: 100%; will-change: transform; }
+    .t1 { top: 11%; animation: swim 56s linear infinite; animation-delay: -14s; }
+    .t4 { top: 23%; animation: swim 64s linear infinite reverse; animation-delay: -40s; }
+    .t2 { top: 33%; animation: swim 72s linear infinite; animation-delay: -44s; }
+    .t5 { top: 42%; animation: swim 62s linear infinite; animation-delay: -9s; }
+    .t3 { top: 51%; animation: swim 88s linear infinite; animation-delay: -70s; }
+    .t7 { top: 57%; animation: swim 46s linear infinite reverse; animation-delay: -31s; }
+    .t6 { top: 67%; animation: swim 96s linear infinite; animation-delay: -52s; }
+    @keyframes swim { from { transform: translateX(104vw); } to { transform: translateX(-220px); } }
+    .flip { transform: scaleX(-1); }
+    .fish { display: block; animation: bob 5.6s ease-in-out infinite alternate; will-change: transform; }
+    .f1 { width: clamp(96px, 15vw, 150px); }
+    .f2 { width: clamp(68px, 11vw, 104px); filter: hue-rotate(-26deg) brightness(1.04); animation-duration: 6.9s; }
+    .f3 { width: clamp(48px, 8vw, 74px); filter: hue-rotate(32deg) brightness(1.06) blur(1px); opacity: .78; animation-duration: 7.8s; }
+    .f4 { width: clamp(80px, 12vw, 116px); animation-duration: 7.4s; }
+    .f5 { width: clamp(56px, 8.5vw, 82px); animation-duration: 6.1s; }
+    .f6 { width: clamp(52px, 7.5vw, 72px); animation-duration: 8.2s; }
+    .f7 { width: clamp(120px, 17vw, 170px); filter: blur(.8px); opacity: .8; animation-duration: 5.2s; }
+    @keyframes bob { from { transform: translateY(-9px) rotate(-1.6deg); } to { transform: translateY(9px) rotate(1.6deg); } }
+    .tail { transform-box: fill-box; transform-origin: 0% 50%; animation: wag .55s ease-in-out infinite alternate; }
+    .fin { transform-box: fill-box; transform-origin: 0% 100%; animation: wag .55s ease-in-out infinite alternate-reverse; }
+    .f4 .tail, .f4 .fin { animation-duration: .9s; }
+    .f6 .tail, .f6 .fin { animation-duration: .75s; }
+    @keyframes wag { from { transform: rotate(10deg); } to { transform: rotate(-10deg); } }
+    .tb { fill: #EAFBFF; transform-box: fill-box; opacity: 0; animation: trailRise 2.7s linear infinite; }
+    .tb2 { animation-delay: .95s; }
+    .tb3 { animation-delay: 1.8s; }
+    @keyframes trailRise {
+      0% { transform: translateY(0); opacity: 0; }
+      15% { opacity: .8; }
+      100% { transform: translateY(-30px); opacity: 0; }
+    }
+
+    .bokeh { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bokeh span {
+      position: absolute;
+      bottom: -260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 36% 30%, rgba(255, 255, 255, .42), rgba(214, 246, 255, .1) 55%, transparent 72%);
+      filter: blur(2px);
+      animation: rise linear infinite;
+    }
+    .bokeh span:nth-child(1) { left: 12%; width: 210px; height: 210px; animation-duration: 58s; animation-delay: -12s; opacity: .8; }
+    .bokeh span:nth-child(2) { left: 58%; width: 150px; height: 150px; animation-duration: 47s; animation-delay: -30s; opacity: .6; }
+    .bokeh span:nth-child(3) { left: 84%; width: 250px; height: 250px; animation-duration: 66s; animation-delay: -52s; opacity: .5; }
 
     /* ── HUD topbar ─────────────────────────── */
     .hud {
@@ -659,6 +1013,7 @@ POST /verify  → check OTP at every login</pre>
       gap: 22px;
     }
     .glass {
+      position: relative;
       background: linear-gradient(180deg, rgba(255, 255, 255, .74), rgba(255, 255, 255, .42));
       backdrop-filter: blur(16px) saturate(1.35);
       border: 1px solid rgba(255, 255, 255, .88);
@@ -667,6 +1022,15 @@ POST /verify  → check OTP at every login</pre>
         0 14px 34px rgba(7, 64, 94, .18),
         inset 0 1px 0 rgba(255, 255, 255, .95);
       padding: clamp(20px, 4vw, 34px);
+    }
+    .glass::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: inherit;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .32), rgba(255, 255, 255, .1) 34%, rgba(255, 255, 255, .02) 48%, transparent 52%);
     }
     .glass > :last-child { margin-bottom: 0; }
 
@@ -712,17 +1076,29 @@ POST /verify  → check OTP at every login</pre>
       font-weight: 800;
       line-height: .95;
       letter-spacing: -.02em;
-      background: linear-gradient(180deg, #FFFFFF 0%, #C9EEFF 32%, #57A9DC 50%, #E9F8FF 54%, #6FC3EC 100%);
+      background: linear-gradient(180deg,
+        #FFFFFF 0%, #C9EEFF 12%, #57A9DC 21%, #E9F8FF 25%, #6FC3EC 29%, #FFFFFF 50%,
+        #C9EEFF 62%, #57A9DC 71%, #E9F8FF 75%, #6FC3EC 79%, #FFFFFF 100%);
+      background-size: 100% 200%;
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       filter: drop-shadow(0 3px 4px rgba(7, 64, 94, .3));
+      animation: chromeFlow 7s linear infinite;
     }
+    @keyframes chromeFlow { from { background-position: 0 0; } to { background-position: 0 100%; } }
     .khmer {
-      margin: 12px 0 0;
+      display: inline-block;
+      margin: 14px 0 0;
+      padding: 5px 18px;
+      border-radius: 999px;
       font-family: 'Kantumruy Pro', sans-serif;
-      font-size: 1.05rem;
+      font-size: 1.02rem;
+      font-weight: 600;
       color: var(--deep);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .82), rgba(216, 243, 255, .5));
+      border: 1px solid rgba(255, 255, 255, .92);
+      box-shadow: inset 0 1px 0 #fff, 0 4px 12px rgba(7, 64, 94, .14);
     }
     .role {
       margin: 10px 0 0;
@@ -1126,23 +1502,41 @@ POST /verify  → check OTP at every login</pre>
       box-shadow: inset 0 1px 0 #fff, 0 12px 24px rgba(88, 201, 32, .2), 0 0 0 1px rgba(88, 201, 32, .25);
     }
     .achv:last-child { margin-bottom: 0; }
-    .achv-ico {
+    .achv-logo {
       flex-shrink: 0;
+      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      font-size: 20px;
-      color: #fff;
-      text-shadow: 0 1px 2px rgba(40, 90, 10, .4);
-      background: radial-gradient(circle at 32% 28%, #CFF7A8, var(--lime) 65%, #3E9B0F);
-      border: 2px solid rgba(255, 255, 255, .9);
-      box-shadow: 0 6px 14px rgba(88, 201, 32, .4), inset 0 1px 0 rgba(255, 255, 255, .7);
+      width: 92px;
+      height: 52px;
+      padding: 6px 10px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #fff, rgba(222, 244, 253, .88));
+      border: 2px solid rgba(255, 255, 255, .92);
+      box-shadow: 0 6px 14px rgba(88, 201, 32, .35), inset 0 1px 0 rgba(255, 255, 255, .8);
       transition: scale .25s ease, rotate .25s ease;
     }
-    .achv:hover .achv-ico { scale: 1.12; rotate: 8deg; }
+    .achv-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .achv-logo::after {
+      content: '★';
+      position: absolute;
+      top: -8px;
+      right: -7px;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(40, 90, 10, .4);
+      background: radial-gradient(circle at 32% 28%, #CFF7A8, var(--lime) 65%, #3E9B0F);
+      border: 1.5px solid rgba(255, 255, 255, .9);
+      box-shadow: 0 3px 6px rgba(88, 201, 32, .4);
+    }
+    .achv:hover .achv-logo { scale: 1.07; rotate: -2deg; }
     .achv h3 { margin: 2px 0 4px; font-size: 1rem; font-weight: 800; color: var(--deep); }
     .achv p { margin: 0 0 4px; }
     .achv-meta { font-size: 12px; color: var(--aqua-deep); font-weight: 700; margin: 0; }
@@ -1189,10 +1583,67 @@ POST /verify  → check OTP at every login</pre>
     }
     .contacts a:hover { transform: translateY(-2px) scale(1.02); background: #fff; color: var(--aqua-deep); box-shadow: inset 0 1px 0 #fff, 0 8px 18px rgba(7, 64, 94, .18); }
     .contacts a:active { transform: translateY(1px) scale(.98); }
-    .khmer-c { font-family: 'Kantumruy Pro', sans-serif; margin: 0; color: var(--deep); }
+    .khmer-c {
+      display: inline-block;
+      margin: 6px 0 0;
+      padding: 6px 22px;
+      border-radius: 999px;
+      font-family: 'Kantumruy Pro', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--deep);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .82), rgba(216, 243, 255, .5));
+      border: 1px solid rgba(255, 255, 255, .92);
+      box-shadow: inset 0 1px 0 #fff, 0 4px 12px rgba(7, 64, 94, .14);
+    }
 
     /* ── scoreboard (footer) ────────────────── */
-    .scoreboard { text-align: center; padding: 4px 6px 0; }
+    .scoreboard {
+      position: relative;
+      text-align: center;
+      padding: 20px 18px 16px;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, .08) 40%, transparent 52%),
+        linear-gradient(180deg, rgba(255, 255, 255, .74), rgba(255, 255, 255, .42));
+      backdrop-filter: blur(14px) saturate(1.3);
+      border: 1px solid rgba(255, 255, 255, .88);
+      box-shadow: 0 14px 34px rgba(7, 64, 94, .18), inset 0 1px 0 rgba(255, 255, 255, .95);
+    }
+    .nowplaying {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      letter-spacing: .05em;
+      color: var(--deep);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(222, 244, 253, .55));
+      border: 1px solid rgba(255, 255, 255, .95);
+      box-shadow: inset 0 1px 0 #fff, 0 4px 10px rgba(7, 64, 94, .14);
+      cursor: pointer;
+      transition: translate .18s ease, box-shadow .18s ease;
+    }
+    .nowplaying:hover { translate: 0 -2px; box-shadow: inset 0 1px 0 #fff, 0 8px 18px rgba(7, 64, 94, .22); }
+    .nowplaying:active { translate: 0 1px; }
+    .np-skip { opacity: .55; margin-left: 2px; }
+    .nowplaying:hover .np-skip { opacity: 1; }
+    .eq { display: inline-flex; align-items: flex-end; gap: 2.5px; height: 12px; }
+    .eq i {
+      display: block;
+      width: 3px;
+      height: 5px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, var(--aqua), var(--lime));
+      animation: eqBounce .8s ease-in-out infinite alternate;
+    }
+    .eq i:nth-child(2) { animation-delay: -.28s; }
+    .eq i:nth-child(3) { animation-delay: -.52s; }
+    @keyframes eqBounce { from { height: 3px; } to { height: 12px; } }
+    body:not(.bgm-playing) .eq i { animation: none; height: 4px; opacity: .55; }
     .score {
       font-family: 'Press Start 2P', monospace;
       font-size: 10px;
@@ -1242,7 +1693,7 @@ POST /verify  → check OTP at every login</pre>
       background:
         radial-gradient(700px 420px at 50% 24%, rgba(0, 183, 229, .18), transparent 70%),
         radial-gradient(900px 600px at 50% 112%, rgba(168, 232, 204, .1), transparent 60%),
-        linear-gradient(180deg, #071E30, #04283E 55%, #031C2C);
+        linear-gradient(180deg, rgba(7, 30, 48, .93), rgba(4, 40, 62, .9) 55%, rgba(3, 28, 44, .93));
       transition: opacity .45s ease;
     }
     .js .boot { display: flex; }
@@ -1483,12 +1934,21 @@ POST /verify  → check OTP at every login</pre>
     }
     [data-theme="dark"] body {
       color: var(--body-ink);
+      background: linear-gradient(180deg, var(--sky-a) 0%, var(--sky-b) 55%, var(--sky-c) 100%);
+    }
+    [data-theme="dark"] .bg-photo { filter: brightness(.32) saturate(.55) hue-rotate(-14deg); }
+    [data-theme="dark"] .bg-sky {
       background:
         radial-gradient(1100px 480px at 82% -8%, rgba(0, 183, 229, .13), transparent 60%),
-        radial-gradient(900px 420px at -10% 24%, rgba(18, 84, 66, .2), transparent 55%),
-        linear-gradient(180deg, var(--sky-a) 0%, var(--sky-b) 55%, var(--sky-c) 100%);
-      background-attachment: fixed;
+        radial-gradient(900px 420px at -10% 24%, rgba(18, 84, 66, .24), transparent 55%),
+        linear-gradient(180deg, rgba(11, 24, 38, .86) 0%, rgba(14, 39, 66, .82) 55%, rgba(15, 58, 47, .8) 100%);
     }
+    [data-theme="dark"] .bg-aurora { opacity: .5; }
+    [data-theme="dark"] .cloud { opacity: .07; }
+    [data-theme="dark"] .bg-flare { opacity: .3; }
+    [data-theme="dark"] .grass { filter: brightness(.32) saturate(.55); }
+    [data-theme="dark"] .fish-school,
+    [data-theme="dark"] .bokeh { display: none; }
     [data-theme="dark"] body::before {
       content: '';
       position: fixed;
@@ -1557,11 +2017,31 @@ POST /verify  → check OTP at every login</pre>
     [data-theme="dark"] .tt-knob::before { content: '☾'; color: #0A2540; }
     [data-theme="dark"] .hud-menu .bar { background: #8FD9FF; }
     [data-theme="dark"] h1 {
-      background: linear-gradient(180deg, #FFFFFF 0%, #D8F4FF 32%, #6FC8EC 50%, #EAF8FF 54%, #7FD4EE 100%);
+      background: linear-gradient(180deg,
+        #FFFFFF 0%, #D8F4FF 12%, #6FC8EC 21%, #EAF8FF 25%, #7FD4EE 29%, #FFFFFF 50%,
+        #D8F4FF 62%, #6FC8EC 71%, #EAF8FF 75%, #7FD4EE 79%, #FFFFFF 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .55)) drop-shadow(0 0 18px rgba(0, 183, 229, .3));
+    }
+    [data-theme="dark"] .glass::before {
+      background: linear-gradient(180deg, rgba(140, 220, 255, .07), transparent 50%);
+    }
+    [data-theme="dark"] .khmer,
+    [data-theme="dark"] .khmer-c,
+    [data-theme="dark"] .nowplaying {
+      color: #BFE9FF;
+      background: linear-gradient(180deg, rgba(16, 38, 58, .85), rgba(10, 26, 42, .55));
+      border-color: rgba(110, 190, 240, .25);
+      box-shadow: inset 0 1px 0 rgba(140, 220, 255, .12), 0 4px 10px rgba(0, 0, 0, .35);
+    }
+    [data-theme="dark"] .scoreboard {
+      background:
+        linear-gradient(180deg, rgba(140, 220, 255, .06), transparent 50%),
+        linear-gradient(180deg, rgba(13, 33, 52, .72), rgba(9, 25, 40, .5));
+      border-color: rgba(110, 190, 240, .18);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(140, 220, 255, .08);
     }
     [data-theme="dark"] .stats {
       background: rgba(10, 26, 42, .55);
@@ -1610,7 +2090,7 @@ POST /verify  → check OTP at every login</pre>
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .bubbles span, .avatar::before, .press-start, .insert { animation: none; }
-      .bubbles { display: none; }
+      .bubbles, .bg-clouds, .fish-school, .bokeh { display: none; }
       .js .reveal, .js .reveal.stagger > * {
         opacity: 1 !important;
         transform: none !important;
@@ -1684,6 +2164,60 @@ POST /verify  → check OTP at every login</pre>
         setTimeout(() => s.remove(), 620);
       });
 
+      /* ── meadow blades: procedural sway ────── */
+      const bladeLayer = document.getElementById('blades');
+      if (bladeLayer) {
+        const NS = 'http://www.w3.org/2000/svg';
+        const blades = [];
+        let seed = 7;
+        const prand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+        for (let i = 0; i < 34; i++) {
+          const front = prand() > .38;
+          const x = 24 + prand() * 1872;
+          const y = front ? 178 + prand() * 8 : 138 + prand() * 12;
+          const h = (front ? 36 : 20) + prand() * (front ? 42 : 24);
+          const w = 6 + prand() * 3.5;
+          const p = document.createElementNS(NS, 'path');
+          p.setAttribute('fill', 'url(#bladeGrad)');
+          p.setAttribute('opacity', String(.78 + prand() * .22));
+          bladeLayer.appendChild(p);
+          blades.push({
+            x, y, h, w, el: p,
+            lean: (prand() - .5) * 16,
+            amp: 3.5 + prand() * 5.5,
+            speed: .5 + prand() * .85,
+            phase: prand() * Math.PI * 2
+          });
+        }
+        const shapeBlade = (b, bend) => {
+          const { x, y, h, w } = b;
+          const tip = x + bend;
+          return 'M' + (x - w / 2) + ',' + y +
+            ' C' + (x - w / 2 - bend * .12) + ',' + (y - h * .45) +
+            ' ' + (x + bend * .6 - w * .2) + ',' + (y - h * .82) +
+            ' ' + tip + ',' + (y - h) +
+            ' C' + (tip + w * .2) + ',' + (y - h * .74) +
+            ' ' + (x + w / 2 + bend * .1) + ',' + (y - h * .4) +
+            ' ' + (x + w / 2) + ',' + y + ' Z';
+        };
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const drawBlades = t => {
+          const gustStr = .35 + .65 * Math.max(0, Math.sin(t * .21) * .5 + .5);
+          for (const b of blades) {
+            const sway = Math.sin(t * b.speed + b.phase) * b.amp;
+            const gust = Math.max(0, Math.sin(b.x * .0042 - t * 1.25)) * 14 * gustStr;
+            const flutter = Math.sin(t * 6.5 + b.phase * 3) * gustStr * 1.6;
+            b.el.setAttribute('d', shapeBlade(b, b.lean + sway + gust + flutter));
+          }
+        };
+        if (reduced) {
+          drawBlades(.8);
+        } else {
+          const grassLoop = ts => { drawBlades(ts / 1000); requestAnimationFrame(grassLoop); };
+          requestAnimationFrame(grassLoop);
+        }
+      }
+
       /* ── high score counter ────────────────── */
       const v = document.getElementById('visits');
       if (v) {
@@ -1738,8 +2272,101 @@ POST /verify  → check OTP at every login</pre>
       });
       document.addEventListener('click', e => {
         const t = e.target.closest('a, button');
-        if (t && t.id !== 'sfxToggle') sfx.click();
+        if (t && !t.closest('.dbterm') && t.id !== 'sfxToggle' && t.id !== 'bgmToggle') sfx.click();
       });
+
+      /* ── background music playlist ── */
+      const TRACKS = [
+        { id: 'xsdWibwQdZE', label: 'LEASE — TAKESHI ABO' },
+        { id: 'rj0K5WkNxX4', label: 'LOTUS WATERS — YUME 2KKI' }
+      ];
+      let bgmOn = true, ytPlayer = null, ytReady = false, bgmDead = false;
+      try { bgmOn = localStorage.getItem('hr_bgm') !== 'off'; } catch (e) {}
+      const bgmBtn = document.getElementById('bgmToggle');
+      const npText = document.getElementById('npText');
+      const npChip = document.getElementById('nowPlaying');
+      const syncBgm = playing => {
+        document.body.classList.toggle('bgm-playing', !!playing);
+        if (bgmBtn) {
+          bgmBtn.textContent = bgmOn ? 'BGM:ON' : 'BGM:OFF';
+          bgmBtn.setAttribute('aria-pressed', String(bgmOn));
+          bgmBtn.title = bgmDead
+            ? 'Background music unavailable'
+            : 'Toggle background music — LEASE + Lotus Waters playlist';
+        }
+      };
+      const startBgm = () => {
+        if (!bgmOn || bgmDead || !ytReady) return;
+        try { ytPlayer.playVideo(); } catch (e) {}
+      };
+      if (bgmBtn) bgmBtn.addEventListener('click', () => {
+        bgmOn = !bgmOn;
+        try { localStorage.setItem('hr_bgm', bgmOn ? 'on' : 'off'); } catch (e) {}
+        if (ytReady && !bgmDead) {
+          try { bgmOn ? ytPlayer.playVideo() : ytPlayer.pauseVideo(); } catch (e) {}
+        }
+        syncBgm(bgmOn && ytReady && !bgmDead);
+      });
+      if (npChip) npChip.addEventListener('click', () => {
+        if (bgmDead) return;
+        if (!bgmOn) {
+          bgmOn = true;
+          try { localStorage.setItem('hr_bgm', 'on'); } catch (e) {}
+          if (ytReady) { try { ytPlayer.playVideo(); } catch (e) {} }
+          syncBgm(ytReady);
+          return;
+        }
+        if (ytReady) {
+          try {
+            ytPlayer.nextVideo();
+            setTimeout(() => { try { ytPlayer.playVideo(); } catch (e2) {} }, 300);
+          } catch (e) {}
+        }
+      });
+      syncBgm(false);
+      const bgmFail = () => {
+        bgmDead = true;
+        if (npText) npText.textContent = 'BGM OFFLINE — SIGNAL LOST';
+        syncBgm(false);
+      };
+      window.onYouTubeIframeAPIReady = () => {
+        try {
+          ytPlayer = new YT.Player('ytbgm', {
+            videoId: TRACKS[0].id,
+            host: 'https://www.youtube-nocookie.com',
+            playerVars: {
+              autoplay: 0, controls: 0, loop: 1, playlist: TRACKS.map(t => t.id).join(','),
+              playsinline: 1, rel: 0, modestbranding: 1, disablekb: 1,
+              iv_load_policy: 3, fs: 0
+            },
+            events: {
+              onReady: () => {
+                ytReady = true;
+                try { ytPlayer.setVolume(42); } catch (e) {}
+                if (bgmOn && experienceStarted) startBgm();
+                syncBgm(bgmOn && experienceStarted && !bgmDead);
+              },
+              onStateChange: e => {
+                syncBgm(e.data === YT.PlayerState.PLAYING);
+                if (e.data === YT.PlayerState.PLAYING) {
+                  try {
+                    const tr = TRACKS[ytPlayer.getPlaylistIndex()];
+                    if (tr && npText) npText.textContent = 'NOW PLAYING · ' + tr.label;
+                  } catch (e2) {}
+                }
+                if (e.data === YT.PlayerState.ENDED) {
+                  try { ytPlayer.seekTo(0); ytPlayer.playVideo(); } catch (e2) {}
+                }
+              },
+              onError: bgmFail
+            }
+          });
+        } catch (e) { bgmFail(); }
+      };
+      const ytApi = document.createElement('script');
+      ytApi.src = 'https://www.youtube.com/iframe_api';
+      ytApi.onerror = bgmFail;
+      document.head.appendChild(ytApi);
 
       /* ── interactive shell (shell.exe) ─────── */
       const out = document.getElementById('shellOut');
@@ -1865,16 +2492,15 @@ POST /verify  → check OTP at every login</pre>
 
         let queue = [], synced = 0, flight = null, net = true, nextId = 1, last = 0, autoT = 1.8;
 
-        const enqueue = manual => {
+        const enqueue = () => {
           const id = nextId++;
           queue.push(id);
-          if (manual) sfx.key();
           log('+ order #' + String(id).padStart(2, '0') + ' queued on device', 'q');
         };
 
         const update = dt => {
           autoT -= dt;
-          if (autoT <= 0) { enqueue(false); autoT = rnd(2.4, 4.4); }
+          if (autoT <= 0) { enqueue(); autoT = rnd(2.4, 4.4); }
           if (net && !flight && queue.length) {
             flight = { id: queue.shift(), t: 0 };
           }
@@ -1882,7 +2508,6 @@ POST /verify  → check OTP at every login</pre>
             flight.t += dt;
             if (flight.t >= .7) {
               synced++;
-              sfx.coin();
               log('✓ order #' + String(flight.id).padStart(2, '0') + ' synced to server', 's');
               flight = null;
             }
@@ -2013,7 +2638,7 @@ POST /verify  → check OTP at every login</pre>
         log('LAB READY — press + NEW ORDER, then cut the network', 'on');
 
         const no = document.getElementById('newOrder');
-        if (no) no.addEventListener('click', () => enqueue(true));
+        if (no) no.addEventListener('click', () => enqueue());
         const nb = document.getElementById('netBtn');
         if (nb) nb.addEventListener('click', () => {
           net = !net;
@@ -2022,7 +2647,6 @@ POST /verify  → check OTP at every login</pre>
           log(net
             ? '↻ network online — draining queue…'
             : '⚠ network offline — orders keep queueing', net ? 'on' : 'off');
-          sfx.enter();
         });
       }
 
@@ -2150,12 +2774,14 @@ POST /verify  → check OTP at every login</pre>
           'LOADING QUEST LOG ....... <b class="ok">OK</b>',
           'SYNC LAB CALIBRATION .... <b class="ok">OK</b>',
           'GITHUB UPLINK ........... <b class="ok">OK</b>',
+          'BGM PLAYLIST · 2 TRKS .. <b class="ok">OK</b>',
           'PLAYER 1 ............ <b class="ok">READY</b>',
         ];
         const finishBoot = () => {
           if (booted) return;
           booted = true;
           sfx.start();
+          startBgm();
           document.body.classList.remove('booting');
           boot.classList.add('done');
           setTimeout(() => boot.remove(), 550);
