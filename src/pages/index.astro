@@ -2280,7 +2280,7 @@ POST /verify  → check OTP at every login</pre>
         { id: 'xsdWibwQdZE', label: 'LEASE — TAKESHI ABO' },
         { id: 'rj0K5WkNxX4', label: 'LOTUS WATERS — YUME 2KKI' }
       ];
-      let bgmOn = true, ytPlayer = null, ytReady = false, bgmDead = false;
+      let bgmOn = true, ytPlayer = null, ytReady = false, bgmDead = false, ytLoading = false;
       try { bgmOn = localStorage.getItem('hr_bgm') !== 'off'; } catch (e) {}
       const bgmBtn = document.getElementById('bgmToggle');
       const npText = document.getElementById('npText');
@@ -2302,6 +2302,7 @@ POST /verify  → check OTP at every login</pre>
       if (bgmBtn) bgmBtn.addEventListener('click', () => {
         bgmOn = !bgmOn;
         try { localStorage.setItem('hr_bgm', bgmOn ? 'on' : 'off'); } catch (e) {}
+        if (bgmOn) loadYtApi();
         if (ytReady && !bgmDead) {
           try { bgmOn ? ytPlayer.playVideo() : ytPlayer.pauseVideo(); } catch (e) {}
         }
@@ -2312,6 +2313,7 @@ POST /verify  → check OTP at every login</pre>
         if (!bgmOn) {
           bgmOn = true;
           try { localStorage.setItem('hr_bgm', 'on'); } catch (e) {}
+          loadYtApi();
           if (ytReady) { try { ytPlayer.playVideo(); } catch (e) {} }
           syncBgm(ytReady);
           return;
@@ -2329,6 +2331,15 @@ POST /verify  → check OTP at every login</pre>
         if (npText) npText.textContent = 'BGM OFFLINE — SIGNAL LOST';
         syncBgm(false);
       };
+      const loadYtApi = () => {
+        if (ytLoading || ytReady || bgmDead) return;
+        ytLoading = true;
+        const ytApi = document.createElement('script');
+        ytApi.src = 'https://www.youtube.com/iframe_api';
+        ytApi.async = true;
+        ytApi.onerror = bgmFail;
+        document.head.appendChild(ytApi);
+      };
       window.onYouTubeIframeAPIReady = () => {
         try {
           ytPlayer = new YT.Player('ytbgm', {
@@ -2337,12 +2348,12 @@ POST /verify  → check OTP at every login</pre>
             playerVars: {
               autoplay: 0, controls: 0, loop: 1, playlist: TRACKS.map(t => t.id).join(','),
               playsinline: 1, rel: 0, modestbranding: 1, disablekb: 1,
-              iv_load_policy: 3, fs: 0
+              iv_load_policy: 3, fs: 0, vq: 'small'
             },
             events: {
               onReady: () => {
                 ytReady = true;
-                try { ytPlayer.setVolume(42); } catch (e) {}
+                try { ytPlayer.setVolume(42); ytPlayer.setPlaybackQuality('small'); } catch (e) {}
                 if (bgmOn && experienceStarted) startBgm();
                 syncBgm(bgmOn && experienceStarted && !bgmDead);
               },
@@ -2350,6 +2361,7 @@ POST /verify  → check OTP at every login</pre>
                 syncBgm(e.data === YT.PlayerState.PLAYING);
                 if (e.data === YT.PlayerState.PLAYING) {
                   try {
+                    ytPlayer.setPlaybackQuality('small');
                     const tr = TRACKS[ytPlayer.getPlaylistIndex()];
                     if (tr && npText) npText.textContent = 'NOW PLAYING · ' + tr.label;
                   } catch (e2) {}
@@ -2363,10 +2375,18 @@ POST /verify  → check OTP at every login</pre>
           });
         } catch (e) { bgmFail(); }
       };
-      const ytApi = document.createElement('script');
-      ytApi.src = 'https://www.youtube.com/iframe_api';
-      ytApi.onerror = bgmFail;
-      document.head.appendChild(ytApi);
+      /* BGM:OFF means zero YouTube cost — the player only loads when music is wanted */
+      if (bgmOn) {
+        if (document.readyState === 'complete') setTimeout(loadYtApi, 600);
+        else window.addEventListener('load', () => setTimeout(loadYtApi, 600));
+      }
+      document.addEventListener('visibilitychange', () => {
+        if (!ytReady || bgmDead || !bgmOn) return;
+        try {
+          if (document.hidden) ytPlayer.pauseVideo();
+          else if (experienceStarted) ytPlayer.playVideo();
+        } catch (e) {}
+      });
 
       /* ── interactive shell (shell.exe) ─────── */
       const out = document.getElementById('shellOut');
@@ -2781,6 +2801,7 @@ POST /verify  → check OTP at every login</pre>
           if (booted) return;
           booted = true;
           sfx.start();
+          if (bgmOn) loadYtApi();
           startBgm();
           document.body.classList.remove('booting');
           boot.classList.add('done');
