@@ -69,6 +69,10 @@ import '@fontsource/kantumruy-pro/600.css';
         <stop offset="0" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#CFEAF6"/>
         <stop offset="1" stop-color="#8FBFD8"/>
       </linearGradient>
+      <linearGradient id="khmerGold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFF3CE"/><stop offset=".55" stop-color="#FFD98C"/>
+        <stop offset="1" stop-color="#F0B45A"/>
+      </linearGradient>
       <linearGradient id="cloudGrad" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-color="#FFFFFF"/><stop offset=".62" stop-color="#F3FBFF"/>
         <stop offset="1" stop-color="#D4EBF7"/>
@@ -86,60 +90,85 @@ import '@fontsource/kantumruy-pro/600.css';
         <stop offset="1" stop-color="#8CD9FF" stop-opacity="0"/>
       </linearGradient>
       <g id="fishShape">
-        <g class="tail"><path d="M78,32 L110,10 C102,25 102,39 110,54 Z" fill="url(#fishTail)"/></g>
-        <path class="fin" d="M46,12 C52,0 66,0 70,9 C62,7 54,8 46,12 Z" fill="url(#fishFin)"/>
-        <path d="M10,32 C24,9 60,5 79,16 C93,25 93,39 79,48 C60,59 24,55 10,32 Z" fill="url(#fishBody)"/>
-        <path class="fin" d="M40,36 C48,40 50,46 44,47 C38,44 37,39 40,36 Z" fill="url(#fishFin)" opacity=".9"/>
-        <ellipse cx="42" cy="45" rx="28" ry="7" fill="#E9FBFF" opacity=".6"/>
-        <ellipse cx="42" cy="17" rx="28" ry="5.5" fill="#fff" opacity=".55"/>
-        <path d="M36,15 C31,27 31,38 36,50" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
-        <circle cx="23" cy="26" r="5.4" fill="#fff"/>
-        <circle cx="21.5" cy="26" r="2.7" fill="#08304A"/>
-        <circle cx="24" cy="24.4" r="1.4" fill="#fff" opacity=".9"/>
+        <g class="tail"><path d="M92,32 C102,24 114,14 120,8 C111,17 107,25 106,32 C107,39 111,47 120,56 C114,51 102,40 92,32 Z" fill="url(#fishTail)"/></g>
+        <path class="fin" d="M44,15 C50,3 65,1 73,9 C64,7 54,9 47,16 Z" fill="url(#fishFin)"/>
+        <path d="M8,32 C20,12 54,7 77,15 C89,21 92,27 92,32 C92,37 89,43 77,49 C54,57 20,52 8,32 Z" fill="url(#fishBody)"/>
+        <path d="M30,16 C25,26 25,38 30,48" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M48,17 C44,27 44,37 48,47" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.6" stroke-linecap="round"/>
+        <path class="fin" d="M46,34 C54,37 56,44 49,47 C44,43 44,38 46,34 Z" fill="url(#fishFin)" opacity=".92"/>
+        <ellipse cx="42" cy="46" rx="27" ry="6" fill="#E9FBFF" opacity=".55"/>
+        <ellipse cx="44" cy="17" rx="27" ry="5" fill="#fff" opacity=".55"/>
+        <circle cx="20" cy="27" r="5.2" fill="#fff"/>
+        <circle cx="18.7" cy="27" r="2.6" fill="#08304A"/>
+        <circle cx="21" cy="25.4" r="1.3" fill="#fff" opacity=".9"/>
       </g>
+      <clipPath id="angelClip"><path d="M20,32 C24,17 34,7 50,6 C64,5 76,12 83,22 C85,26 86,29 86,32 C86,35 85,38 83,42 C76,52 64,59 50,58 C34,56 24,46 20,32 Z"/></clipPath>
       <g id="angelfish">
-        <g class="tail"><path d="M82,30 C92,22 100,20 106,24 C102,29 102,35 106,40 C100,44 92,42 82,34 Z" fill="url(#angelFin)"/></g>
-        <path d="M58,24 C62,8 74,-1 86,5 C78,9 71,16 68,26 Z" fill="url(#angelFin)"/>
-        <path d="M58,40 C62,56 74,65 86,59 C78,55 71,48 68,38 Z" fill="url(#angelFin)"/>
-        <path d="M26,32 C32,14 52,8 70,14 C82,18 86,26 82,32 C86,38 82,46 70,50 C52,56 32,50 26,32 Z" fill="url(#angelBody)"/>
-        <path d="M46,13 C43,22 43,42 46,51" fill="none" stroke="#8A5A12" stroke-width="3.4" opacity=".55"/>
-        <path d="M62,12 C59,22 59,42 62,52" fill="none" stroke="#8A5A12" stroke-width="3.4" opacity=".45"/>
-        <ellipse cx="55" cy="20" rx="20" ry="5" fill="#fff" opacity=".5"/>
-        <circle cx="34" cy="26" r="4.6" fill="#fff"/>
-        <circle cx="32.6" cy="26" r="2.3" fill="#20120A"/>
-        <circle cx="34.6" cy="24.6" r="1" fill="#fff" opacity=".85"/>
+        <g class="tail"><path d="M84,30 C94,26 102,22 109,20 C105,26 103,29 103,32 C103,35 105,38 109,44 C102,42 94,38 84,34 Z" fill="url(#angelFin)"/></g>
+        <path d="M46,11 C56,-1 74,-3 88,3 C74,5 61,9 54,19 Z" fill="url(#angelFin)"/>
+        <path d="M46,53 C56,65 74,67 88,61 C74,59 61,55 54,45 Z" fill="url(#angelFin)"/>
+        <path d="M20,32 C24,17 34,7 50,6 C64,5 76,12 83,22 C85,26 86,29 86,32 C86,35 85,38 83,42 C76,52 64,59 50,58 C34,56 24,46 20,32 Z" fill="url(#angelBody)"/>
+        <g clip-path="url(#angelClip)">
+          <path d="M42,4 C37,16 37,48 42,60" fill="none" stroke="#8A5A12" stroke-width="7" opacity=".55"/>
+          <path d="M60,4 C55,16 55,48 60,60" fill="none" stroke="#8A5A12" stroke-width="6" opacity=".45"/>
+        </g>
+        <ellipse cx="52" cy="12" rx="21" ry="4" fill="#fff" opacity=".5"/>
+        <circle cx="30" cy="26" r="4.4" fill="#fff"/>
+        <circle cx="28.7" cy="26" r="2.2" fill="#20120A"/>
+        <circle cx="31" cy="24.5" r=".95" fill="#fff" opacity=".85"/>
       </g>
+      <clipPath id="clownClip"><path d="M14,32 C20,15 46,8 66,12 C80,15 87,23 87,32 C87,41 80,49 66,52 C46,56 20,49 14,32 Z"/></clipPath>
       <g id="clownfish">
-        <g class="tail"><path d="M76,32 L98,21 C94,29 94,35 98,43 Z" fill="url(#clownFin)"/></g>
-        <path class="fin" d="M42,14 C46,5 58,4 62,10 C55,9 48,10 42,14 Z" fill="url(#clownFin)"/>
-        <path d="M14,32 C24,13 56,9 74,17 C88,24 88,40 74,47 C56,55 24,51 14,32 Z" fill="url(#clownBody)"/>
-        <path d="M30,14 C26,24 26,40 30,50" fill="none" stroke="#2A1608" stroke-width="7" opacity=".85"/>
-        <path d="M30,14 C26,24 26,40 30,50" fill="none" stroke="#FFF6EA" stroke-width="4.4"/>
-        <path d="M54,12 C51,22 51,42 54,52" fill="none" stroke="#2A1608" stroke-width="7" opacity=".85"/>
-        <path d="M54,12 C51,22 51,42 54,52" fill="none" stroke="#FFF6EA" stroke-width="4.4"/>
-        <path d="M72,17 C70,26 70,38 72,47" fill="none" stroke="#2A1608" stroke-width="5" opacity=".85"/>
-        <path d="M72,17 C70,26 70,38 72,47" fill="none" stroke="#FFF6EA" stroke-width="3"/>
-        <ellipse cx="46" cy="18" rx="22" ry="4.5" fill="#fff" opacity=".4"/>
-        <circle cx="22" cy="26" r="4.4" fill="#fff"/>
-        <circle cx="20.6" cy="26" r="2.2" fill="#180B04"/>
-        <circle cx="22.6" cy="24.6" r=".9" fill="#fff" opacity=".85"/>
+        <g class="tail">
+          <path d="M86,32 C92,25 98,21 104,20 C102,27 102,37 104,44 C98,43 92,39 86,32 Z" fill="url(#clownFin)"/>
+          <path d="M101,21 C99,28 99,36 101,43" fill="none" stroke="#FFF6EA" stroke-width="2.2" stroke-linecap="round"/>
+        </g>
+        <path class="fin" d="M36,15 C41,6 53,5 60,10 C53,9 45,10 39,17 Z" fill="url(#clownFin)"/>
+        <path d="M14,32 C20,15 46,8 66,12 C80,15 87,23 87,32 C87,41 80,49 66,52 C46,56 20,49 14,32 Z" fill="url(#clownBody)"/>
+        <g clip-path="url(#clownClip)">
+          <path d="M29,8 C25,20 25,44 29,56" fill="none" stroke="#2A1608" stroke-width="7.5" opacity=".85"/>
+          <path d="M29,8 C25,20 25,44 29,56" fill="none" stroke="#FFF6EA" stroke-width="4.6"/>
+          <path d="M52,6 C48,20 48,44 52,58" fill="none" stroke="#2A1608" stroke-width="7" opacity=".85"/>
+          <path d="M52,6 C48,20 48,44 52,58" fill="none" stroke="#FFF6EA" stroke-width="4.4"/>
+          <path d="M72,10 C69,22 69,42 72,54" fill="none" stroke="#2A1608" stroke-width="5.4" opacity=".85"/>
+          <path d="M72,10 C69,22 69,42 72,54" fill="none" stroke="#FFF6EA" stroke-width="3.2"/>
+        </g>
+        <path class="fin" d="M52,33 C58,36 59,43 52,45 C49,41 49,36 52,33 Z" fill="url(#clownFin)" opacity=".95"/>
+        <ellipse cx="46" cy="17" rx="21" ry="4" fill="#fff" opacity=".4"/>
+        <circle cx="24" cy="26" r="4.4" fill="#fff"/>
+        <circle cx="22.7" cy="26" r="2.2" fill="#180B04"/>
+        <circle cx="25" cy="24.5" r=".9" fill="#fff" opacity=".85"/>
       </g>
       <g id="puffer">
-        <g class="tail"><path d="M72,32 C80,24 90,22 94,28 C91,32 91,34 94,38 C90,44 80,42 72,34 Z" fill="url(#pufferFin)"/></g>
-        <path d="M30,12 l4,-7 2,8 Z M46,8 l4,-7 2,8 Z M62,12 l4,-7 2,8 Z M22,30 l-7,-3 5,-6 Z M27,50 l3,7 4,-6 Z M50,55 l4,7 2,-8 Z M68,48 l4,6 1,-7 Z" fill="#3E9457"/>
+        <g class="tail"><path d="M74,34 C80,27 86,23 92,22 C90,29 90,39 92,46 C86,45 80,41 74,36 Z" fill="url(#pufferFin)"/></g>
+        <g fill="#3E9457">
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(46,8)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(61,11.2) rotate(30)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(31,11.2) rotate(-30)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(72,20) rotate(60)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(20,20) rotate(-60)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(76,32) rotate(90)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(72,44) rotate(120)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(20,44) rotate(-120)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(61,52.8) rotate(150)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(31,52.8) rotate(-150)"/>
+          <path d="M-3.2,0 L0,-9 L3.2,0 Z" transform="translate(46,56) rotate(180)"/>
+        </g>
         <ellipse cx="46" cy="32" rx="30" ry="24" fill="url(#pufferBody)"/>
-        <ellipse cx="44" cy="44" rx="20" ry="9" fill="#F2FBDA" opacity=".75"/>
-        <ellipse cx="44" cy="18" rx="18" ry="5" fill="#fff" opacity=".5"/>
-        <path class="fin" d="M58,40 C64,44 64,50 58,50 C54,46 54,42 58,40 Z" fill="url(#pufferFin)"/>
-        <circle cx="18" cy="30" r="2.4" fill="#12502A"/>
-        <circle cx="30" cy="24" r="4.6" fill="#fff"/>
-        <circle cx="28.6" cy="24" r="2.3" fill="#0C2416"/>
-        <circle cx="30.6" cy="22.6" r="1" fill="#fff" opacity=".85"/>
+        <ellipse cx="43" cy="44" rx="19" ry="8.5" fill="#F2FBDA" opacity=".75"/>
+        <ellipse cx="42" cy="16.5" rx="17" ry="4.6" fill="#fff" opacity=".5"/>
+        <path class="fin" d="M56,36 C62,39 63,45 56,47 C52,43 52,39 56,36 Z" fill="url(#pufferFin)"/>
+        <path d="M17,35 C19,37.5 22,37.5 24,35.5" fill="none" stroke="#2E6B3C" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="26" cy="36.5" r="2.6" fill="#FF9D9D" opacity=".3"/>
+        <circle cx="30" cy="25" r="4.6" fill="#fff"/>
+        <circle cx="28.7" cy="25" r="2.3" fill="#0C2416"/>
+        <circle cx="31" cy="23.5" r="1" fill="#fff" opacity=".85"/>
       </g>
       <g id="minnowShape">
-        <path d="M14,6 L21,2.6 C20,4.6 20,7.4 21,9.4 Z" fill="#8FBFD8"/>
-        <ellipse cx="8.5" cy="6" rx="8.5" ry="3.1" fill="url(#minnowBody)"/>
-        <circle cx="3" cy="5" r="1" fill="#0A2C42"/>
+        <path d="M12,6 C15,4.4 18,2.8 20,2 C18.6,3.6 18.3,4.7 18.5,6 C18.3,7.3 18.6,8.4 20,10 C18,9.2 15,7.6 12,6 Z" fill="#8FBFD8"/>
+        <ellipse cx="7" cy="6" rx="7.6" ry="3.1" fill="url(#minnowBody)"/>
+        <path d="M6,3.4 C7,2.2 9,2.2 10,3.2 C9,3.5 7,3.7 6,3.4 Z" fill="#B9DCEF"/>
+        <circle cx="2.6" cy="5" r="1" fill="#0A2C42"/>
       </g>
       <g id="minnowSchool">
         <use href="#minnowShape" transform="translate(6,10)"/>
@@ -148,6 +177,44 @@ import '@fontsource/kantumruy-pro/600.css';
         <use href="#minnowShape" transform="translate(52,12) scale(.8)"/>
         <use href="#minnowShape" transform="translate(56,30) scale(.9)"/>
         <use href="#minnowShape" transform="translate(36,46) scale(.75)"/>
+      </g>
+      <g id="khmerFish" fill="none" stroke="url(#khmerGold)" stroke-linecap="round" stroke-linejoin="round">
+        <g class="tail ktail">
+          <path d="M106,45 C116,37 127,30 139,26" stroke-width="2.4"/>
+          <path d="M106,45 C117,42 128,41 142,43" stroke-width="2.2"/>
+          <path d="M106,45 C116,50 126,56 136,62" stroke-width="2.4"/>
+          <path d="M106,45 C113,40 119,37 126,34" stroke-width="1.3" opacity=".65"/>
+          <path d="M106,45 C113,50 119,55 125,59" stroke-width="1.3" opacity=".65"/>
+          <path d="M133,27 C140,36 142,49 136,61" stroke-width="2.6"/>
+        </g>
+        <path d="M14,45 C24,24 54,14 80,20 C94,24 103,34 108,45 C103,56 94,66 80,70 C54,76 24,66 14,45 Z" fill="rgba(255,221,140,.06)" stroke-width="2.6"/>
+        <path d="M22,56 C30,64 46,70 62,70 C78,70 92,64 100,55" stroke-width="1.3" opacity=".55"/>
+        <path d="M44,19 C48,10 56,7 63,10 C59,13 57,17 58,21" stroke-width="2"/>
+        <path d="M64,16 C68,7 76,5 83,9 C78,12 76,16 77,21" stroke-width="2"/>
+        <path d="M84,20 C88,13 94,12 98,16 C94,18 91,21 91,25" stroke-width="1.8"/>
+        <g class="fin kfin">
+          <path d="M52,49 C58,51 62,57 61,64 C56,61 52,57 50,51" stroke-width="2"/>
+          <path d="M56,54 C59,57 61,60 61,64" stroke-width="1.2" opacity=".7"/>
+        </g>
+        <path d="M38,31 C32,37 32,49 40,55" stroke-width="2.2"/>
+        <path d="M36,39 C33,43 34,49 38,52" stroke-width="1.3" opacity=".65"/>
+        <circle cx="26" cy="40" r="4" stroke-width="2"/>
+        <circle cx="26" cy="40" r="1.2" fill="url(#khmerGold)" stroke="none"/>
+        <path d="M20,32 C18,27 21,23 26,23 C24,26 24,29 26,31" stroke-width="1.8" opacity=".85"/>
+        <path d="M15,50 C13,52 14,55 17,56" stroke-width="1.8"/>
+        <path d="M50,32 c5,3 11,3 16,0 M66,30 c5,3 11,3 16,0 M82,31 c5,3 10,3 15,0 M50,44 c5,3 11,3 16,0 M66,42 c5,3 11,3 16,0 M82,43 c5,3 10,3 15,0 M50,56 c5,3 11,3 16,0 M66,54 c5,3 11,3 16,0 M82,55 c5,3 10,3 15,0" stroke-width="1.5" opacity=".75"/>
+      </g>
+      <g id="treyOne" fill="none" stroke="url(#khmerGold)" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M40,10 C44,7 48,5 53,4 M40,10 C44,12 48,14 53,15 M40,10 C45,9 49,9 53,10" stroke-width="1.7"/>
+        <path d="M2,10 C7,2 20,0 31,4 C37,7 40,10 41,10 C40,10 37,13 31,16 C20,20 7,18 2,10 Z" fill="rgba(255,221,140,.06)" stroke-width="2.1"/>
+        <path d="M16,3 C19,1 24,1 27,3 M16,17 C19,19 24,19 27,17" stroke-width="1.3" opacity=".8"/>
+        <circle cx="7.5" cy="8" r="2" stroke-width="1.6"/>
+      </g>
+      <g id="khmerTrey">
+        <use href="#treyOne"/>
+        <use href="#treyOne" transform="translate(72,42) scale(.82)"/>
+        <use href="#treyOne" transform="translate(36,62) scale(.66)"/>
+        <path d="M104,16 l2.4,3.2 2.4,-3.2 -2.4,-3.2 Z M120,64 l2,2.6 2,-2.6 -2,-2.6 Z" fill="url(#khmerGold)" stroke="none" opacity=".75"/>
       </g>
       <g id="cloudShape">
         <ellipse cx="70" cy="55" rx="60" ry="28"/>
@@ -215,13 +282,19 @@ import '@fontsource/kantumruy-pro/600.css';
   </div>
 
   <div class="fish-school" aria-hidden="true">
-    <div class="fish-track t1"><svg class="fish f1" viewBox="0 0 120 64"><use href="#fishShape"/><circle class="tb tb1" cx="30" cy="24" r="2.4"/><circle class="tb tb2" cx="35" cy="17" r="3.1"/><circle class="tb tb3" cx="36" cy="30" r="1.7"/></svg></div>
-    <div class="fish-track t4"><div class="flip"><svg class="fish f4" viewBox="0 0 120 64"><use href="#angelfish"/><circle class="tb tb1" cx="42" cy="20" r="2.4"/><circle class="tb tb2" cx="47" cy="14" r="3"/></svg></div></div>
-    <div class="fish-track t2"><svg class="fish f2" viewBox="0 0 120 64"><use href="#fishShape"/><circle class="tb tb1" cx="30" cy="24" r="2.4"/><circle class="tb tb2" cx="35" cy="17" r="3.1"/></svg></div>
-    <div class="fish-track t5"><svg class="fish f5" viewBox="0 0 120 64"><use href="#clownfish"/><circle class="tb tb1" cx="32" cy="20" r="2.3"/><circle class="tb tb2" cx="37" cy="14" r="3"/></svg></div>
+    <div class="fish-track t1"><svg class="fish f1" viewBox="0 0 120 64"><use href="#fishShape"/><circle class="tb tb1" cx="14" cy="25" r="2.4"/><circle class="tb tb2" cx="19" cy="18" r="3.1"/><circle class="tb tb3" cx="23" cy="29" r="1.7"/></svg></div>
+    <div class="fish-track t4"><div class="flip"><svg class="fish f4" viewBox="0 0 120 64"><use href="#angelfish"/><circle class="tb tb1" cx="24" cy="22" r="2.4"/><circle class="tb tb2" cx="29" cy="15" r="3"/></svg></div></div>
+    <div class="fish-track t2"><svg class="fish f2" viewBox="0 0 120 64"><use href="#fishShape"/><circle class="tb tb1" cx="14" cy="25" r="2.4"/><circle class="tb tb2" cx="19" cy="18" r="3.1"/></svg></div>
+    <div class="fish-track t5"><svg class="fish f5" viewBox="0 0 120 64"><use href="#clownfish"/><circle class="tb tb1" cx="20" cy="22" r="2.3"/><circle class="tb tb2" cx="25" cy="15" r="3"/></svg></div>
     <div class="fish-track t3"><svg class="fish f3" viewBox="0 0 120 64"><use href="#fishShape"/></svg></div>
     <div class="fish-track t7"><div class="flip"><svg class="fish f7" viewBox="0 0 120 64"><use href="#minnowSchool"/></svg></div></div>
-    <div class="fish-track t6"><svg class="fish f6" viewBox="0 0 120 64"><use href="#puffer"/><circle class="tb tb1" cx="44" cy="18" r="2.4"/><circle class="tb tb2" cx="49" cy="12" r="3"/></svg></div>
+    <div class="fish-track t6"><svg class="fish f6" viewBox="0 0 120 64"><use href="#puffer"/><circle class="tb tb1" cx="20" cy="22" r="2.4"/><circle class="tb tb2" cx="25" cy="14" r="3"/></svg></div>
+  </div>
+
+  <div class="khmer-school" aria-hidden="true">
+    <div class="ktrack k1"><svg class="kfish ka1" viewBox="0 0 150 90"><use href="#khmerFish"/></svg></div>
+    <div class="ktrack k2"><div class="flip"><svg class="kfish ka2" viewBox="0 0 150 90"><use href="#khmerFish"/></svg></div></div>
+    <div class="ktrack k3"><svg class="kfish ka3" viewBox="0 0 150 90"><use href="#khmerTrey"/></svg></div>
   </div>
 
   <div class="bokeh" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -864,6 +937,18 @@ POST /verify  → check OTP at every login</pre>
     .bokeh span:nth-child(1) { left: 12%; width: 210px; height: 210px; animation-duration: 58s; animation-delay: -12s; opacity: .8; }
     .bokeh span:nth-child(2) { left: 58%; width: 150px; height: 150px; animation-duration: 47s; animation-delay: -30s; opacity: .6; }
     .bokeh span:nth-child(3) { left: 84%; width: 250px; height: 250px; animation-duration: 66s; animation-delay: -52s; opacity: .5; }
+
+    /* ── Khmer night school (dark mode only) ── */
+    .khmer-school { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; display: none; }
+    .ktrack { position: absolute; left: 0; width: 100%; will-change: transform; }
+    .k1 { top: 13%; animation: swim 128s linear infinite; animation-delay: -52s; }
+    .k2 { top: 40%; animation: swim 94s linear infinite reverse; animation-delay: -28s; }
+    .k3 { top: 66%; animation: swim 74s linear infinite; animation-delay: -60s; }
+    .kfish { display: block; animation: bob 7.6s ease-in-out infinite alternate; will-change: transform; }
+    .ka1 { width: clamp(110px, 16vw, 170px); opacity: .95; filter: drop-shadow(0 0 7px rgba(255, 211, 128, .5)); }
+    .ka2 { width: clamp(78px, 11vw, 120px); opacity: .8; animation-duration: 6.7s; filter: drop-shadow(0 0 6px rgba(255, 211, 128, .38)); }
+    .ka3 { width: clamp(118px, 16vw, 178px); opacity: .55; filter: blur(.7px) drop-shadow(0 0 5px rgba(255, 211, 128, .3)); animation-duration: 5.9s; }
+    .ktail, .kfin { animation-duration: 1.35s; }
 
     /* ── HUD topbar ─────────────────────────── */
     .hud {
@@ -1949,6 +2034,7 @@ POST /verify  → check OTP at every login</pre>
     [data-theme="dark"] .grass { filter: brightness(.32) saturate(.55); }
     [data-theme="dark"] .fish-school,
     [data-theme="dark"] .bokeh { display: none; }
+    [data-theme="dark"] .khmer-school { display: block; }
     [data-theme="dark"] body::before {
       content: '';
       position: fixed;
@@ -2090,7 +2176,7 @@ POST /verify  → check OTP at every login</pre>
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .bubbles span, .avatar::before, .press-start, .insert { animation: none; }
-      .bubbles, .bg-clouds, .fish-school, .bokeh { display: none; }
+      .bubbles, .bg-clouds, .fish-school, .bokeh, .khmer-school { display: none; }
       .js .reveal, .js .reveal.stagger > * {
         opacity: 1 !important;
         transform: none !important;
