@@ -1,18 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <defs>
-    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#A8E8CC"/>
-      <stop offset="35%" stop-color="#8FD9FF"/>
-      <stop offset="100%" stop-color="#00B7E5"/>
-    </linearGradient>
-    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#07405E" flood-opacity="0.22"/>
-    </filter>
-  </defs>
-  <circle cx="64" cy="64" r="58" fill="url(#lg)" stroke="#fff" stroke-width="5" filter="url(#sh)"/>
-  <circle cx="64" cy="64" r="51" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3"/>
-  <ellipse cx="42" cy="34" rx="22" ry="11" fill="rgba(255,255,255,.55)" transform="rotate(-12 42 34)"/>
-  <path d="M26 44h11v16h22V44h11v40h-11V68H41v16H26z" fill="#fff"/>
-  <path d="M78 44h28v16h-10l12 24h-12l-8-14v14h-10z" fill="#fff"/>
-  <path d="M112 26l3-8 3 8h8l-6 5 3 8-8-5-8 5 3-8-6-5z" fill="#FFD447"/>
+  <rect x="14" y="14" width="106" height="106" fill="#111116"/>
+  <rect x="6" y="6" width="106" height="106" fill="#FCFBF7" stroke="#111116" stroke-width="6"/>
+  <path d="M6 78 L112 22 L112 48 L6 104 Z" fill="#E6002E"/>
+  <path d="M20 38h13v18h20V38h13v46H53V66H33v18H20z" fill="#111116"/>
+  <path d="M72 38h26c4 0 8 3 8 8v9c0 4-3 7-7 8l9 21H93l-7-18h-2v18H72zm12 10v8h10v-8z" fill="#111116"/>
+  <polygon points="102,12 107,24 120,24 109,31 113,43 102,36 91,43 95,31 84,24 97,24" fill="#FFD400" stroke="#111116" stroke-width="3"/>
 </svg>
