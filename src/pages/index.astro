@@ -109,13 +109,28 @@ import '@fontsource/kantumruy-pro/600.css';
         <p class="cover-khmer" lang="km">ហុឹង រក្សា — អ្នកអភិវឌ្ឍន៍គេហទំព័រ</p>
         <p class="cover-sub">FULL-STACK DEVELOPER · フルスタック開発者</p>
         <div class="cover-checks" aria-hidden="true">
-          <span>✓ OFFLINE PWA</span>
-          <span>✓ LARAVEL + REACT</span>
-          <span>✓ GITHUB REPOS</span>
-          <span>✓ 1,100+ MOD DOWNLOADS</span>
+          <span>
+            <svg class="ico-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            OFFLINE PWA
+          </span>
+          <span>
+            <svg class="ico-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            LARAVEL + REACT
+          </span>
+          <span>
+            <svg class="ico-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            GITHUB REPOS
+          </span>
+          <span>
+            <svg class="ico-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1,100+ MOD DOWNLOADS
+          </span>
         </div>
         <div class="cover-cta-wrap">
-          <span class="cover-cta" id="coverStart">▶ OPEN MANGA · 読む</span>
+          <span class="cover-cta" id="coverStart">
+            <svg class="ico-svg" viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+            OPEN MANGA · 読む
+          </span>
           <span class="cover-sfx" aria-hidden="true">ドン!!</span>
         </div>
         <p class="cover-hint">CLICK ANYWHERE OR PRESS ENTER</p>
@@ -149,11 +164,12 @@ import '@fontsource/kantumruy-pro/600.css';
 
       <div class="nav-tools">
         <span class="folio-live" id="folioLive" aria-hidden="true">P.01/07</span>
-        <button class="comic-pill theme-btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark ink mode" title="Toggle Paper / Midnight Ink mode" data-pop="INK!">
+        <button class="comic-pill theme-btn" id="themeToggle" type="button" aria-pressed="false" aria-label="Switch to dark ink mode" title="Toggle Paper / Midnight Ink mode (T)" data-pop="INK!">
           <span class="tp-day" aria-hidden="true">昼 PAPER</span>
           <span class="tp-night" aria-hidden="true">夜 INK</span>
         </button>
-        <button class="comic-pill" id="sfxToggle" type="button" aria-pressed="true" title="Toggle G-Pen scratch & comic sound effects" data-pop="SFX!">SFX:ON</button>
+        <button class="comic-pill" id="sfxToggle" type="button" aria-pressed="true" title="Toggle G-Pen scratch & comic sound effects (M)" data-pop="SFX!">SFX:ON</button>
+        <button class="comic-pill kb-pill" id="kbBtn" type="button" aria-haspopup="dialog" aria-controls="kbHud" aria-expanded="false" title="Keyboard shortcuts HUD (?)" data-pop="KEYS!">?</button>
       </div>
     </div>
   </header>
@@ -243,8 +259,8 @@ import '@fontsource/kantumruy-pro/600.css';
           </div>
         </div>
 
-        <!-- 3D Tilt + Permanent Manga Ink B&W + Click-to-Flip Shonen Card -->
-        <figure class="hero-portrait tilt-card" id="pfCard" data-tilt data-fx="manga" role="button" tabindex="0" aria-label="Hoeng Reaksa portrait card — click to flip between front and character stats">
+        <!-- 3D Tilt + Manga Ink B&W + Dev HUD + Click-to-Flip Shonen Card -->
+        <figure class="hero-portrait tilt-card" id="pfCard" data-tilt data-fx="manga" aria-label="Hoeng Reaksa developer manga card">
           <div class="pf-flipper" id="pfFlipper">
             <!-- CARD FRONT -->
             <div class="pf-face pf-front">
@@ -256,57 +272,94 @@ import '@fontsource/kantumruy-pro/600.css';
               </div>
 
               <div class="pf-card-top">
-                <span class="pf-rarity" id="pfRarity">№ 001 // INK</span>
-                <span class="pf-live"><i aria-hidden="true"></i>PHNOM PENH</span>
+                <span class="pf-rarity pf-dev-file" id="pfRarity">
+                  <svg class="ico-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  reaksa.dev.tsx
+                </span>
+                <span class="pf-live">
+                  <i aria-hidden="true"></i>
+                  <svg class="ico-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                  git:main
+                </span>
               </div>
 
               <div class="portrait-frame" id="pfStage">
                 <img src="/photo.jpg" alt="Hoeng Reaksa" width="520" height="520" />
                 <div class="portrait-halftone" aria-hidden="true"></div>
                 <div class="pf-holo-foil" aria-hidden="true"></div>
+                <div class="pf-gutter" aria-hidden="true">
+                  <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span>
+                </div>
                 <div class="pf-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
                 <span class="pf-hint" aria-hidden="true">
                   CLICK TO FLIP
                   <svg class="ico-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
                 </span>
+                <span class="pf-build-pill" aria-hidden="true">BUILD // OK</span>
+                <span class="pf-hud-cmd" aria-hidden="true"><em>$</em> fullstack --offline</span>
                 <span class="portrait-sfx" id="pfSfxTag" aria-hidden="true">INKED!</span>
               </div>
 
+              <div class="pf-dev-strip" aria-label="Core developer stack">
+                <span class="pf-branch">LVL.04 DEV</span>
+                <div class="pf-tags">
+                  <span>NEXT.JS</span>
+                  <span>VUE</span>
+                  <span>LARAVEL</span>
+                  <span>JAVA</span>
+                </div>
+              </div>
+
               <figcaption class="pf-footer">
-                <span class="pf-cap-txt">
-                  CLICK CARD // STATS
+                <button type="button" class="pf-cap-btn" id="pfFlipBtn" aria-label="Flip developer profile card to spec sheet">
+                  CLICK CARD // SPEC
                   <svg class="ico-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                </span>
-                <button type="button" class="mode-ping" id="quoteCycle" title="Cycle protagonist quote" data-pop="NEXT!">
+                </button>
+                <button type="button" class="mode-ping" id="quoteCycle" title="Cycle protagonist quote (Q)" data-pop="NEXT!">
                   <svg class="ico-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
                   NEXT LINE
                 </button>
               </figcaption>
             </div>
 
-            <!-- CARD BACK (SHONEN CHARACTER STATS SHEET) -->
+            <!-- CARD BACK (SHONEN DEVELOPER SPEC SHEET) -->
             <div class="pf-face pf-back" aria-hidden="true">
               <div class="pf-holo" aria-hidden="true"></div>
               <div class="pf-back-head">
-                <span class="pf-rarity">CHARACTER SHEET</span>
-                <span class="pf-card-no">VOL.01 · INK</span>
+                <span class="pf-rarity">DEV SPEC // SR</span>
+                <span class="pf-card-no">VOL.01 · git:main</span>
               </div>
 
               <div class="pf-back-id">
-                <strong>HOENG REAKSA</strong>
-                <span>CLASS: FULL-STACK BUILDER</span>
+                <div class="pf-id-row">
+                  <strong>HOENG REAKSA</strong>
+                  <span class="pf-handle">@poseidon9991</span>
+                </div>
+                <span>CLASS: FULL-STACK × MOD CRAFTER</span>
+              </div>
+
+              <div class="pf-code-box" aria-hidden="true">
+                <div class="pf-code-bar">
+                  <i></i><i></i><i></i>
+                  <span>profile.ts</span>
+                </div>
+                <pre><code><span class="ck">const</span> dev = &#123;
+  base: <span class="cs">"Phnom Penh, KH"</span>,
+  sync: <span class="cs">"offline-first PWA"</span>,
+  mods: <span class="cs">"Forge // 1,136+ DL"</span>
+&#125;;</code></pre>
               </div>
 
               <div class="pf-bars">
                 <div class="pf-bar-row"><span>FRONTEND</span><div class="pf-bar"><i style="width:94%"></i></div><b>94</b></div>
                 <div class="pf-bar-row"><span>BACKEND</span><div class="pf-bar"><i style="width:92%"></i></div><b>92</b></div>
-                <div class="pf-bar-row"><span>OFFLINE SYNC</span><div class="pf-bar"><i style="width:96%"></i></div><b>96</b></div>
-                <div class="pf-bar-row"><span>MC MODDING</span><div class="pf-bar"><i style="width:88%"></i></div><b>88</b></div>
+                <div class="pf-bar-row"><span>OFFLINE PWA</span><div class="pf-bar"><i style="width:96%"></i></div><b>96</b></div>
+                <div class="pf-bar-row"><span>JAVA MODS</span><div class="pf-bar"><i style="width:88%"></i></div><b>88</b></div>
               </div>
 
               <div class="pf-passive">
                 <em>PASSIVE // IDEMPOTENT SYNC</em>
-                <p>Orders queue safely offline and transmit once without duplicates.</p>
+                <p>Orders queue offline in IndexedDB; replay once to Laravel API with zero duplicates.</p>
               </div>
 
               <div class="pf-back-foot">
@@ -1002,15 +1055,18 @@ POST /verify  → check OTP at every login</pre>
         <div class="term-head" aria-hidden="true">
           <div class="term-dots"><i></i><i></i><i></i></div>
           <span class="term-title">CONSOLE.SH // インタラクティブ端末</span>
+          <span class="term-tab-hint">TAB: COMPLETE</span>
           <span class="term-live">INTERACTIVE</span>
         </div>
         <div class="quick-cmds" id="quickCmds" aria-label="Quick terminal commands">
           <button type="button" data-cmd="whoami">whoami</button>
           <button type="button" data-cmd="skills">skills</button>
+          <button type="button" data-cmd="mods">mods</button>
           <button type="button" data-cmd="repos">repos</button>
           <button type="button" data-cmd="badges">badges</button>
-          <button type="button" data-cmd="mods">mods</button>
-          <button type="button" data-cmd="manga">manga</button>
+          <button type="button" data-cmd="stats">stats</button>
+          <button type="button" data-cmd="flip">flip</button>
+          <button type="button" data-cmd="theme">theme</button>
           <button type="button" data-cmd="sudo hire-me">sudo hire-me</button>
           <button type="button" data-cmd="clear">clear</button>
         </div>
@@ -1018,7 +1074,7 @@ POST /verify  → check OTP at every login</pre>
           <div class="out" id="shellOut" aria-live="polite"></div>
           <div class="in-row">
             <span class="ps1" aria-hidden="true">❯</span>
-            <input id="shellIn" autocomplete="off" spellcheck="false" aria-label="Terminal input — type help" placeholder="type a command or click a pill above..." />
+            <input id="shellIn" autocomplete="off" spellcheck="false" aria-label="Terminal input — type help or press Tab to autocomplete" placeholder="type a command (help, open tacz, goto work, flip) or press Tab..." />
           </div>
         </div>
       </div>
@@ -1116,9 +1172,54 @@ POST /verify  → check OTP at every login</pre>
   </main>
 
   <button class="to-top" id="toTop" type="button" aria-label="Back to top" data-pop="HERO!">
-    <span>▲</span>
+    <svg class="ico-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
     <em>TOP</em>
   </button>
+
+  <!-- ═══════════ KEYBOARD SHORTCUTS HUD (?) ═══════════ -->
+  <div class="kb-hud" id="kbHud" role="dialog" aria-modal="true" aria-labelledby="kbHudTitle" hidden>
+    <div class="kb-backdrop" data-kb-close></div>
+    <div class="kb-card">
+      <div class="kb-head">
+        <span class="kb-title" id="kbHudTitle">
+          <svg class="ico-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M8 13h8"/></svg>
+          SHORTCUT HUD // 操作コマンド
+        </span>
+        <button type="button" class="kb-close" id="kbClose" aria-label="Close keyboard shortcuts" data-pop="CLOSE!">ESC</button>
+      </div>
+
+      <div class="kb-grid">
+        <div class="kb-col">
+          <h3>CHAPTER JUMP</h3>
+          <button type="button" class="kb-row" data-kb-act="go:top"><kbd>1</kbd><span>Hero Splash</span></button>
+          <button type="button" class="kb-row" data-kb-act="go:origin"><kbd>2</kbd><span>Origin &amp; Skills</span></button>
+          <button type="button" class="kb-row" data-kb-act="go:experience"><kbd>3</kbd><span>Story Arcs</span></button>
+          <button type="button" class="kb-row" data-kb-act="go:work"><kbd>4</kbd><span>Work &amp; CurseForge</span></button>
+          <button type="button" class="kb-row" data-kb-act="go:opensource"><kbd>5</kbd><span>GitHub Repos</span></button>
+          <button type="button" class="kb-row" data-kb-act="go:education"><kbd>6</kbd><span>Training &amp; Console</span></button>
+          <button type="button" class="kb-row" data-kb-act="go:contact"><kbd>7</kbd><span>Contact Finale</span></button>
+        </div>
+
+        <div class="kb-col">
+          <h3>VIEW &amp; ACTIONS</h3>
+          <button type="button" class="kb-row" data-kb-act="flip"><kbd>F</kbd><span>Flip Dev Profile Card</span></button>
+          <button type="button" class="kb-row" data-kb-act="theme"><kbd>T</kbd><span>Paper / Midnight Ink Mode</span></button>
+          <button type="button" class="kb-row" data-kb-act="sfx"><kbd>M</kbd><span>Mute / Unmute Pen SFX</span></button>
+          <button type="button" class="kb-row" data-kb-act="quote"><kbd>Q</kbd><span>Next Hero Quote</span></button>
+          <button type="button" class="kb-row" data-kb-act="shell"><kbd>/</kbd><span>Focus console.sh</span></button>
+          <button type="button" class="kb-row" data-kb-act="search"><kbd>S</kbd><span>Search GitHub Repos</span></button>
+          <button type="button" class="kb-row" data-kb-act="close"><kbd>?</kbd><span>Toggle This HUD</span></button>
+        </div>
+      </div>
+
+      <div class="kb-foot">
+        <span>PRO TIP: CLICK ANY ROW ABOVE TO TRIGGER · INSIDE CONSOLE: <b>TAB</b> AUTOCOMPLETE · <b>CTRL+L</b> CLEAR</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ KEYBOARD SHORTCUT TOAST ═══════════ -->
+  <div class="kb-toast" id="kbToast" aria-live="polite"></div>
 
   <style is:global>
     :root {
@@ -1530,10 +1631,12 @@ POST /verify  → check OTP at every login</pre>
     .cover-khmer { margin: 12px 0 4px; font-family: var(--font-khmer); font-weight: 600; font-size: 15px; color: var(--ink); }
     .cover-sub { margin: 0 0 16px; font-family: var(--font-comic); font-size: 16px; letter-spacing: 0.08em; color: var(--ink-muted); }
     .cover-checks { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
-    .cover-checks span { font-family: var(--font-comic); font-size: 13.5px; letter-spacing: 0.06em; padding: 3px 10px; background: var(--paper-alt); border: 2px solid var(--ink); color: var(--ink); }
+    .cover-checks span { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-comic); font-size: 13.5px; letter-spacing: 0.06em; padding: 3px 10px; background: var(--paper-alt); border: 2px solid var(--ink); color: var(--ink); }
+    .cover-checks span svg { color: var(--crimson); flex-shrink: 0; }
+    [data-theme="dark"] .cover-checks span svg { color: var(--yellow); }
     .cover-cta-wrap { display: inline-flex; align-items: center; gap: 12px; }
     .cover-cta {
-      display: inline-flex; align-items: center; padding: 12px 24px;
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
       background: var(--crimson); color: #FCFBF7; border: 3px solid var(--ink);
       box-shadow: 6px 6px 0 var(--shadow-ink); font-family: var(--font-display); font-size: 16px;
       letter-spacing: 0.05em; transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
@@ -1876,10 +1979,14 @@ POST /verify  → check OTP at every login</pre>
     .tilt-card { position: relative; transform-style: preserve-3d; will-change: transform; }
     .tilt-sheen {
       position: absolute; inset: 0; pointer-events: none; z-index: 3; opacity: 0;
-      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 212, 0, 0.22), transparent 58%);
+      background:
+        radial-gradient(circle 190px at var(--mx, 50%) var(--my, 50%), rgba(255, 212, 0, 0.25), transparent 60%),
+        linear-gradient(125deg, transparent 22%, rgba(230, 0, 46, 0.12) 48%, rgba(0, 229, 255, 0.1) 62%, transparent 82%);
+      mix-blend-mode: overlay;
       transition: opacity 0.2s ease;
     }
     .tilt-card:hover .tilt-sheen { opacity: 1; }
+    .manga-panel:hover .folio { background: var(--yellow); color: #111116; }
 
     /* ── Scroll Reveals ── */
     .js .reveal {
@@ -2036,13 +2143,19 @@ POST /verify  → check OTP at every login</pre>
       margin-bottom: 8px;
     }
     .pf-rarity {
+      display: inline-flex; align-items: center; gap: 5px;
       padding: 2px 8px; background: #111116; color: #FCFBF7;
       border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--shadow-ink);
       font-family: var(--font-comic); font-size: 13px; letter-spacing: 0.08em;
     }
+    .pf-dev-file {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.02em;
+      color: var(--yellow);
+    }
+    [data-theme="dark"] .pf-rarity { border-color: var(--yellow); }
     .pf-live {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-family: var(--font-comic); font-size: 12.5px; letter-spacing: 0.08em; color: var(--ink);
+      display: inline-flex; align-items: center; gap: 4px;
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.02em; color: var(--ink);
     }
     .pf-live i {
       width: 8px; height: 8px; border-radius: 50%; background: #22C55E;
@@ -2091,6 +2204,17 @@ POST /verify  → check OTP at every login</pre>
     }
     .portrait-frame:hover .portrait-halftone { opacity: 0.2; }
 
+    /* IDE Line-Number Gutter inside Manga Viewfinder */
+    .pf-gutter {
+      position: absolute; left: 4px; top: 34px; z-index: 4; pointer-events: none;
+      display: flex; flex-direction: column; gap: 3px;
+      font-family: var(--font-mono); font-size: 9px; font-weight: 700; line-height: 1.25;
+      color: rgba(252, 251, 247, 0.62);
+      text-shadow: 1px 1px 0 #111116;
+      opacity: 0.72; transition: opacity 0.2s ease, color 0.2s ease;
+    }
+    .hero-portrait:hover .pf-gutter { opacity: 1; color: var(--yellow); }
+
     .pf-holo-foil {
       position: absolute; inset: 0; pointer-events: none; z-index: 3; opacity: 0;
       background: radial-gradient(circle 160px at var(--mx) var(--my), rgba(255, 255, 255, 0.48), transparent 62%);
@@ -2117,11 +2241,27 @@ POST /verify  → check OTP at every login</pre>
 
     .pf-hint {
       position: absolute; top: 8px; left: 8px; z-index: 4; pointer-events: none;
-      padding: 2px 7px; background: rgba(17, 17, 22, 0.86); color: var(--yellow);
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 7px; background: rgba(17, 17, 22, 0.88); color: var(--yellow);
       border: 1.5px solid var(--yellow); font-family: var(--font-comic); font-size: 11px; letter-spacing: 0.08em;
       opacity: 0; transform: translateY(-4px); transition: opacity 0.18s ease, transform 0.18s ease;
     }
     .hero-portrait:hover .pf-hint { opacity: 1; transform: translateY(0); }
+
+    .pf-build-pill {
+      position: absolute; top: 8px; right: 8px; z-index: 4; pointer-events: none;
+      padding: 2px 6px; background: rgba(17, 17, 22, 0.85); color: #22E58A;
+      border: 1.5px solid #22E58A;
+      font-family: var(--font-mono); font-size: 9.5px; font-weight: 700; letter-spacing: 0.04em;
+    }
+
+    .pf-hud-cmd {
+      position: absolute; bottom: 8px; left: 8px; z-index: 4; pointer-events: none;
+      padding: 3px 8px; background: rgba(17, 17, 22, 0.88); color: #FCFBF7;
+      border: 1.5px solid rgba(252, 251, 247, 0.4);
+      font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .pf-hud-cmd em { font-style: normal; color: var(--yellow); font-weight: 700; margin-right: 3px; }
 
     .portrait-sfx {
       position: absolute; bottom: 8px; right: 8px; z-index: 4; padding: 2px 9px;
@@ -2130,10 +2270,35 @@ POST /verify  → check OTP at every login</pre>
       font-family: var(--font-comic); font-size: 14px; letter-spacing: 0.06em;
       transform: rotate(-6deg); transition: transform 0.18s cubic-bezier(0.2, 1.4, 0.35, 1), background 0.18s ease;
     }
-    .hero-portrait:hover .portrait-sfx { transform: rotate(-2deg) scale(1.08); }
+    .hero-portrait:hover .portrait-sfx { transform: rotate(-2deg) scale(1.08); background: var(--crimson); color: #FCFBF7; }
+
+    /* Dev Stack Strip integrated inside Profile Front */
+    .pf-dev-strip {
+      position: relative; z-index: 4; margin-top: 9px; padding: 5px 8px;
+      display: flex; align-items: center; justify-content: space-between; gap: 6px;
+      background: var(--paper-card); border: 2px solid var(--ink);
+      box-shadow: 2px 2px 0 var(--shadow-ink);
+    }
+    .pf-branch {
+      flex-shrink: 0; font-family: var(--font-comic); font-size: 12px; letter-spacing: 0.06em;
+      color: var(--crimson); white-space: nowrap;
+    }
+    [data-theme="dark"] .pf-branch { color: var(--yellow); }
+    .pf-tags {
+      display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px;
+    }
+    .pf-tags span {
+      padding: 1px 5px; background: var(--paper-alt); color: var(--ink);
+      border: 1.5px solid var(--ink);
+      font-family: var(--font-mono); font-size: 9.5px; font-weight: 700; letter-spacing: 0.03em;
+      line-height: 1.3;
+    }
+    .hero-portrait:hover .pf-tags span {
+      border-color: var(--crimson);
+    }
 
     .portrait-bubble {
-      position: absolute; top: -22px; left: -10px; z-index: 6; padding: 6px 12px;
+      position: absolute; top: -42px; left: 6px; z-index: 6; padding: 5px 11px;
       background: var(--paper-card); color: var(--ink); border: 3px solid var(--ink);
       border-radius: 14px; box-shadow: 4px 4px 0 var(--shadow-ink);
       transform: scale(0.86) rotate(-4deg); opacity: 0; pointer-events: none;
@@ -2144,13 +2309,20 @@ POST /verify  → check OTP at every login</pre>
     .hero-portrait:hover:not(.flipped) .portrait-bubble { opacity: 1; transform: scale(1) rotate(-3deg); }
 
     .pf-footer {
-      position: relative; z-index: 4; margin-top: 10px;
+      position: relative; z-index: 4; margin-top: 9px;
       display: flex; align-items: center; justify-content: space-between; gap: 8px;
     }
-    .pf-cap-txt {
-      font-family: var(--font-comic); font-size: 13.5px; letter-spacing: 0.06em; color: var(--ink);
+    .pf-cap-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 2px 6px; margin: -2px -6px;
+      background: transparent; border: 0; color: var(--ink); cursor: pointer;
+      font-family: var(--font-comic); font-size: 13.5px; letter-spacing: 0.06em;
+      transition: color 0.14s ease, transform 0.14s ease;
     }
+    .pf-cap-btn:hover { color: var(--crimson); transform: translateX(2px); }
+    [data-theme="dark"] .pf-cap-btn:hover { color: var(--yellow); }
     .mode-ping {
+      display: inline-flex; align-items: center; gap: 5px;
       padding: 4px 10px; background: #111116; color: var(--yellow); border: 2px solid var(--ink);
       box-shadow: 2px 2px 0 var(--shadow-ink);
       font-family: var(--font-comic); font-size: 13px; letter-spacing: 0.06em; text-align: center;
@@ -2162,38 +2334,68 @@ POST /verify  → check OTP at every login</pre>
     }
     .mode-ping:hover { background: var(--yellow); color: #111116; border-color: #111116; transform: translate(-1px, -2px); box-shadow: 3px 3px 0 var(--crimson); }
 
-    /* Card Back (Shonen Character Stats) */
+    /* Card Back (Shonen Developer Spec Sheet) */
     .pf-back-head {
       position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between;
-      padding-bottom: 8px; border-bottom: 2px dashed var(--ink);
+      padding-bottom: 6px; border-bottom: 2px dashed var(--ink);
     }
-    .pf-card-no { font-family: var(--font-comic); font-size: 13px; letter-spacing: 0.08em; color: var(--ink-muted); }
+    .pf-card-no { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink-muted); }
     .pf-back-id { position: relative; z-index: 3; }
-    .pf-back-id strong { display: block; font-family: var(--font-display); font-size: 20px; line-height: 1.05; color: var(--ink); }
-    .pf-back-id span { display: block; margin-top: 2px; font-family: var(--font-comic); font-size: 13px; letter-spacing: 0.08em; color: var(--crimson); }
-    [data-theme="dark"] .pf-back-id span { color: var(--yellow); }
+    .pf-id-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; flex-wrap: wrap; }
+    .pf-back-id strong { font-family: var(--font-display); font-size: 18px; line-height: 1.05; color: var(--ink); }
+    .pf-handle {
+      padding: 1px 6px; background: var(--yellow); color: #111116; border: 1.5px solid #111116;
+      font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    }
+    .pf-back-id > span { display: block; margin-top: 2px; font-family: var(--font-comic); font-size: 12.5px; letter-spacing: 0.08em; color: var(--crimson); }
+    [data-theme="dark"] .pf-back-id > span { color: var(--yellow); }
 
-    .pf-bars { position: relative; z-index: 3; display: flex; flex-direction: column; gap: 8px; }
-    .pf-bar-row { display: grid; grid-template-columns: 84px 1fr 24px; align-items: center; gap: 7px; font-family: var(--font-comic); font-size: 12.5px; letter-spacing: 0.05em; color: var(--ink); }
-    .pf-bar { height: 11px; background: var(--paper-card); border: 2px solid var(--ink); overflow: hidden; }
+    /* Mini Terminal Snippet inside Card Back */
+    .pf-code-box {
+      position: relative; z-index: 3;
+      background: #111116; color: #F4F0E6;
+      border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--shadow-ink);
+      overflow: hidden;
+    }
+    [data-theme="dark"] .pf-code-box { border-color: rgba(244, 240, 230, 0.35); }
+    .pf-code-bar {
+      display: flex; align-items: center; gap: 4px; padding: 3px 8px;
+      background: #1D1D28; border-bottom: 1.5px solid rgba(255, 255, 255, 0.12);
+    }
+    .pf-code-bar i { width: 6px; height: 6px; border-radius: 50%; display: block; }
+    .pf-code-bar i:nth-child(1) { background: #FF2955; }
+    .pf-code-bar i:nth-child(2) { background: #FFE033; }
+    .pf-code-bar i:nth-child(3) { background: #22E58A; }
+    .pf-code-bar span { margin-left: auto; font-family: var(--font-mono); font-size: 9.5px; color: #A6ABC2; }
+    .pf-code-box pre {
+      margin: 0; padding: 6px 8px;
+      font-family: var(--font-mono); font-size: 10.5px; line-height: 1.38;
+      overflow-x: auto; white-space: pre;
+    }
+    .pf-code-box .ck { color: #FF5A7A; font-weight: 700; }
+    .pf-code-box .cs { color: #FFE033; }
+
+    .pf-bars { position: relative; z-index: 3; display: flex; flex-direction: column; gap: 6px; }
+    .pf-bar-row { display: grid; grid-template-columns: 82px 1fr 22px; align-items: center; gap: 6px; font-family: var(--font-comic); font-size: 12px; letter-spacing: 0.05em; color: var(--ink); }
+    .pf-bar { height: 10px; background: var(--paper-card); border: 2px solid var(--ink); overflow: hidden; }
     .pf-bar i { display: block; height: 100%; background: repeating-linear-gradient(-45deg, var(--crimson) 0 6px, var(--yellow) 6px 12px); border-right: 1.5px solid #111116; }
-    .pf-bar-row b { text-align: right; color: var(--crimson); }
+    .pf-bar-row b { text-align: right; color: var(--crimson); font-family: var(--font-mono); font-size: 11px; }
     [data-theme="dark"] .pf-bar-row b { color: var(--yellow); }
 
     .pf-passive {
-      position: relative; z-index: 3; padding: 8px 10px;
+      position: relative; z-index: 3; padding: 7px 9px;
       background: var(--paper-card); border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--shadow-ink);
     }
-    .pf-passive em { display: block; font-style: normal; font-family: var(--font-comic); font-size: 12px; letter-spacing: 0.08em; color: var(--crimson); margin-bottom: 2px; }
+    .pf-passive em { display: block; font-style: normal; font-family: var(--font-comic); font-size: 11.5px; letter-spacing: 0.08em; color: var(--crimson); margin-bottom: 1px; }
     [data-theme="dark"] .pf-passive em { color: var(--yellow); }
-    .pf-passive p { margin: 0; font-size: 13px; line-height: 1.35; font-weight: 700; color: var(--ink-soft); }
+    .pf-passive p { margin: 0; font-size: 12px; line-height: 1.32; font-weight: 700; color: var(--ink-soft); }
 
     .pf-back-foot {
       position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 8px;
-      padding-top: 8px; border-top: 2px dashed var(--ink);
+      padding-top: 6px; border-top: 2px dashed var(--ink);
     }
-    .pf-trophies { font-family: var(--font-comic); font-size: 12px; letter-spacing: 0.05em; color: var(--ink); }
-    .pf-flip-cue { font-family: var(--font-comic); font-size: 12px; letter-spacing: 0.06em; color: var(--crimson); }
+    .pf-trophies { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-comic); font-size: 12px; letter-spacing: 0.05em; color: var(--ink); }
+    .pf-flip-cue { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-comic); font-size: 12px; letter-spacing: 0.06em; color: var(--crimson); }
     [data-theme="dark"] .pf-flip-cue { color: var(--yellow); }
 
     /* ── Spread 02: Bento Origin + Interactive Skill Arsenal ── */
@@ -2735,9 +2937,21 @@ POST /verify  → check OTP at every login</pre>
     .edu-card:hover .hanko { transform: rotate(-8deg) scale(1.16); background: var(--crimson); color: #FCFBF7; opacity: 1; }
 
     /* Terminal */
-    .manga-term { position: relative; z-index: 1; background: var(--term-bg); color: var(--term-ink); border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--shadow-ink); overflow: hidden; }
+    .manga-term {
+      position: relative; z-index: 1; background: var(--term-bg); color: var(--term-ink);
+      border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--shadow-ink); overflow: hidden;
+      transition: box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .manga-term.console-box:focus-within {
+      box-shadow: 9px 9px 0 var(--crimson);
+    }
+    .manga-term.console-box::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 2;
+      background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.024) 0 1px, transparent 1px 3px);
+    }
     .manga-term.compact { box-shadow: 4px 4px 0 var(--shadow-ink); }
     .term-head {
+      position: relative; z-index: 3;
       display: flex; align-items: center; gap: 10px; padding: 7px 12px;
       background: var(--ink); color: var(--paper-card); border-bottom: 2px solid rgba(255, 255, 255, 0.14);
       font-family: var(--font-comic); font-size: 14px; letter-spacing: 0.08em;
@@ -2748,25 +2962,117 @@ POST /verify  → check OTP at every login</pre>
     .term-dots i:nth-child(2) { background: var(--yellow); }
     .term-dots i:nth-child(3) { background: var(--cyan); }
     .term-title { flex: 1; }
+    .term-tab-hint {
+      padding: 1px 6px; border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #A6ABC2; font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    }
+    @media (max-width: 560px) { .term-tab-hint { display: none; } }
     .term-live { padding: 1px 7px; background: var(--crimson); color: #FCFBF7; font-size: 11px; }
     .quick-cmds {
+      position: relative; z-index: 3;
       display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 14px;
       background: rgba(255, 255, 255, 0.04); border-bottom: 1px dashed rgba(255, 255, 255, 0.16);
     }
     .quick-cmds button {
       padding: 3px 10px; background: #1D2132; color: var(--yellow);
       border: 1.5px solid rgba(255, 255, 255, 0.25); font-family: var(--font-mono); font-size: 11.5px; font-weight: 700;
-      transition: background 0.12s ease, color 0.12s ease;
+      transition: background 0.12s ease, color 0.12s ease, transform 0.12s ease;
     }
-    .quick-cmds button:hover { background: var(--crimson); color: #FCFBF7; border-color: var(--crimson); }
-    .shell { padding: 12px 16px; min-height: 120px; max-height: 210px; overflow-y: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.55; cursor: text; }
+    .quick-cmds button:hover { background: var(--crimson); color: #FCFBF7; border-color: var(--crimson); transform: translateY(-1px); }
+    .shell {
+      position: relative; z-index: 3;
+      padding: 12px 16px; min-height: 132px; max-height: 230px; overflow-y: auto;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.55; cursor: text;
+    }
     .shell .out div { white-space: pre-wrap; word-break: break-word; }
     .shell .line-in { color: var(--yellow); font-weight: 700; }
-    .shell .line-sfx { color: var(--crimson); font-weight: 700; }
+    .shell .line-sfx { color: #FF5A7A; font-weight: 700; }
+    .shell .line-ok { color: #22E58A; font-weight: 700; }
+    .shell .line-err { color: #FF5A7A; }
+    .shell .line-meta { color: #00E5FF; }
     .in-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
     .ps1 { color: var(--crimson); font-weight: 700; }
     .in-row input { flex: 1; background: transparent; border: 0; color: #FCFBF7; font: inherit; outline: none; }
     .code { margin: 0; padding: 14px 16px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.58; color: #EBF4FF; overflow-x: auto; }
+
+    /* ── Keyboard Shortcuts HUD (?) & Shortcut Toast ── */
+    .kb-pill { padding: 5px 10px; font-family: var(--font-display); font-size: 13px; }
+    .kb-pill[aria-expanded="true"] { background: var(--yellow); color: #111116; }
+
+    .kb-hud[hidden] { display: none; }
+    .kb-hud {
+      position: fixed; inset: 0; z-index: 240;
+      display: flex; align-items: center; justify-content: center; padding: 18px;
+    }
+    .kb-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(11, 13, 20, 0.72);
+      backdrop-filter: blur(4px);
+    }
+    .kb-card {
+      position: relative; z-index: 1; width: min(680px, 100%);
+      background: var(--paper-card); color: var(--ink);
+      border: 4px solid var(--ink); box-shadow: 10px 10px 0 var(--crimson);
+      animation: paneSnap 0.22s cubic-bezier(0.2, 1.2, 0.35, 1);
+    }
+    .kb-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 10px 16px; background: #111116; color: var(--yellow);
+      border-bottom: 3px solid var(--ink);
+    }
+    .kb-title {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-comic); font-size: 16px; letter-spacing: 0.08em;
+    }
+    .kb-close {
+      padding: 3px 10px; background: var(--crimson); color: #FCFBF7;
+      border: 2px solid #FCFBF7; font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      cursor: pointer; transition: transform 0.12s ease, background 0.12s ease;
+    }
+    .kb-close:hover { background: var(--yellow); color: #111116; border-color: var(--yellow); transform: translate(-1px, -1px); }
+    .kb-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;
+      padding: 18px;
+    }
+    @media (max-width: 620px) { .kb-grid { grid-template-columns: 1fr; gap: 12px; } }
+    .kb-col h3 {
+      margin: 0 0 10px; padding-bottom: 4px; border-bottom: 2px dashed var(--ink);
+      font-family: var(--font-comic); font-size: 14px; letter-spacing: 0.08em; color: var(--crimson);
+    }
+    [data-theme="dark"] .kb-col h3 { color: var(--yellow); }
+    .kb-row {
+      width: 100%; display: flex; align-items: center; gap: 10px;
+      padding: 6px 8px; margin-bottom: 6px;
+      background: var(--paper-alt); color: var(--ink);
+      border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--shadow-ink);
+      font-family: var(--font-body); font-size: 14px; font-weight: 700; text-align: left;
+      cursor: pointer; transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+    }
+    .kb-row:hover {
+      background: var(--yellow); color: #111116;
+      transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--crimson);
+    }
+    .kb-row kbd {
+      min-width: 26px; padding: 2px 7px; text-align: center;
+      background: #111116; color: var(--yellow); border: 1.5px solid #111116;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 700;
+    }
+    .kb-foot {
+      padding: 9px 16px; background: var(--paper-alt); border-top: 2px dashed var(--ink);
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--ink-muted);
+      text-align: center;
+    }
+
+    .kb-toast {
+      position: fixed; left: 50%; bottom: 22px; z-index: 230;
+      transform: translate(-50%, 16px) scale(0.92); opacity: 0; pointer-events: none;
+      padding: 6px 14px; background: #111116; color: var(--yellow);
+      border: 2.5px solid var(--yellow); box-shadow: 4px 4px 0 var(--crimson);
+      font-family: var(--font-comic); font-size: 15px; letter-spacing: 0.08em;
+      transition: opacity 0.16s ease, transform 0.18s cubic-bezier(0.2, 1.35, 0.35, 1);
+    }
+    .kb-toast.show { opacity: 1; transform: translate(-50%, 0) scale(1); }
 
     /* ── Final Chapter (Contact) ── */
     .finale-panel { overflow: hidden; text-align: center; }
@@ -2890,7 +3196,7 @@ POST /verify  → check OTP at every login</pre>
       .manga-panel { padding: 20px 18px 22px; }
       .panel-strip { margin: -20px -18px 16px; padding: 7px 14px; }
       .hero-spread { grid-template-columns: 1fr; }
-      .hero-portrait { order: -1; max-width: 280px; margin: 0 auto; }
+      .hero-portrait { order: -1; max-width: min(320px, 100%); margin: 0 auto; }
       .repo-grid, .contacts { grid-template-columns: 1fr; }
       .gh-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
       .gh-badges-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -3021,15 +3327,15 @@ POST /verify  → check OTP at every login</pre>
         sfxBtn.textContent = sfxOn ? 'SFX:ON' : 'SFX:OFF';
         sfxBtn.setAttribute('aria-pressed', String(sfxOn));
       };
+      const setSfxMode = (mode) => {
+        sfxOn = mode === 'on' ? true : mode === 'off' ? false : !sfxOn;
+        try { localStorage.setItem('hr_sfx', sfxOn ? 'on' : 'off'); } catch (e) {}
+        syncSfxBtn();
+        if (sfxOn) penSfx.tap();
+        return sfxOn;
+      };
       syncSfxBtn();
-      if (sfxBtn) {
-        sfxBtn.addEventListener('click', () => {
-          sfxOn = !sfxOn;
-          try { localStorage.setItem('hr_sfx', sfxOn ? 'on' : 'off'); } catch (e) {}
-          syncSfxBtn();
-          if (sfxOn) penSfx.tap();
-        });
-      }
+      if (sfxBtn) sfxBtn.addEventListener('click', () => setSfxMode('toggle'));
 
       /* ── Compact Mangaka G-Pen Cursor + Anime Running Dust, Dirt Debris & Pen SFX Glyphs ── */
       const fxCanvas = document.getElementById('fxCanvas');
@@ -3339,6 +3645,10 @@ POST /verify  → check OTP at every login</pre>
         const max = Math.max(1, ...Object.values(counts));
         if (totalEl && total > 0) totalEl.textContent = total.toLocaleString('en-US');
         if (heroCfEl && total > 0) heroCfEl.textContent = total.toLocaleString('en-US') + '+ Mod Downloads';
+        const pfTr = document.querySelector('.pf-trophies');
+        if (pfTr && total > 0 && pfTr.lastChild && pfTr.lastChild.nodeType === 3) {
+          pfTr.lastChild.textContent = ' 5 GH BADGES · ' + total.toLocaleString('en-US') + '+ DL';
+        }
 
         cards.forEach(card => {
           const slug = card.getAttribute('data-cf-slug');
@@ -3391,16 +3701,13 @@ POST /verify  → check OTP at every login</pre>
         const rect = pfCard.getBoundingClientRect();
         const cx = (e && e.clientX) ? e.clientX : rect.left + rect.width / 2;
         const cy = (e && e.clientY) ? e.clientY : rect.top + rect.height / 2;
-        spawnPop(cx, cy, flipped ? 'STATS!' : 'FRONT!');
+        spawnPop(cx, cy, flipped ? 'DEV SPEC!' : 'FRONT!');
+        return flipped;
       };
       if (pfCard) {
         pfCard.addEventListener('click', (e) => {
-          if (e.target.closest('button, a')) return;
+          if (e.target.closest('a, #quoteCycle')) return;
           togglePfFlip(e);
-        });
-        pfCard.addEventListener('keydown', (e) => {
-          if (e.target !== pfCard) return;
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePfFlip(); }
         });
       }
 
@@ -3586,18 +3893,19 @@ POST /verify  → check OTP at every login</pre>
       const quoteBtn = document.getElementById('quoteCycle');
       const heroQuote = document.getElementById('heroQuote');
       const portraitBubble = document.getElementById('portraitBubble');
-      if (quoteBtn && heroQuote) {
-        quoteBtn.addEventListener('click', () => {
-          qi = (qi + 1) % QUOTES.length;
-          heroQuote.innerHTML = QUOTES[qi].q;
-          if (portraitBubble) {
-            const s = portraitBubble.querySelector('span');
-            const em = portraitBubble.querySelector('em');
-            if (s) s.textContent = QUOTES[qi].b1;
-            if (em) em.textContent = QUOTES[qi].b2;
-          }
-        });
-      }
+      const cycleHeroQuote = () => {
+        if (!heroQuote) return;
+        qi = (qi + 1) % QUOTES.length;
+        heroQuote.innerHTML = QUOTES[qi].q;
+        if (portraitBubble) {
+          const s = portraitBubble.querySelector('span');
+          const em = portraitBubble.querySelector('em');
+          const cfTot = (document.getElementById('cfTotalDl') || {}).textContent || '1,136';
+          if (s) s.textContent = qi === 2 ? (cfTot + '+ DOWNLOADS!') : QUOTES[qi].b1;
+          if (em) em.textContent = QUOTES[qi].b2;
+        }
+      };
+      if (quoteBtn && heroQuote) quoteBtn.addEventListener('click', cycleHeroQuote);
 
       /* ── Origin Story Beat Tabs ── */
       const beatTabs = document.getElementById('beatTabs');
@@ -3665,7 +3973,11 @@ POST /verify  → check OTP at every login</pre>
           const tab = e.target.closest('.ch-tab');
           if (!tab) return;
           const view = tab.getAttribute('data-view');
-          card.querySelectorAll('.ch-tab').forEach(t => t.classList.toggle('active', t === tab));
+          card.querySelectorAll('.ch-tab').forEach(t => {
+            const on = t === tab;
+            t.classList.toggle('active', on);
+            t.setAttribute('aria-selected', String(on));
+          });
           card.querySelectorAll('.ch-pane').forEach(p => p.classList.toggle('active', p.getAttribute('data-pane') === view));
         });
       });
@@ -3695,7 +4007,55 @@ POST /verify  → check OTP at every login</pre>
         } catch (e) { v.textContent = '000001'; }
       }
 
-      /* ── Interactive Console (console.sh) ── */
+      /* ── Shortcut Toast + Shared Theme / Jump Helpers ── */
+      const kbToast = document.getElementById('kbToast');
+      let toastTimer = null;
+      const showToast = (msg) => {
+        if (!kbToast || !msg) return;
+        kbToast.textContent = msg;
+        kbToast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => kbToast.classList.remove('show'), 1400);
+      };
+
+      const jumpToSec = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        closeMenu();
+        triggerSlash((SEC_NAMES[id] || id.toUpperCase()) + '!!');
+        el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        return true;
+      };
+
+      /* ── Paper / Ink Theme Toggle ── */
+      const themeBtn = document.getElementById('themeToggle');
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      let theme = 'light';
+      try {
+        theme = localStorage.getItem('hr_theme') ||
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch (e) {}
+      const applyTheme = () => {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0B0D14' : '#F5F0E4');
+        if (themeBtn) {
+          themeBtn.setAttribute('aria-pressed', String(theme === 'dark'));
+          themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light paper mode' : 'Switch to dark ink mode');
+        }
+      };
+      const setThemeMode = (mode) => {
+        theme = (mode === 'dark' || mode === 'ink') ? 'dark'
+          : (mode === 'light' || mode === 'paper') ? 'light'
+          : (theme === 'dark' ? 'light' : 'dark');
+        try { localStorage.setItem('hr_theme', theme); } catch (e) {}
+        applyTheme();
+        penSfx.stamp();
+        return theme;
+      };
+      applyTheme();
+      if (themeBtn) themeBtn.addEventListener('click', () => setThemeMode('toggle'));
+
+      /* ── Smarter Interactive Console (console.sh) ── */
       const out = document.getElementById('shellOut');
       const inp = document.getElementById('shellIn');
       const wrap = document.getElementById('shell');
@@ -3710,9 +4070,34 @@ POST /verify  → check OTP at every login</pre>
           wrap.scrollTop = wrap.scrollHeight;
           return d;
         };
+        const SEC_MAP = {
+          hero: 'top', top: 'top', origin: 'origin', skills: 'origin',
+          arcs: 'experience', experience: 'experience', exp: 'experience',
+          work: 'work', mods: 'curseforge', curseforge: 'curseforge',
+          repos: 'opensource', github: 'opensource', opensource: 'opensource',
+          edu: 'education', education: 'education', console: 'education',
+          contact: 'contact', end: 'contact'
+        };
+        const OPEN_URLS = {
+          github: 'https://github.com/Poseidon9991',
+          curseforge: 'https://www.curseforge.com/members/reaksa9991mc/projects',
+          tacz: 'https://www.curseforge.com/minecraft/mc-mods/tacz-fracture-points-backpack-compatibility-addon',
+          zombie: 'https://www.curseforge.com/minecraft/mc-mods/zombie-custom-drops',
+          traveler: 'https://www.curseforge.com/minecraft/mc-mods/tacz-travelers-backpack-compatibility-addon',
+          arcade: 'https://github.com/Poseidon9991/flashgame_retro_emulator_game',
+          linkedin: 'https://www.linkedin.com/in/hoeng-reaksa-48b5842b3',
+          telegram: 'https://t.me/ReaksaNamikaze'
+        };
+        const MOD_NAMES = {
+          'tacz-fracture-points-backpack-compatibility-addon': '[TaCZ] Fracture Point\'s BackPack Addon',
+          'zombie-custom-drops': 'Configurable Zombie Drops',
+          'tacz-travelers-backpack-compatibility-addon': '[TaCZ] Traveler\'s Backpack Addon'
+        };
         const CMDS = {
           help: () => [
-            'available commands: whoami · skills · projects · repos · badges · mods · contact · manga · clear · sudo hire-me'
+            { t: 'info   : whoami · skills · projects · repos · badges · mods · stats · contact', c: 'line-meta' },
+            { t: 'control: goto <sec> · open <target> · flip · theme [dark|light] · sfx [on|off]', c: 'line-ok' },
+            { t: 'shell  : echo <msg> · ls · pwd · date · manga · sudo hire-me · clear (Ctrl+L)', c: '' }
           ],
           whoami: () => [
             'hoeng_reaksa · full-stack developer · phnom penh, kh',
@@ -3748,34 +4133,90 @@ POST /verify  → check OTP at every login</pre>
           ],
           mods: () => {
             const tot = (document.getElementById('cfTotalDl') || {}).textContent || '1,136';
+            const rows = [...document.querySelectorAll('.cf-card[data-cf-slug]')].map((c, idx) => {
+              const slug = c.getAttribute('data-cf-slug');
+              const dl = (c.querySelector('.cf-dl-num') || {}).textContent || '0';
+              const pct = (c.querySelector('.cf-dl-pct') || {}).textContent || '';
+              return `  ${idx + 1}. ${(MOD_NAMES[slug] || slug).padEnd(40)} ${dl} DL ${pct ? '(' + pct + ')' : ''}`;
+            });
             return [
-              'CurseForge creator: Reaksa9991MC (' + tot + ' total downloads)',
-              '  1. [TaCZ] Fracture Point\'s BackPack Addon  — 575+ DL',
-              '  2. Configurable Zombie Drops               — 290+ DL',
-              '  3. [TaCZ] Traveler\'s Backpack Addon        — 271+ DL',
+              { t: `CurseForge creator: Reaksa9991MC (${tot} total downloads)`, c: 'line-ok' },
+              ...rows,
               '→ curseforge.com/members/reaksa9991mc/projects'
             ];
           },
-          contact: () => [
-            'email: hongraksa097@gmail.com | tg: t.me/ReaksaNamikaze | gh: Poseidon9991'
+          stats: () => {
+            const gh = [...document.querySelectorAll('#ghTiles .gh-tile b')].map(b => b.textContent);
+            const tot = (document.getElementById('cfTotalDl') || {}).textContent || '1,136';
+            return [
+              { t: `github     : ${gh[0] || '10'} repos · ${gh[1] || '0'} stars · ${gh[2] || '3'} followers`, c: 'line-meta' },
+              { t: `curseforge : ${tot} downloads across 3 mods`, c: 'line-ok' },
+              `ui state   : theme=${theme} · sfx=${sfxOn ? 'on' : 'off'} · card=${pfCard && pfCard.classList.contains('flipped') ? 'spec' : 'front'}`
+            ];
+          },
+          flip: () => {
+            const on = togglePfFlip();
+            return [{ t: `✓ flipped dev card → ${on ? 'DEV SPEC SHEET' : 'PORTRAIT FRONT'}`, c: 'line-ok' }];
+          },
+          theme: (arg) => {
+            const next = setThemeMode(arg || 'toggle');
+            showToast('THEME // ' + (next === 'dark' ? 'INK DARK' : 'PAPER LIGHT'));
+            return [{ t: `✓ theme switched to ${next === 'dark' ? 'Midnight Ink (dark)' : 'Shonen Paper (light)'}`, c: 'line-ok' }];
+          },
+          sfx: (arg) => {
+            const on = setSfxMode(arg || 'toggle');
+            showToast('PEN SFX // ' + (on ? 'ON' : 'MUTED'));
+            return [{ t: `✓ manga pen SFX: ${on ? 'ON' : 'OFF'}`, c: 'line-ok' }];
+          },
+          goto: (arg) => {
+            const key = (arg || '').toLowerCase();
+            const target = SEC_MAP[key];
+            if (!target) return [{ t: 'usage: goto <' + Object.keys(SEC_MAP).slice(0, 8).join('|') + '>', c: 'line-err' }];
+            jumpToSec(target);
+            return [{ t: `✓ jumped to #${target}`, c: 'line-ok' }];
+          },
+          open: (arg) => {
+            const key = (arg || '').toLowerCase();
+            const url = OPEN_URLS[key];
+            if (!url) return [{ t: 'targets: ' + Object.keys(OPEN_URLS).join(' · '), c: 'line-meta' }];
+            window.open(url, '_blank', 'noopener');
+            return [{ t: `↗ opening ${url}`, c: 'line-ok' }];
+          },
+          ls: () => [
+            { t: 'top/  origin/  experience/  work/  curseforge/  repos/  education/  contact/', c: 'line-meta' }
           ],
+          pwd: () => ['/manga/vol-01/hoeng-reaksa'],
+          date: () => [new Date().toString()],
+          echo: (arg) => [arg || ''],
           manga: () => {
             triggerSlash('SLASH!!');
-            return ['[SFX] Speedlines engaged — MANGA SLASH TRIGGERED'];
+            return [{ t: '[SFX] Speedlines engaged — MANGA SLASH TRIGGERED', c: 'line-sfx' }];
           },
           'sudo hire-me': () => {
             triggerSlash('HIRED!!');
-            return ['permission granted ✓ initiating handshake → hongraksa097@gmail.com'];
-          },
+            return [{ t: 'permission granted ✓ initiating handshake → hongraksa097@gmail.com', c: 'line-ok' }];
+          }
         };
+        const CMD_NAMES = [...Object.keys(CMDS), 'clear'];
         const run = (raw, echo = true) => {
-          const cmd = raw.trim();
-          if (echo) line('❯ ' + cmd, 'line-in');
-          if (!cmd) return;
-          if (cmd === 'clear') { out.innerHTML = ''; return; }
+          const clean = raw.trim();
+          if (echo) line('❯ ' + clean, 'line-in');
+          if (!clean) return;
+          const lower = clean.toLowerCase();
+          if (lower === 'clear' || lower === 'cls') { out.innerHTML = ''; return; }
+          if (lower === 'sudo hire-me') {
+            CMDS['sudo hire-me']().forEach(item => line(typeof item === 'string' ? item : item.t, item.c || ''));
+            return;
+          }
+          const parts = clean.split(/\s+/);
+          const cmd = parts[0].toLowerCase();
+          const arg = parts.slice(1).join(' ');
           const fn = CMDS[cmd];
-          if (fn) fn().forEach(l => line(l, cmd === 'manga' ? 'line-sfx' : ''));
-          else line("command not found: " + cmd + "  (try 'help')");
+          if (fn) {
+            fn(arg).forEach(item => line(typeof item === 'string' ? item : item.t, item.c || ''));
+          } else {
+            line("command not found: " + clean + "  (try 'help' or press Tab)", 'line-err');
+          }
         };
         if (quickCmds) {
           quickCmds.addEventListener('click', e => {
@@ -3790,14 +4231,48 @@ POST /verify  → check OTP at every login</pre>
           (async () => {
             await sleep(260);
             run('whoami');
-            await sleep(200);
-            run('mods');
             await sleep(180);
-            line("— tap a command above, or type help —");
+            run('mods');
+            await sleep(160);
+            line("— tap a pill above, press Tab to autocomplete, or '?' for shortcuts —", 'line-meta');
           })();
         };
         const hist = []; let hi = 0;
         inp.addEventListener('keydown', e => {
+          if (e.key === 'l' && e.ctrlKey) {
+            e.preventDefault();
+            out.innerHTML = '';
+            return;
+          }
+          if (e.key === 'Tab') {
+            e.preventDefault();
+            const val = inp.value.trimStart();
+            const low = val.toLowerCase();
+            if (low.startsWith('goto ')) {
+              const sub = low.slice(5);
+              const hits = Object.keys(SEC_MAP).filter(k => k.startsWith(sub));
+              if (hits.length === 1) inp.value = 'goto ' + hits[0];
+              else if (hits.length > 1) line('sections: ' + hits.join(' · '), 'line-meta');
+              return;
+            }
+            if (low.startsWith('open ')) {
+              const sub = low.slice(5);
+              const hits = Object.keys(OPEN_URLS).filter(k => k.startsWith(sub));
+              if (hits.length === 1) inp.value = 'open ' + hits[0];
+              else if (hits.length > 1) line('targets: ' + hits.join(' · '), 'line-meta');
+              return;
+            }
+            if (low.startsWith('theme ')) {
+              const sub = low.slice(6);
+              const hits = ['dark', 'light', 'toggle'].filter(k => k.startsWith(sub));
+              if (hits.length === 1) inp.value = 'theme ' + hits[0];
+              return;
+            }
+            const hits = CMD_NAMES.filter(c => c.startsWith(low));
+            if (hits.length === 1) inp.value = hits[0] + (['goto', 'open', 'theme', 'sfx', 'echo'].includes(hits[0]) ? ' ' : '');
+            else if (hits.length > 1) line('matches: ' + hits.join(' · '), 'line-meta');
+            return;
+          }
           if (e.key === 'Enter') {
             penSfx.tap();
             const val = inp.value;
@@ -3811,30 +4286,6 @@ POST /verify  → check OTP at every login</pre>
         });
         wrap.addEventListener('click', () => inp.focus());
       }
-
-      /* ── Paper / Ink Theme Toggle ── */
-      const themeBtn = document.getElementById('themeToggle');
-      const themeMeta = document.querySelector('meta[name="theme-color"]');
-      let theme = 'light';
-      try {
-        theme = localStorage.getItem('hr_theme') ||
-          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      } catch (e) {}
-      const applyTheme = () => {
-        document.documentElement.setAttribute('data-theme', theme);
-        if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0B0D14' : '#F5F0E4');
-        if (themeBtn) {
-          themeBtn.setAttribute('aria-pressed', String(theme === 'dark'));
-          themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light paper mode' : 'Switch to dark ink mode');
-        }
-      };
-      applyTheme();
-      if (themeBtn) themeBtn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        try { localStorage.setItem('hr_theme', theme); } catch (e) {}
-        applyTheme();
-        penSfx.stamp();
-      });
 
       /* ── Public GitHub Repos (Search + Filter + Live Telemetry) ── */
       const REPO_FALLBACK_DESCS = {
@@ -3987,6 +4438,76 @@ POST /verify  → check OTP at every login</pre>
         } catch (e) { fail(); }
       })();
 
+      /* ── Graceful Fallback if CDN Devicons Fail Offline ── */
+      document.querySelectorAll('#skillDeck img').forEach(img => {
+        img.addEventListener('error', () => { img.style.display = 'none'; }, { once: true });
+      });
+
+      /* ── Keyboard Shortcuts HUD (?) & Global Hotkeys ── */
+      const kbHud = document.getElementById('kbHud');
+      const kbBtn = document.getElementById('kbBtn');
+      const kbClose = document.getElementById('kbClose');
+      const setKbOpen = (open) => {
+        if (!kbHud) return;
+        kbHud.hidden = !open;
+        if (kbBtn) kbBtn.setAttribute('aria-expanded', String(open));
+        if (open) penSfx.flip();
+      };
+      const runAction = (act) => {
+        if (!act) return;
+        if (act === 'close') { setKbOpen(false); return; }
+        if (act.startsWith('go:')) {
+          setKbOpen(false);
+          const id = act.slice(3);
+          jumpToSec(id);
+          showToast('CHAPTER // ' + (SEC_NAMES[id] || id.toUpperCase()));
+          return;
+        }
+        if (act === 'flip') {
+          setKbOpen(false);
+          const flipped = togglePfFlip();
+          showToast('DEV CARD // ' + (flipped ? 'SPEC SHEET' : 'PORTRAIT'));
+          return;
+        }
+        if (act === 'theme') {
+          const next = setThemeMode('toggle');
+          showToast('THEME // ' + (next === 'dark' ? 'INK DARK' : 'PAPER LIGHT'));
+          return;
+        }
+        if (act === 'sfx') {
+          const on = setSfxMode('toggle');
+          showToast('PEN SFX // ' + (on ? 'ON' : 'MUTED'));
+          return;
+        }
+        if (act === 'quote') {
+          setKbOpen(false);
+          cycleHeroQuote();
+          penSfx.tap();
+          showToast('HERO LINE // UPDATED');
+          return;
+        }
+        if (act === 'shell') {
+          setKbOpen(false);
+          const el = document.getElementById('shellIn');
+          if (el) { el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' }); el.focus(); showToast('CONSOLE.SH // READY'); }
+          return;
+        }
+        if (act === 'search') {
+          setKbOpen(false);
+          if (searchIn) { searchIn.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' }); searchIn.focus(); showToast('REPOS // SEARCH'); }
+          return;
+        }
+      };
+      if (kbBtn) kbBtn.addEventListener('click', () => setKbOpen(kbHud ? kbHud.hidden : false));
+      if (kbClose) kbClose.addEventListener('click', () => setKbOpen(false));
+      if (kbHud) {
+        kbHud.addEventListener('click', e => {
+          if (e.target.closest('[data-kb-close]')) { setKbOpen(false); return; }
+          const row = e.target.closest('[data-kb-act]');
+          if (row) runAction(row.getAttribute('data-kb-act'));
+        });
+      }
+
       /* ── Manga Volume Cover Entry ── */
       const cover = document.getElementById('cover');
       const coverCard = document.getElementById('coverCard');
@@ -3997,7 +4518,15 @@ POST /verify  → check OTP at every login</pre>
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
         shellBootStart();
       };
-      if (cover) {
+      const skipCover = () => {
+        opened = true;
+        document.body.classList.remove('covering');
+        if (cover) cover.remove();
+        startExperience();
+      };
+      let hadOpened = false;
+      try { hadOpened = sessionStorage.getItem('hr_opened') === '1'; } catch (e) {}
+      if (cover && !hadOpened && !location.hash) {
         document.body.classList.add('covering');
         if (finePointer && !reduced && coverCard) {
           cover.addEventListener('pointermove', e => {
@@ -4010,6 +4539,7 @@ POST /verify  → check OTP at every login</pre>
         const openManga = () => {
           if (opened) return;
           opened = true;
+          try { sessionStorage.setItem('hr_opened', '1'); } catch (e) {}
           triggerSlash('CHAPTER 01!!');
           document.body.classList.remove('covering');
           cover.classList.add('done');
@@ -4022,8 +4552,33 @@ POST /verify  → check OTP at every login</pre>
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openManga(); }
         });
       } else {
-        startExperience();
+        skipCover();
       }
+
+      const CHAPTER_KEYS = { '1': 'top', '2': 'origin', '3': 'experience', '4': 'work', '5': 'opensource', '6': 'education', '7': 'contact' };
+      document.addEventListener('keydown', e => {
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
+        if (e.key === 'Escape') {
+          if (kbHud && !kbHud.hidden) setKbOpen(false);
+          if (document.activeElement && (document.activeElement.id === 'shellIn' || document.activeElement.id === 'repoSearch')) {
+            document.activeElement.blur();
+          }
+          return;
+        }
+        if (!opened) return;
+        const ae = document.activeElement;
+        const typing = ae && (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.tagName === 'SELECT' || ae.isContentEditable);
+        if (typing) return;
+        if (e.key === '?') { e.preventDefault(); setKbOpen(kbHud ? kbHud.hidden : false); return; }
+        if (e.key === '/') { e.preventDefault(); runAction('shell'); return; }
+        if (CHAPTER_KEYS[e.key]) { e.preventDefault(); runAction('go:' + CHAPTER_KEYS[e.key]); return; }
+        const k = e.key.toLowerCase();
+        if (k === 'f') { e.preventDefault(); runAction('flip'); }
+        else if (k === 't') { e.preventDefault(); runAction('theme'); }
+        else if (k === 'm') { e.preventDefault(); runAction('sfx'); }
+        else if (k === 'q') { e.preventDefault(); runAction('quote'); }
+        else if (k === 's') { e.preventDefault(); runAction('search'); }
+      });
     })();
   </script>
 </body>
