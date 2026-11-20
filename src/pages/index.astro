@@ -37,39 +37,96 @@ import '@fontsource/kantumruy-pro/600.css';
   <!-- ═══════════ ANIME RUNNING DUST, DIRT DEBRIS & PEN SFX CANVAS ═══════════ -->
   <canvas id="fxCanvas" aria-hidden="true"></canvas>
 
-  <!-- ═══════════ COMPACT MANGAKA G-PEN NIB (22×22px) ═══════════ -->
+  <!-- ═══════════ COMPACT MANGAKA G-PEN + DEV TARGET CURSOR ═══════════ -->
   <div class="manga-cursor" id="mCursor" aria-hidden="true">
+    <!-- Rotating Tech × Shonen Lock-On Reticle (appears on interactive hover) -->
+    <svg class="gpen-reticle" viewBox="0 0 40 40" width="38" height="38" fill="none">
+      <circle cx="20" cy="20" r="14" stroke="var(--crimson)" stroke-width="2" stroke-dasharray="6 4"/>
+      <circle cx="20" cy="20" r="9" stroke="var(--yellow)" stroke-width="1.4" stroke-dasharray="3 3"/>
+      <path d="M20 2v5M20 33v5M2 20h5M33 20h5" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
     <svg class="gpen-svg" viewBox="0 0 26 26" width="22" height="22" fill="none">
-      <!-- Ink spark at nib tip on interactive hover -->
-      <circle class="gpen-drop" cx="2.2" cy="2.2" r="2.1" fill="var(--yellow)" stroke="#111116" stroke-width="1.3"/>
+      <!-- Charged ink spark at nib tip on interactive hover -->
+      <circle class="gpen-drop" cx="2.2" cy="2.2" r="2.6" fill="var(--yellow)" stroke="#111116" stroke-width="1.3"/>
       <!-- Short compact crimson grip stub -->
-      <path d="M13.5 11 L23.5 20.5 C24.4 21.4 24.3 22.8 23.3 23.6 C22.4 24.3 21 24.2 20 23.2 L10.8 13.8 Z" fill="#E6002E" stroke="#111116" stroke-width="2" stroke-linejoin="round"/>
+      <path class="gpen-grip" d="M13.5 11 L23.5 20.5 C24.4 21.4 24.3 22.8 23.3 23.6 C22.4 24.3 21 24.2 20 23.2 L10.8 13.8 Z" fill="#E6002E" stroke="#111116" stroke-width="2" stroke-linejoin="round"/>
       <!-- Gold ferrule collar -->
-      <path d="M9.8 12.6 L12.6 9.8 L15.4 12.6 L12.6 15.4 Z" fill="#FFD400" stroke="#111116" stroke-width="1.8" stroke-linejoin="miter"/>
+      <path class="gpen-collar" d="M9.8 12.6 L12.6 9.8 L15.4 12.6 L12.6 15.4 Z" fill="#FFD400" stroke="#111116" stroke-width="1.8" stroke-linejoin="miter"/>
       <!-- Compact Steel G-Pen Nib -->
-      <path d="M1.6 1.6 L11.2 4.4 L13.2 9.8 L9.8 13.2 L4.4 11.2 Z" fill="#FCFBF7" stroke="#111116" stroke-width="2" stroke-linejoin="miter"/>
+      <path class="gpen-blade" d="M1.6 1.6 L11.2 4.4 L13.2 9.8 L9.8 13.2 L4.4 11.2 Z" fill="#FCFBF7" stroke="#111116" stroke-width="2" stroke-linejoin="miter"/>
       <!-- G-Pen Slit + Breather Hole -->
       <path d="M2 2 L7.8 7.8" stroke="#111116" stroke-width="1.5" stroke-linecap="round"/>
       <circle cx="8.2" cy="8.2" r="1.4" fill="#111116"/>
     </svg>
-    <span class="gpen-sfx" id="gpenSfx">カリッ!</span>
+    <span class="gpen-sfx" id="gpenSfx">[ カリッ! ]</span>
   </div>
 
-  <!-- ═══════════ MANGA WORLD 3D BACKDROP ═══════════ -->
+  <!-- ═══════════ IT × MANGA 3D STORYBOARD BACKDROP ═══════════ -->
   <div class="manga-bg" aria-hidden="true"></div>
   <div class="manga-stage-3d" id="mangaStage3d" aria-hidden="true">
     <div class="stage-grid-3d"></div>
-    <div class="bg-panel-3d bp-1"><span>CH.01</span></div>
-    <div class="bg-panel-3d bp-2"><span>VOL.01</span></div>
-    <div class="bg-panel-3d bp-3"><span>INK//3D</span></div>
+
+    <!-- Panel 1: IDE Code Storyboard -->
+    <div class="bg-panel-3d bp-1">
+      <div class="bp-head"><i></i><i></i><i></i><span>sync.worker.ts</span></div>
+      <div class="bp-code">
+        <p><em>01</em> <b>async</b> flushQueue() &#123;</p>
+        <p><em>02</em>   <b>const</b> tx = idb.read();</p>
+        <p><em>03</em>   <b>await</b> post('/sync', tx);</p>
+        <p><em>04</em>   <b>return</b> 200; // OK</p>
+        <p><em>05</em> &#125;</p>
+      </div>
+      <div class="bp-foot"><span>PWA // IDEMPOTENT</span><b>CH.01</b></div>
+    </div>
+
+    <!-- Panel 2: Git Branch Graph & CI Telemetry -->
+    <div class="bg-panel-3d bp-2">
+      <div class="bp-head"><i></i><i></i><i></i><span>git:main · CI</span></div>
+      <svg class="bp-git-svg" viewBox="0 0 200 72" fill="none">
+        <path d="M18 22 H182" stroke="currentColor" stroke-width="2.2" opacity="0.55"/>
+        <path d="M52 22 C70 22 72 52 94 52 H138 C154 52 158 22 174 22" stroke="var(--crimson)" stroke-width="2.2"/>
+        <circle cx="24" cy="22" r="5" fill="var(--yellow)" stroke="currentColor" stroke-width="2"/>
+        <circle cx="52" cy="22" r="5" fill="var(--crimson)" stroke="currentColor" stroke-width="2"/>
+        <circle cx="98" cy="52" r="5" fill="var(--cyan)" stroke="currentColor" stroke-width="2"/>
+        <circle cx="136" cy="52" r="5" fill="var(--cyan)" stroke="currentColor" stroke-width="2"/>
+        <circle cx="174" cy="22" r="6" fill="var(--yellow)" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <div class="bp-metrics">
+        <span>BUILD: PASS</span>
+        <span>0 ERR</span>
+      </div>
+      <div class="bp-foot"><span>ARCH // GRAPH</span><b>VOL.01</b></div>
+    </div>
+
+    <!-- Panel 3: REST API & Forge Mod Card -->
+    <div class="bg-panel-3d bp-3">
+      <div class="bp-head"><i></i><i></i><i></i><span>api · forge</span></div>
+      <div class="bp-code">
+        <p><em>POST</em> /api/v1/orders</p>
+        <p><em>201</em> &#123; dup: 0 &#125;</p>
+        <p><em>MOD</em> Forge 1.20.1</p>
+      </div>
+      <div class="bp-foot"><span>DEV // 3D</span><b>P.03</b></div>
+    </div>
+
+    <!-- Panel 4: Live System Signal Bars -->
+    <div class="bg-panel-3d bp-4">
+      <div class="bp-head"><i></i><i></i><i></i><span>sys.mon</span></div>
+      <div class="bp-bars">
+        <span>API<i style="width:86%"></i></span>
+        <span>SQL<i style="width:74%"></i></span>
+        <span>PWA<i style="width:94%"></i></span>
+      </div>
+      <div class="bp-foot"><span>開発 // 0x7F</span><b>SYS</b></div>
+    </div>
   </div>
 
-  <!-- Parallax vertical katakana margin SFX -->
+  <!-- Parallax vertical katakana × code margin SFX -->
   <div class="manga-margin-sfx" id="marginSfx" aria-hidden="true">
-    <span class="msfx msfx-1" data-speed="0.08">ドドド</span>
-    <span class="msfx msfx-2" data-speed="-0.06">ゴゴゴ</span>
-    <span class="msfx msfx-3" data-speed="0.05">シャキーン</span>
-    <span class="msfx msfx-4" data-speed="-0.09">バチッ!!</span>
+    <span class="msfx msfx-1" data-speed="0.08">ドドド // 0x01</span>
+    <span class="msfx msfx-2" data-speed="-0.06">ゴゴゴ // SYNC</span>
+    <span class="msfx msfx-3" data-speed="0.05">シャキーン // DEV</span>
+    <span class="msfx msfx-4" data-speed="-0.09">バチッ!! // API</span>
   </div>
 
   <!-- Falling ink speed streaks -->
@@ -85,6 +142,16 @@ import '@fontsource/kantumruy-pro/600.css';
   <div class="slash-wipe" id="slashWipe" aria-hidden="true">
     <div class="slash-blade"></div>
     <span class="slash-word" id="slashWord">SLASH!!</span>
+  </div>
+
+  <!-- Dramatic Manga Theme Shift Overlay (Light Paper ⇄ Midnight Ink) -->
+  <div class="theme-shift" id="themeShift" aria-hidden="true">
+    <div class="ts-wash"></div>
+    <div class="ts-ring"></div>
+    <div class="ts-banner">
+      <span class="ts-jp" id="tsJp">夜・インキ解放</span>
+      <strong class="ts-title" id="tsTitle">MIDNIGHT INK!!</strong>
+    </div>
   </div>
 
   <!-- ═══════════ MANGA VOLUME COVER (ENTRY) ═══════════ -->
@@ -1340,12 +1407,41 @@ POST /verify  → check OTP at every login</pre>
       transition: opacity 0.14s ease;
     }
     .manga-cursor.vis { opacity: 1; }
+    .manga-cursor .gpen-reticle {
+      position: absolute;
+      top: -19px;
+      left: -19px;
+      opacity: 0;
+      transform: scale(0.35) rotate(0deg);
+      transform-origin: center;
+      filter: drop-shadow(1px 1px 0 #111116);
+      transition: opacity 0.14s ease, transform 0.2s cubic-bezier(0.2, 1.45, 0.35, 1);
+    }
+    .manga-cursor.hover .gpen-reticle {
+      opacity: 1;
+      transform: scale(1) rotate(90deg);
+      animation: reticleSpin 3.4s linear infinite;
+    }
+    .manga-cursor.down .gpen-reticle {
+      transform: scale(0.76) rotate(45deg);
+    }
+    @keyframes reticleSpin {
+      from { transform: scale(1) rotate(0deg); }
+      to { transform: scale(1) rotate(360deg); }
+    }
     .manga-cursor .gpen-svg {
+      position: relative;
+      z-index: 2;
       display: block;
       margin: -2px 0 0 -2px;
       transform-origin: 2px 2px;
-      filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.45));
-      transition: transform 0.12s cubic-bezier(0.2, 1.4, 0.35, 1);
+      filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.48));
+      transition: transform 0.13s cubic-bezier(0.2, 1.4, 0.35, 1), filter 0.14s ease;
+    }
+    .manga-cursor .gpen-blade,
+    .manga-cursor .gpen-collar,
+    .manga-cursor .gpen-grip {
+      transition: fill 0.14s ease;
     }
     .manga-cursor .gpen-drop {
       opacity: 0;
@@ -1355,34 +1451,39 @@ POST /verify  → check OTP at every login</pre>
     }
     .gpen-sfx {
       position: absolute;
-      top: -15px;
-      left: 8px;
-      padding: 1px 5px;
-      background: var(--yellow);
-      color: #111116;
-      border: 1.8px solid #111116;
-      box-shadow: 2px 2px 0 #111116;
-      font-family: var(--font-display);
-      font-size: 8.5px;
-      letter-spacing: 0.03em;
+      top: -21px;
+      left: 14px;
+      padding: 1.5px 6px;
+      background: #111116;
+      color: var(--yellow);
+      border: 2px solid var(--yellow);
+      box-shadow: 2px 2px 0 var(--crimson);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       white-space: nowrap;
       opacity: 0;
-      transform: scale(0.6) rotate(-8deg);
+      transform: scale(0.55) rotate(-8deg);
       transition: opacity 0.12s ease, transform 0.15s cubic-bezier(0.2, 1.4, 0.35, 1);
     }
     .manga-cursor.hover .gpen-svg {
-      transform: rotate(-12deg) scale(1.1);
+      transform: rotate(-18deg) scale(1.18);
+      filter: drop-shadow(0 0 6px rgba(255, 212, 0, 0.65)) drop-shadow(2px 2px 0 #111116);
     }
+    .manga-cursor.hover .gpen-blade { fill: #FFD400; }
+    .manga-cursor.hover .gpen-collar { fill: #00E5FF; }
+    .manga-cursor.hover .gpen-grip { fill: #111116; }
     .manga-cursor.hover .gpen-drop {
       opacity: 1;
-      transform: scale(1.15);
+      transform: scale(1.25);
     }
     .manga-cursor.hover .gpen-sfx {
       opacity: 1;
-      transform: scale(1) rotate(-6deg);
+      transform: scale(1) rotate(-5deg);
     }
     .manga-cursor.down .gpen-svg {
-      transform: translate(-1px, 1px) rotate(-22deg) scale(0.92);
+      transform: translate(-1px, 1px) rotate(-26deg) scale(0.88);
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -1408,7 +1509,7 @@ POST /verify  → check OTP at every login</pre>
     :focus-visible { outline: 3px solid var(--crimson); outline-offset: 3px; }
     ::selection { background: var(--yellow); color: #111116; }
 
-    /* ── Manga 3D Perspective Stage Backdrop ── */
+    /* ── IT × Manga 3D Storyboard Perspective Stage Backdrop ── */
     .manga-bg {
       position: fixed;
       inset: 0;
@@ -1417,9 +1518,19 @@ POST /verify  → check OTP at every login</pre>
       background-color: var(--paper);
       background-image:
         radial-gradient(var(--dot-color) 1.2px, transparent 1.2px),
-        radial-gradient(ellipse 75% 55% at 15% 15%, rgba(230, 0, 46, 0.08), transparent 65%),
-        radial-gradient(ellipse 65% 50% at 88% 82%, rgba(255, 212, 0, 0.09), transparent 65%);
-      background-size: 16px 16px, 100% 100%, 100% 100%;
+        linear-gradient(to right, rgba(17, 17, 22, 0.032) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(17, 17, 22, 0.032) 1px, transparent 1px),
+        radial-gradient(ellipse 75% 55% at 15% 15%, rgba(230, 0, 46, 0.075), transparent 65%),
+        radial-gradient(ellipse 65% 50% at 88% 82%, rgba(0, 184, 217, 0.065), transparent 65%);
+      background-size: 16px 16px, 64px 64px, 64px 64px, 100% 100%, 100% 100%;
+    }
+    [data-theme="dark"] .manga-bg {
+      background-image:
+        radial-gradient(var(--dot-color) 1.2px, transparent 1.2px),
+        linear-gradient(to right, rgba(0, 229, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 41, 85, 0.045) 1px, transparent 1px),
+        radial-gradient(ellipse 75% 55% at 15% 15%, rgba(255, 41, 85, 0.11), transparent 65%),
+        radial-gradient(ellipse 65% 50% at 88% 82%, rgba(0, 229, 255, 0.09), transparent 65%);
     }
     .manga-stage-3d {
       position: fixed;
@@ -1451,48 +1562,120 @@ POST /verify  → check OTP at every login</pre>
     }
     [data-theme="dark"] .stage-grid-3d {
       background-image:
-        linear-gradient(to right, rgba(230, 0, 46, 0.19) 1.5px, transparent 1.5px),
-        linear-gradient(to bottom, rgba(255, 212, 0, 0.14) 1.5px, transparent 1.5px);
+        linear-gradient(to right, rgba(0, 229, 255, 0.16) 1.5px, transparent 1.5px),
+        linear-gradient(to bottom, rgba(255, 41, 85, 0.18) 1.5px, transparent 1.5px);
     }
     .bg-panel-3d {
       position: absolute;
-      border: 3px solid rgba(17, 17, 22, 0.14);
+      border: 2.5px solid rgba(17, 17, 22, 0.2);
       background:
-        radial-gradient(var(--dot-color) 1.4px, transparent 1.4px) 0 0 / 8px 8px,
-        rgba(255, 255, 255, 0.22);
-      box-shadow: 10px 10px 0 rgba(230, 0, 46, 0.08);
+        radial-gradient(var(--dot-color) 1.3px, transparent 1.3px) 0 0 / 8px 8px,
+        rgba(252, 251, 247, 0.56);
+      box-shadow: 9px 9px 0 rgba(230, 0, 46, 0.1);
       display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      padding: 8px 12px;
-      font-family: var(--font-comic);
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      color: rgba(17, 17, 22, 0.24);
-      transition: transform 0.26s ease-out;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      color: rgba(17, 17, 22, 0.52);
+      opacity: 0.72;
+      transition: transform 0.26s ease-out, opacity 0.25s ease;
     }
     [data-theme="dark"] .bg-panel-3d {
-      border-color: rgba(244, 240, 230, 0.12);
+      border-color: rgba(0, 229, 255, 0.2);
       background:
-        radial-gradient(rgba(255, 255, 255, 0.08) 1.4px, transparent 1.4px) 0 0 / 8px 8px,
-        rgba(20, 23, 36, 0.55);
-      box-shadow: 10px 10px 0 rgba(230, 0, 46, 0.16);
-      color: rgba(255, 212, 0, 0.24);
+        radial-gradient(rgba(255, 255, 255, 0.07) 1.3px, transparent 1.3px) 0 0 / 8px 8px,
+        rgba(17, 20, 34, 0.74);
+      box-shadow: 9px 9px 0 rgba(255, 41, 85, 0.18);
+      color: rgba(244, 240, 230, 0.62);
+      opacity: 0.76;
     }
+    .bp-head {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 8px;
+      background: rgba(17, 17, 22, 0.12);
+      border-bottom: 1.5px solid rgba(17, 17, 22, 0.14);
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+    }
+    [data-theme="dark"] .bp-head {
+      background: rgba(255, 255, 255, 0.06);
+      border-bottom-color: rgba(255, 255, 255, 0.12);
+    }
+    .bp-head i { width: 5px; height: 5px; border-radius: 50%; background: var(--crimson); opacity: 0.8; }
+    .bp-head i:nth-child(2) { background: var(--yellow); }
+    .bp-head i:nth-child(3) { background: var(--cyan); }
+    .bp-head span { margin-left: auto; opacity: 0.85; }
+    .bp-code {
+      padding: 8px 9px;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      line-height: 1.55;
+      white-space: pre;
+    }
+    .bp-code p { margin: 0; }
+    .bp-code em { font-style: normal; opacity: 0.55; margin-right: 4px; background: none; border: 0; padding: 0; color: inherit; }
+    .bp-code b { color: var(--crimson); }
+    [data-theme="dark"] .bp-code b { color: var(--yellow); }
+    .bp-git-svg { width: 100%; height: 68px; padding: 4px 6px; display: block; }
+    .bp-metrics {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 9px 4px;
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .bp-bars {
+      padding: 8px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+    }
+    .bp-bars span { display: grid; grid-template-columns: 28px 1fr; align-items: center; gap: 6px; }
+    .bp-bars i {
+      display: block; height: 7px;
+      background: repeating-linear-gradient(-45deg, var(--crimson) 0 4px, var(--yellow) 4px 8px);
+      border: 1px solid currentColor;
+    }
+    .bp-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 8px;
+      border-top: 1.5px dashed rgba(17, 17, 22, 0.18);
+      font-family: var(--font-comic);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+    [data-theme="dark"] .bp-foot { border-top-color: rgba(244, 240, 230, 0.16); }
+    .bp-foot b { color: var(--crimson); }
+    [data-theme="dark"] .bp-foot b { color: var(--yellow); }
+
     .bp-1 {
-      top: 10%; left: 3%; width: 210px; height: 270px;
+      top: 11%; left: 2.2%; width: 224px; height: 174px;
       transform: translate3d(calc(var(--bgx) * 24px), calc(var(--bgy) * 20px + var(--sc) * -45px), 40px) rotateY(18deg) rotateX(8deg) rotateZ(-4deg);
     }
     .bp-2 {
-      top: 42%; right: 3.5%; width: 230px; height: 190px;
-      border-color: rgba(230, 0, 46, 0.22);
-      transform: translate3d(calc(var(--bgx) * -28px), calc(var(--bgy) * -18px + var(--sc) * -80px), 70px) rotateY(-20deg) rotateX(6deg) rotateZ(3deg);
+      top: 22%; right: 2.6%; width: 226px; height: 158px;
+      border-color: rgba(230, 0, 46, 0.25);
+      transform: translate3d(calc(var(--bgx) * -28px), calc(var(--bgy) * -18px + var(--sc) * -75px), 70px) rotateY(-20deg) rotateX(6deg) rotateZ(3deg);
     }
     .bp-3 {
-      bottom: 8%; left: 6%; width: 180px; height: 150px;
-      transform: translate3d(calc(var(--bgx) * 16px), calc(var(--bgy) * -22px + var(--sc) * 35px), 20px) rotateY(14deg) rotateX(-10deg) rotateZ(5deg);
+      bottom: 10%; left: 3.6%; width: 204px; height: 138px;
+      transform: translate3d(calc(var(--bgx) * 16px), calc(var(--bgy) * -22px + var(--sc) * 35px), 20px) rotateY(14deg) rotateX(-10deg) rotateZ(4deg);
     }
-    @media (max-width: 1120px) { .bg-panel-3d { display: none; } }
+    .bp-4 {
+      bottom: 11%; right: 3.2%; width: 186px; height: 128px;
+      transform: translate3d(calc(var(--bgx) * -20px), calc(var(--bgy) * 16px + var(--sc) * 25px), 30px) rotateY(-16deg) rotateX(-8deg) rotateZ(-3deg);
+    }
+    @media (max-width: 1220px) { .bg-panel-3d { display: none; } }
 
     .manga-margin-sfx { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
     .msfx {
@@ -1500,17 +1683,17 @@ POST /verify  → check OTP at every login</pre>
       font-family: var(--font-display);
       writing-mode: vertical-rl;
       color: transparent;
-      -webkit-text-stroke: 1.5px var(--ink);
-      opacity: 0.11;
+      -webkit-text-stroke: 1.4px var(--ink);
+      opacity: 0.1;
       user-select: none;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       will-change: transform;
     }
-    .msfx-1 { top: 14%; left: 1.2%; font-size: clamp(28px, 2.8vw, 46px); }
-    .msfx-2 { top: 52%; right: 4.5%; font-size: clamp(26px, 2.6vw, 42px); }
-    .msfx-3 { bottom: 8%; left: 1.6%; font-size: clamp(22px, 2.1vw, 34px); }
-    .msfx-4 { top: 18%; right: 4.6%; font-size: clamp(24px, 2.4vw, 38px); }
-    @media (max-width: 1320px) { .manga-margin-sfx { display: none; } }
+    .msfx-1 { top: 14%; left: 0.8%; font-size: clamp(22px, 2.2vw, 36px); }
+    .msfx-2 { top: 52%; right: 4.2%; font-size: clamp(20px, 2.0vw, 34px); }
+    .msfx-3 { bottom: 8%; left: 1.0%; font-size: clamp(18px, 1.8vw, 28px); }
+    .msfx-4 { top: 14%; right: 4.4%; font-size: clamp(20px, 2.0vw, 32px); }
+    @media (max-width: 1360px) { .manga-margin-sfx { display: none; } }
 
     /* Falling ink speed streaks */
     .streak-layer { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
@@ -1538,6 +1721,117 @@ POST /verify  → check OTP at every login</pre>
     @keyframes streakFall {
       from { transform: translate3d(0, 0, 0) rotate(14deg); }
       to { transform: translate3d(-30vh, 125vh, 0) rotate(14deg); }
+    }
+
+    /* ── Dramatic Manga Theme Shift Overlay (Light ⇄ Dark) ── */
+    .theme-shift {
+      position: fixed;
+      inset: 0;
+      z-index: 260;
+      pointer-events: none;
+      opacity: 0;
+      overflow: hidden;
+      --tx: 50vw;
+      --ty: 40px;
+    }
+    .theme-shift.active { opacity: 1; }
+    .ts-wash {
+      position: absolute;
+      inset: 0;
+      clip-path: circle(0% at var(--tx) var(--ty));
+      will-change: clip-path, opacity;
+    }
+    .theme-shift.to-dark .ts-wash {
+      background:
+        radial-gradient(rgba(255, 224, 51, 0.14) 1.5px, transparent 1.5px) 0 0 / 10px 10px,
+        repeating-linear-gradient(-25deg, rgba(255, 41, 85, 0.12) 0 3px, transparent 3px 18px),
+        #0B0D14;
+    }
+    .theme-shift.to-light .ts-wash {
+      background:
+        radial-gradient(rgba(17, 17, 22, 0.12) 1.5px, transparent 1.5px) 0 0 / 10px 10px,
+        repeating-linear-gradient(-25deg, rgba(230, 0, 46, 0.08) 0 3px, transparent 3px 18px),
+        #F5F0E4;
+    }
+    .theme-shift.active .ts-wash {
+      animation: themeInkSweep 0.68s cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+    }
+    @keyframes themeInkSweep {
+      0%   { clip-path: circle(0% at var(--tx) var(--ty)); opacity: 1; }
+      38%  { clip-path: circle(155% at var(--tx) var(--ty)); opacity: 1; }
+      62%  { clip-path: circle(155% at var(--tx) var(--ty)); opacity: 1; }
+      100% { clip-path: circle(155% at var(--tx) var(--ty)); opacity: 0; }
+    }
+    .ts-ring {
+      position: absolute;
+      left: var(--tx);
+      top: var(--ty);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 6px solid var(--crimson);
+      box-shadow: 0 0 0 4px var(--yellow);
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+    }
+    .theme-shift.active .ts-ring {
+      animation: themeShockRing 0.52s cubic-bezier(0.18, 0.9, 0.3, 1) forwards;
+    }
+    @keyframes themeShockRing {
+      0%   { transform: translate(-50%, -50%) scale(0.2); opacity: 1; }
+      75%  { transform: translate(-50%, -50%) scale(78); opacity: 0.7; }
+      100% { transform: translate(-50%, -50%) scale(110); opacity: 0; }
+    }
+    .ts-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.6) rotate(-7deg);
+      padding: 12px 28px;
+      background: #111116;
+      color: var(--yellow);
+      border: 4px solid var(--yellow);
+      box-shadow: 8px 8px 0 var(--crimson);
+      text-align: center;
+      opacity: 0;
+    }
+    .theme-shift.to-light .ts-banner {
+      background: #FCFBF7;
+      color: #111116;
+      border-color: #111116;
+      box-shadow: 8px 8px 0 var(--yellow);
+    }
+    .ts-jp {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      color: var(--crimson);
+      margin-bottom: 2px;
+    }
+    .ts-title {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(24px, 5vw, 52px);
+      line-height: 1;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .theme-shift.active .ts-banner {
+      animation: themeBannerSlam 0.64s cubic-bezier(0.18, 1.3, 0.32, 1) forwards;
+    }
+    @keyframes themeBannerSlam {
+      0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.5) rotate(-11deg); }
+      24%  { opacity: 1; transform: translate(-50%, -50%) scale(1.06) rotate(-4deg); }
+      68%  { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-3deg); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1.22) rotate(3deg); }
+    }
+    body.theme-jolt { animation: themeJolt 0.2s ease-out; }
+    @keyframes themeJolt {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(-2px, 2px); }
+      55%  { transform: translate(2px, -1px); }
+      100% { transform: translate(0, 0); }
     }
 
     /* ── Diagonal Slash Transition ── */
@@ -3216,7 +3510,7 @@ POST /verify  → check OTP at every login</pre>
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .streak-layer, .manga-margin-sfx, .cover-speedlines, .slash-wipe,
+      .streak-layer, .manga-margin-sfx, .cover-speedlines, .slash-wipe, .theme-shift,
       .manga-stage-3d, .manga-cursor, #fxCanvas { display: none !important; }
       body.mc-active, body.mc-active * { cursor: auto !important; }
       .js .reveal, .js .reveal.stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -3337,7 +3631,7 @@ POST /verify  → check OTP at every login</pre>
       syncSfxBtn();
       if (sfxBtn) sfxBtn.addEventListener('click', () => setSfxMode('toggle'));
 
-      /* ── Compact Mangaka G-Pen Cursor + Anime Running Dust, Dirt Debris & Pen SFX Glyphs ── */
+      /* ── Mangaka G-Pen × Dev Reticle Cursor + Tapered Ink Ribbon, Theme-Aware Dust & Hover Sparks ── */
       const fxCanvas = document.getElementById('fxCanvas');
       const mCursor = document.getElementById('mCursor');
       const gpenSfx = document.getElementById('gpenSfx');
@@ -3356,97 +3650,119 @@ POST /verify  → check OTP at every login</pre>
         window.addEventListener('resize', resizeFx, { passive: true });
 
         /* Particle pools:
-           - dusts: billowing comic smoke clouds (もくもく) with sumi-ink outline
-           - rocks: angular dirt clods / pebbles tumbling with gravity
-           - streaks: short ground dash scratch lines
-           - glyphs: floating Japanese manga pen & dash SFX characters (サッ, カリッ, ダッ!, シュッ) */
+           - trail: velocity-tapered ink brush ribbon (normal = sumi ink, hover = crimson/gold charge)
+           - dusts: billowing 4-lobe comic smoke puffs with inner crescent & halftone dots (normal mode)
+           - sparks: 4-point manga sparkles, diamond shards & syntax glints (hover & click bursts)
+           - rings: crisp impact shockwave rings on click
+           - glyphs: floating katakana & dev onomatopoeia SFX */
+        const trail = [];
         const dusts = [];
-        const rocks = [];
-        const streaks = [];
+        const sparks = [];
+        const rings = [];
         const glyphs = [];
-        let cursorOn = false, isDown = false;
+        let cursorOn = false, isDown = false, isHover = false;
         let lastX = -100, lastY = -100, sfxDist = 0;
-        const INTERACTIVE = 'a, button, .cover, .chip, .repo-card, .cf-card, .chapter-card, .arc-panel, .edu-card, .cstat, .filter-btn, .beat-tab, .sk-tab, .wf-btn, .ch-tab, .mg-track';
-        const ROCK_COLORS = ['#5C4735', '#8B735B', '#2A2725', '#A99278', '#42372E'];
-        const PEN_GLYPHS = ['サッ', 'カリッ', 'ダッ!', 'シュッ', 'ズサッ', 'ガリッ!'];
-        const HOVER_SFX = ['カリッ!', '書!!', 'チェック!', 'キラッ!'];
+        const INTERACTIVE = 'a, button, .cover, .chip, .repo-card, .cf-card, .chapter-card, .arc-panel, .edu-card, .cstat, .filter-btn, .beat-tab, .sk-tab, .wf-btn, .ch-tab, .mg-track, .hero-portrait, .kb-row';
+        const PEN_GLYPHS = ['サッ', 'カリッ', 'ダッ!', 'シュッ', 'ズサッ'];
+        const HOVER_GLYPHS = ['<>', '{}', '//', 'キラッ!', 'EXEC!'];
+        const HOVER_SFX = ['[ CLICK! ]', '[ RUN!! ]', '[ OPEN! ]', '[ 書!! ]', '[ EXEC ]'];
 
         const spawnDashDebris = (x, y, dx, dy, burst = false) => {
           const speed = Math.hypot(dx, dy);
           const ang = speed > 0.5 ? Math.atan2(-dy, -dx) : -Math.PI / 2;
-          const puffCount = burst ? 5 : (isDown ? 2 : 1);
-          const rockCount = burst ? 8 : (isDown || speed > 16 ? 3 : 1);
+          const dark = document.documentElement.getAttribute('data-theme') === 'dark';
 
-          /* 1. Scalloped Manga Dust Clouds */
-          for (let i = 0; i < puffCount; i++) {
-            const spread = (Math.random() - 0.5) * (burst ? 2.4 : 1.1);
-            const spd = (burst ? 1.8 : 0.7) + Math.random() * 1.8;
-            dusts.push({
-              x: x + (Math.random() - 0.5) * 8,
-              y: y + (Math.random() - 0.5) * 8,
-              vx: Math.cos(ang + spread) * spd,
-              vy: Math.sin(ang + spread) * spd - 0.35,
-              r: (burst ? 6.5 : 4) + Math.random() * 4.5,
-              vr: 0.2 + Math.random() * 0.22,
-              rot: Math.random() * Math.PI * 2,
-              vrot: (Math.random() - 0.5) * 0.08,
-              life: 1,
-              decay: (burst ? 0.026 : 0.036) + Math.random() * 0.015,
-              shade: Math.random() > 0.4 ? '#F2EAD7' : '#DFD2B8'
-            });
+          if (burst) {
+            rings.push({ x, y, r: 4, vr: 3.4, life: 1, color: isHover ? '#00E5FF' : '#E6002E' });
           }
 
-          /* 2. Tumbling Dirt & Rock Shards */
-          for (let i = 0; i < rockCount; i++) {
-            const spread = (Math.random() - 0.5) * (burst ? 2.8 : 1.4);
-            const spd = (burst ? 2.5 : 1.1) + Math.random() * 2.6;
-            const sz = 2.2 + Math.random() * 3.4;
-            rocks.push({
-              x: x + (Math.random() - 0.5) * 6,
-              y: y + (Math.random() - 0.5) * 6,
-              vx: Math.cos(ang + spread) * spd,
-              vy: Math.sin(ang + spread) * spd - (1.1 + Math.random() * 1.7),
-              sz,
-              rot: Math.random() * Math.PI * 2,
-              vrot: (Math.random() - 0.5) * 0.32,
-              life: 1,
-              decay: 0.028 + Math.random() * 0.018,
-              color: ROCK_COLORS[Math.floor(Math.random() * ROCK_COLORS.length)],
-              sides: Math.random() > 0.5 ? 4 : 5
-            });
+          if (isHover && !burst) {
+            /* HOVER MODE TRAIL: sharp 4-point anime sparkles + electric cyan/yellow shards */
+            const sparkCount = isDown ? 3 : 2;
+            for (let i = 0; i < sparkCount; i++) {
+              const spread = (Math.random() - 0.5) * 1.9;
+              const spd = 1.1 + Math.random() * 2.4;
+              sparks.push({
+                x: x + (Math.random() - 0.5) * 6,
+                y: y + (Math.random() - 0.5) * 6,
+                vx: Math.cos(ang + spread) * spd,
+                vy: Math.sin(ang + spread) * spd - 0.4,
+                sz: 3.2 + Math.random() * 3.8,
+                rot: Math.random() * Math.PI,
+                vrot: (Math.random() - 0.5) * 0.22,
+                life: 1,
+                decay: 0.042 + Math.random() * 0.02,
+                kind: Math.random() > 0.42 ? 'star' : 'shard',
+                color: Math.random() > 0.45 ? '#FFD400' : (Math.random() > 0.5 ? '#00E5FF' : '#FF2955')
+              });
+            }
+          } else {
+            /* NORMAL MODE TRAIL: refined billowing manga dust clouds + ink motes */
+            const puffCount = burst ? 5 : (isDown ? 2 : 1);
+            for (let i = 0; i < puffCount; i++) {
+              const spread = (Math.random() - 0.5) * (burst ? 2.5 : 0.95);
+              const spd = (burst ? 1.8 : 0.55) + Math.random() * (burst ? 1.8 : 1.15);
+              dusts.push({
+                x: x + (Math.random() - 0.5) * 7,
+                y: y + (Math.random() - 0.5) * 7,
+                vx: Math.cos(ang + spread) * spd,
+                vy: Math.sin(ang + spread) * spd - 0.28,
+                r: (burst ? 6.5 : 4.2) + Math.random() * 4.2,
+                vr: 0.24 + Math.random() * 0.22,
+                rot: Math.random() * Math.PI * 2,
+                vrot: (Math.random() - 0.5) * 0.06,
+                life: 1,
+                decay: (burst ? 0.026 : 0.032) + Math.random() * 0.012,
+                shade: dark
+                  ? (Math.random() > 0.45 ? '#353C5C' : '#4C547B')
+                  : (Math.random() > 0.45 ? '#F7F2E6' : '#E3D7BF'),
+                rim: dark ? '#F4F0E6' : '#111116'
+              });
+            }
+            /* Crisp tiny ink droplets / embers */
+            const dropCount = burst ? 8 : (speed > 14 ? 2 : 1);
+            for (let i = 0; i < dropCount; i++) {
+              const spread = (Math.random() - 0.5) * (burst ? 2.8 : 1.3);
+              const spd = (burst ? 2.4 : 0.9) + Math.random() * 2.2;
+              sparks.push({
+                x: x + (Math.random() - 0.5) * 5,
+                y: y + (Math.random() - 0.5) * 5,
+                vx: Math.cos(ang + spread) * spd,
+                vy: Math.sin(ang + spread) * spd - (0.8 + Math.random() * 1.1),
+                sz: 1.8 + Math.random() * 2.2,
+                rot: Math.random() * Math.PI,
+                vrot: (Math.random() - 0.5) * 0.25,
+                life: 1,
+                decay: 0.034 + Math.random() * 0.018,
+                kind: burst ? 'star' : 'mote',
+                color: burst ? (Math.random() > 0.5 ? '#FFD400' : '#E6002E') : (dark ? '#FF2955' : '#111116')
+              });
+            }
           }
 
-          /* 3. Anime Ground-Kick Wind Scratch */
-          if (speed > 12 || burst) {
-            streaks.push({
-              x, y,
-              ang: ang + (Math.random() - 0.5) * 0.35,
-              len: 10 + Math.min(22, speed * 0.5),
-              life: 1
-            });
-          }
-
-          /* 4. Floating Japanese Manga Pen & Dash Onomatopoeia SFX Character */
+          /* Floating Manga / Dev SFX Glyphs */
           sfxDist += speed;
-          if (burst || (isDown && sfxDist > 50) || sfxDist > 92) {
+          if (burst || (isDown && sfxDist > 52) || sfxDist > 105) {
             sfxDist = 0;
+            const pool = isHover ? HOVER_GLYPHS : PEN_GLYPHS;
             glyphs.push({
-              txt: PEN_GLYPHS[Math.floor(Math.random() * PEN_GLYPHS.length)],
+              txt: pool[Math.floor(Math.random() * pool.length)],
               x: x + (Math.random() - 0.5) * 14,
-              y: y - 4,
-              vx: Math.cos(ang) * 0.7 + (Math.random() - 0.5) * 0.8,
-              vy: -0.9 - Math.random() * 0.7,
-              rot: (Math.random() - 0.5) * 0.35,
+              y: y - 5,
+              vx: Math.cos(ang) * 0.55 + (Math.random() - 0.5) * 0.7,
+              vy: -0.9 - Math.random() * 0.65,
+              rot: (Math.random() - 0.5) * 0.3,
               life: 1,
-              color: burst || isDown ? '#FFD400' : '#FCFBF7'
+              mono: isHover,
+              color: isHover ? '#00E5FF' : (burst || isDown ? '#FFD400' : '#FCFBF7')
             });
-            if (isDown || speed > 22) penSfx.scratch(speed);
+            if (isDown || speed > 24) penSfx.scratch(speed);
           }
 
-          if (dusts.length > 75) dusts.splice(0, dusts.length - 75);
-          if (rocks.length > 90) rocks.splice(0, rocks.length - 90);
-          if (streaks.length > 25) streaks.splice(0, streaks.length - 25);
-          if (glyphs.length > 14) glyphs.splice(0, glyphs.length - 14);
+          if (dusts.length > 68) dusts.splice(0, dusts.length - 68);
+          if (sparks.length > 85) sparks.splice(0, sparks.length - 85);
+          if (rings.length > 10) rings.splice(0, rings.length - 10);
+          if (glyphs.length > 12) glyphs.splice(0, glyphs.length - 12);
         };
 
         let wasHover = false;
@@ -3461,20 +3777,23 @@ POST /verify  → check OTP at every login</pre>
           }
           mCursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
 
-          const dx = x - lastX, dy = y - lastY;
-          const dist = Math.hypot(dx, dy);
-          if (dist > (isDown ? 5 : 10)) {
-            spawnDashDebris(x + 3, y + 4, dx, dy, false);
-            lastX = x; lastY = y;
-          }
-
           const hit = e.target && e.target.closest ? e.target.closest(INTERACTIVE) : null;
-          const nowHover = !!hit;
-          if (nowHover && !wasHover && gpenSfx) {
+          isHover = !!hit;
+          if (isHover && !wasHover && gpenSfx) {
             gpenSfx.textContent = HOVER_SFX[Math.floor(Math.random() * HOVER_SFX.length)];
           }
-          wasHover = nowHover;
-          mCursor.classList.toggle('hover', nowHover);
+          wasHover = isHover;
+          mCursor.classList.toggle('hover', isHover);
+
+          trail.push({ x: x + 1, y: y + 1, life: 1, hover: isHover, down: isDown });
+          if (trail.length > 18) trail.shift();
+
+          const dx = x - lastX, dy = y - lastY;
+          const dist = Math.hypot(dx, dy);
+          if (dist > (isDown ? 5 : 11)) {
+            spawnDashDebris(x + 2, y + 3, dx, dy, false);
+            lastX = x; lastY = y;
+          }
         }, { passive: true });
 
         document.addEventListener('pointerdown', e => {
@@ -3493,118 +3812,166 @@ POST /verify  → check OTP at every login</pre>
 
         const tickFx = () => {
           ctx.clearRect(0, 0, cw, ch);
+          const dark = document.documentElement.getAttribute('data-theme') === 'dark';
 
-          /* 1. Ground-kick wind streaks */
-          for (let i = streaks.length - 1; i >= 0; i--) {
-            const st = streaks[i];
-            st.life -= 0.085;
-            if (st.life <= 0) { streaks.splice(i, 1); continue; }
-            ctx.save();
-            ctx.globalAlpha = st.life * 0.65;
-            ctx.strokeStyle = '#111116';
-            ctx.lineWidth = 2 * st.life;
+          /* 1. Velocity-tapered ink / energy brush ribbon */
+          for (let i = trail.length - 1; i >= 0; i--) {
+            trail[i].life -= 0.095;
+            if (trail[i].life <= 0) trail.splice(i, 1);
+          }
+          if (trail.length > 1) {
             ctx.lineCap = 'round';
-            ctx.beginPath();
-            ctx.moveTo(st.x, st.y);
-            ctx.lineTo(st.x + Math.cos(st.ang) * st.len, st.y + Math.sin(st.ang) * st.len);
-            ctx.stroke();
-            ctx.restore();
+            ctx.lineJoin = 'round';
+            for (let i = 1; i < trail.length; i++) {
+              const p0 = trail[i - 1], p1 = trail[i];
+              const a = Math.max(0, Math.min(1, p1.life));
+              ctx.save();
+              ctx.globalAlpha = a * (p1.hover ? 0.78 : 0.42);
+              ctx.strokeStyle = p1.hover
+                ? (i % 2 === 0 ? '#FFD400' : '#FF2955')
+                : (dark ? '#F4F0E6' : '#111116');
+              ctx.lineWidth = Math.max(0.8, a * (p1.down ? 5.2 : p1.hover ? 3.8 : 2.8));
+              ctx.beginPath();
+              ctx.moveTo(p0.x, p0.y);
+              ctx.lineTo(p1.x, p1.y);
+              ctx.stroke();
+              ctx.restore();
+            }
           }
 
-          /* 2. Billowing comic dust puffs (3-lobe scalloped cloud with sumi-ink outline) */
+          /* 2. Billowing 4-lobe comic dust puffs with sumi-ink rim & inner halftone specks */
           for (let i = dusts.length - 1; i >= 0; i--) {
             const d = dusts[i];
             d.x += d.vx;
             d.y += d.vy;
-            d.vx *= 0.92;
-            d.vy = d.vy * 0.92 - 0.03;
+            d.vx *= 0.91;
+            d.vy = d.vy * 0.91 - 0.035;
             d.r += d.vr;
-            d.vr *= 0.96;
+            d.vr *= 0.95;
             d.rot += d.vrot;
             d.life -= d.decay;
             if (d.life <= 0) { dusts.splice(i, 1); continue; }
 
             ctx.save();
-            ctx.globalAlpha = Math.min(1, d.life * 1.15);
+            ctx.globalAlpha = Math.min(0.92, d.life * 1.1);
             ctx.translate(d.x, d.y);
             ctx.rotate(d.rot);
 
             const r = d.r;
             ctx.fillStyle = d.shade;
-            ctx.strokeStyle = '#111116';
-            ctx.lineWidth = 1.8;
+            ctx.strokeStyle = d.rim;
+            ctx.lineWidth = 1.5;
 
             ctx.beginPath();
-            ctx.arc(-r * 0.38, r * 0.12, r * 0.68, 0, Math.PI * 2);
-            ctx.arc(r * 0.38, r * 0.14, r * 0.62, 0, Math.PI * 2);
-            ctx.arc(0, -r * 0.25, r * 0.78, 0, Math.PI * 2);
+            ctx.arc(-r * 0.42, r * 0.14, r * 0.56, 0, Math.PI * 2);
+            ctx.arc(r * 0.42, r * 0.12, r * 0.52, 0, Math.PI * 2);
+            ctx.arc(0, -r * 0.28, r * 0.68, 0, Math.PI * 2);
+            ctx.arc(0, r * 0.24, r * 0.48, 0, Math.PI * 2);
             ctx.fill();
             ctx.stroke();
 
             ctx.beginPath();
-            ctx.arc(-r * 0.35, r * 0.1, r * 0.58, 0, Math.PI * 2);
-            ctx.arc(r * 0.35, r * 0.12, r * 0.52, 0, Math.PI * 2);
-            ctx.arc(0, -r * 0.22, r * 0.68, 0, Math.PI * 2);
+            ctx.arc(-r * 0.36, r * 0.12, r * 0.48, 0, Math.PI * 2);
+            ctx.arc(r * 0.36, r * 0.1, r * 0.44, 0, Math.PI * 2);
+            ctx.arc(0, -r * 0.24, r * 0.58, 0, Math.PI * 2);
             ctx.fill();
 
+            /* Inner comic curl + halftone specks */
             ctx.beginPath();
-            ctx.arc(0, -r * 0.15, r * 0.36, 0.3, 2.2);
-            ctx.strokeStyle = 'rgba(17, 17, 22, 0.45)';
-            ctx.lineWidth = 1.2;
+            ctx.arc(0, -r * 0.1, r * 0.32, 0.35, 2.15);
+            ctx.strokeStyle = dark ? 'rgba(255, 224, 51, 0.4)' : 'rgba(17, 17, 22, 0.38)';
+            ctx.lineWidth = 1.1;
             ctx.stroke();
+
+            ctx.fillStyle = dark ? 'rgba(255, 41, 85, 0.55)' : 'rgba(17, 17, 22, 0.32)';
+            ctx.fillRect(-r * 0.22, r * 0.08, 1.6, 1.6);
+            ctx.fillRect(r * 0.16, -r * 0.05, 1.6, 1.6);
 
             ctx.restore();
           }
 
-          /* 3. Tumbling dirt clods & rock debris chunks */
-          for (let i = rocks.length - 1; i >= 0; i--) {
-            const rk = rocks[i];
-            rk.x += rk.vx;
-            rk.y += rk.vy;
-            rk.vx *= 0.96;
-            rk.vy += 0.21;
-            rk.rot += rk.vrot;
-            rk.life -= rk.decay;
-            if (rk.life <= 0) { rocks.splice(i, 1); continue; }
+          /* 3. Hover 4-point anime sparkles, shards & normal ink motes */
+          for (let i = sparks.length - 1; i >= 0; i--) {
+            const sp = sparks[i];
+            sp.x += sp.vx;
+            sp.y += sp.vy;
+            sp.vx *= 0.94;
+            sp.vy = sp.kind === 'mote' ? sp.vy + 0.15 : sp.vy * 0.94;
+            sp.rot += sp.vrot;
+            sp.life -= sp.decay;
+            if (sp.life <= 0) { sparks.splice(i, 1); continue; }
 
             ctx.save();
-            ctx.globalAlpha = Math.min(1, rk.life * 1.25);
-            ctx.translate(rk.x, rk.y);
-            ctx.rotate(rk.rot);
-            ctx.fillStyle = rk.color;
+            ctx.globalAlpha = Math.min(1, sp.life * 1.25);
+            ctx.translate(sp.x, sp.y);
+            ctx.rotate(sp.rot);
+            const s = sp.sz * (0.45 + sp.life * 0.65);
+            ctx.fillStyle = sp.color;
             ctx.strokeStyle = '#111116';
-            ctx.lineWidth = 1.4;
+            ctx.lineWidth = 1.2;
 
-            const s = rk.sz;
+            if (sp.kind === 'star') {
+              ctx.beginPath();
+              for (let p = 0; p < 8; p++) {
+                const rad = p % 2 === 0 ? s * 1.35 : s * 0.35;
+                const a = (p * Math.PI) / 4;
+                if (p === 0) ctx.moveTo(Math.cos(a) * rad, Math.sin(a) * rad);
+                else ctx.lineTo(Math.cos(a) * rad, Math.sin(a) * rad);
+              }
+              ctx.closePath();
+              ctx.fill();
+              ctx.stroke();
+            } else if (sp.kind === 'shard') {
+              ctx.beginPath();
+              ctx.moveTo(0, -s * 1.2);
+              ctx.lineTo(s * 0.55, 0);
+              ctx.lineTo(0, s * 1.2);
+              ctx.lineTo(-s * 0.55, 0);
+              ctx.closePath();
+              ctx.fill();
+              ctx.stroke();
+            } else {
+              ctx.beginPath();
+              ctx.arc(0, 0, s * 0.72, 0, Math.PI * 2);
+              ctx.fill();
+            }
+            ctx.restore();
+          }
+
+          /* 4. Click Impact Shockwave Rings */
+          for (let i = rings.length - 1; i >= 0; i--) {
+            const rg = rings[i];
+            rg.r += rg.vr;
+            rg.vr *= 0.92;
+            rg.life -= 0.065;
+            if (rg.life <= 0) { rings.splice(i, 1); continue; }
+            ctx.save();
+            ctx.globalAlpha = rg.life * 0.85;
+            ctx.strokeStyle = rg.color;
+            ctx.lineWidth = 2.6 * rg.life;
             ctx.beginPath();
-            ctx.moveTo(-s, -s * 0.6);
-            ctx.lineTo(s * 0.3, -s);
-            ctx.lineTo(s, -s * 0.2);
-            ctx.lineTo(s * 0.6, s * 0.9);
-            if (rk.sides === 5) ctx.lineTo(-s * 0.8, s * 0.7);
-            ctx.closePath();
-            ctx.fill();
+            ctx.arc(rg.x, rg.y, rg.r, 0, Math.PI * 2);
             ctx.stroke();
             ctx.restore();
           }
 
-          /* 4. Floating Japanese Manga Pen & Dash Onomatopoeia SFX Characters */
+          /* 5. Floating Manga & Code SFX Glyphs */
           for (let i = glyphs.length - 1; i >= 0; i--) {
             const g = glyphs[i];
             g.x += g.vx;
             g.y += g.vy;
-            g.life -= 0.032;
+            g.life -= 0.034;
             if (g.life <= 0) { glyphs.splice(i, 1); continue; }
 
             ctx.save();
             ctx.globalAlpha = Math.min(1, g.life * 1.25);
             ctx.translate(g.x, g.y);
             ctx.rotate(g.rot);
-            const scale = g.life > 0.8 ? 0.8 + (1 - g.life) * 1.5 : 0.75 + g.life * 0.35;
+            const scale = g.life > 0.8 ? 0.8 + (1 - g.life) * 1.4 : 0.78 + g.life * 0.32;
             ctx.scale(scale, scale);
-            ctx.font = '900 13px "Dela Gothic One", sans-serif';
+            ctx.font = g.mono ? '700 12px "Spline Sans Mono", monospace' : '900 12.5px "Dela Gothic One", sans-serif';
             ctx.lineJoin = 'round';
-            ctx.lineWidth = 3.4;
+            ctx.lineWidth = 3.2;
             ctx.strokeStyle = '#111116';
             ctx.strokeText(g.txt, 0, 0);
             ctx.fillStyle = g.color;
@@ -4027,10 +4394,14 @@ POST /verify  → check OTP at every login</pre>
         return true;
       };
 
-      /* ── Paper / Ink Theme Toggle ── */
+      /* ── Paper / Ink Dramatic Manga Theme Toggle ── */
       const themeBtn = document.getElementById('themeToggle');
       const themeMeta = document.querySelector('meta[name="theme-color"]');
+      const themeShift = document.getElementById('themeShift');
+      const tsJp = document.getElementById('tsJp');
+      const tsTitle = document.getElementById('tsTitle');
       let theme = 'light';
+      let themeFlipTimer = null, themeEndTimer = null;
       try {
         theme = localStorage.getItem('hr_theme') ||
           (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -4043,17 +4414,54 @@ POST /verify  → check OTP at every login</pre>
           themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light paper mode' : 'Switch to dark ink mode');
         }
       };
-      const setThemeMode = (mode) => {
-        theme = (mode === 'dark' || mode === 'ink') ? 'dark'
+      const setThemeMode = (mode, ev) => {
+        const next = (mode === 'dark' || mode === 'ink') ? 'dark'
           : (mode === 'light' || mode === 'paper') ? 'light'
           : (theme === 'dark' ? 'light' : 'dark');
+        if (next === theme) return theme;
+        theme = next;
         try { localStorage.setItem('hr_theme', theme); } catch (e) {}
-        applyTheme();
-        penSfx.stamp();
+
+        if (reduced || !themeShift) {
+          applyTheme();
+          penSfx.stamp();
+          return theme;
+        }
+
+        /* Compute ink-ripple origin from click / toggle button / center screen */
+        let ox = window.innerWidth * 0.5, oy = window.innerHeight * 0.5;
+        if (ev && typeof ev.clientX === 'number' && (ev.clientX || ev.clientY)) {
+          ox = ev.clientX; oy = ev.clientY;
+        } else if (themeBtn) {
+          const r = themeBtn.getBoundingClientRect();
+          if (r.width) { ox = r.left + r.width * 0.5; oy = r.top + r.height * 0.5; }
+        }
+        themeShift.style.setProperty('--tx', Math.round(ox) + 'px');
+        themeShift.style.setProperty('--ty', Math.round(oy) + 'px');
+        themeShift.classList.remove('active', 'to-dark', 'to-light');
+        if (tsJp) tsJp.textContent = theme === 'dark' ? '夜・インキ解放' : '昼・原稿展開';
+        if (tsTitle) tsTitle.textContent = theme === 'dark' ? 'MIDNIGHT INK!!' : 'DAYLIGHT PAPER!!';
+        void themeShift.offsetWidth;
+        themeShift.classList.add('active', theme === 'dark' ? 'to-dark' : 'to-light');
+
+        penSfx.slash();
+        clearTimeout(themeFlipTimer);
+        clearTimeout(themeEndTimer);
+        themeFlipTimer = setTimeout(() => {
+          applyTheme();
+          penSfx.stamp();
+          document.body.classList.remove('theme-jolt');
+          void document.body.offsetWidth;
+          document.body.classList.add('theme-jolt');
+        }, 215);
+        themeEndTimer = setTimeout(() => {
+          themeShift.classList.remove('active', 'to-dark', 'to-light');
+          document.body.classList.remove('theme-jolt');
+        }, 700);
         return theme;
       };
       applyTheme();
-      if (themeBtn) themeBtn.addEventListener('click', () => setThemeMode('toggle'));
+      if (themeBtn) themeBtn.addEventListener('click', e => setThemeMode('toggle', e));
 
       /* ── Smarter Interactive Console (console.sh) ── */
       const out = document.getElementById('shellOut');
